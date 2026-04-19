@@ -18,6 +18,7 @@ export const NEW_ISSUE_URL =
 
 export const NAV_ITEMS = [
   { href: '/marketplace', label: 'Marketplace' },
+  { href: '/stats', label: 'Stats' },
   { href: '/hall-of-fame', label: 'Hall of Fame' },
   { href: '/submit', label: 'Submit' },
   { href: 'https://docs.grokinstall.dev', label: 'Docs', external: true },

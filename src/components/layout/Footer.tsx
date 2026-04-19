@@ -13,6 +13,7 @@ const COLS: { title: string; links: { href: string; label: string; external?: bo
       { href: '/marketplace/sections/new', label: 'New' },
       { href: '/marketplace/sections/beginner', label: 'Start here' },
       { href: '/hall-of-fame', label: 'Hall of Fame' },
+      { href: '/stats', label: 'Stats' },
     ],
   },
   {

@@ -15,10 +15,16 @@ export interface InstallCounts {
   last24h: number;
 }
 
+export interface DailyCount {
+  date: string; // YYYY-MM-DD (UTC)
+  count: number;
+}
+
 const MS_24H = 24 * 60 * 60 * 1000;
 const MS_7D = 7 * MS_24H;
-const RECENT_WINDOW_MS = MS_7D;
-const MAX_RECENT_EVENTS = 500;
+const MS_30D = 30 * MS_24H;
+const RECENT_WINDOW_MS = MS_30D;
+const MAX_RECENT_EVENTS = 2000;
 
 interface Backend {
   kind: 'kv' | 'memory';
@@ -26,6 +32,7 @@ interface Backend {
   pushRecent: (evt: InstallEvent) => Promise<void>;
   getTotal: (agentId: string) => Promise<number>;
   getRecent: (agentId: string, sinceMs: number) => Promise<number>;
+  getTimestamps: (agentId: string, sinceMs: number) => Promise<number[]>;
   getAllTotals: () => Promise<Map<string, number>>;
 }
 
@@ -52,6 +59,10 @@ function memoryBackend(): Backend {
     async getRecent(agentId, sinceMs) {
       const list = recent.get(agentId) ?? [];
       return list.filter((e) => e.timestamp >= sinceMs).length;
+    },
+    async getTimestamps(agentId, sinceMs) {
+      const list = recent.get(agentId) ?? [];
+      return list.filter((e) => e.timestamp >= sinceMs).map((e) => e.timestamp);
     },
     async getAllTotals() {
       return new Map(totals);
@@ -85,6 +96,20 @@ async function kvBackend(): Promise<Backend | null> {
       async getRecent(agentId, sinceMs) {
         const count = await kv.zcount(`install:recent:${agentId}`, sinceMs, '+inf');
         return (count as number) ?? 0;
+      },
+      async getTimestamps(agentId, sinceMs) {
+        const raw = (await kv.zrange(`install:recent:${agentId}`, sinceMs, '+inf', {
+          byScore: true,
+          withScores: true,
+        })) as unknown as (string | number)[];
+        // Redis-like `withScores` interleaves member, score, member, score, …
+        const out: number[] = [];
+        for (let i = 1; i < raw.length; i += 2) {
+          const s = raw[i];
+          const n = typeof s === 'number' ? s : Number(s);
+          if (Number.isFinite(n)) out.push(n);
+        }
+        return out;
       },
       async getAllTotals() {
         const keys: string[] = [];
@@ -144,4 +169,37 @@ export async function getCounts(agentId: string): Promise<InstallCounts> {
 export async function getAllTotals(): Promise<Map<string, number>> {
   const b = await backend();
   return b.getAllTotals();
+}
+
+function isoDay(ts: number): string {
+  return new Date(ts).toISOString().slice(0, 10);
+}
+
+/**
+ * Returns an ordered series of per-day install counts for `days` calendar
+ * days ending today (UTC). Missing days are filled with 0 so charts get a
+ * dense x-axis.
+ */
+export async function getDailyCounts(agentId: string, days = 30): Promise<DailyCount[]> {
+  const b = await backend();
+  const now = Date.now();
+  const since = now - (days - 1) * MS_24H;
+  const sinceDayStart = Date.UTC(
+    new Date(since).getUTCFullYear(),
+    new Date(since).getUTCMonth(),
+    new Date(since).getUTCDate()
+  );
+  const timestamps = await b.getTimestamps(agentId, sinceDayStart);
+  const buckets = new Map<string, number>();
+  for (let i = 0; i < days; i++) {
+    const ts = sinceDayStart + i * MS_24H;
+    buckets.set(isoDay(ts), 0);
+  }
+  for (const t of timestamps) {
+    const key = isoDay(t);
+    if (buckets.has(key)) buckets.set(key, (buckets.get(key) ?? 0) + 1);
+  }
+  return [...buckets.entries()]
+    .sort(([a], [b2]) => (a < b2 ? -1 : 1))
+    .map(([date, count]) => ({ date, count }));
 }

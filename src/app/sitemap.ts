@@ -14,6 +14,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.7,
   }));
 
+  const statsEntries: MetadataRoute.Sitemap = agents.map((a) => ({
+    url: `${SITE_URL}/stats/agents/${a.id}`,
+    lastModified: now,
+    changeFrequency: 'daily',
+    priority: 0.5,
+  }));
+
   const sectionEntries: MetadataRoute.Sitemap = sections.map((s) => ({
     url: `${SITE_URL}/marketplace/sections/${s}`,
     lastModified: now,
@@ -25,8 +32,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/`, lastModified: now, changeFrequency: 'daily', priority: 1 },
     { url: `${SITE_URL}/marketplace`, lastModified: now, changeFrequency: 'hourly', priority: 0.9 },
     { url: `${SITE_URL}/hall-of-fame`, lastModified: now, changeFrequency: 'daily', priority: 0.6 },
+    { url: `${SITE_URL}/stats`, lastModified: now, changeFrequency: 'hourly', priority: 0.6 },
     { url: `${SITE_URL}/submit`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
     ...sectionEntries,
     ...agentEntries,
+    ...statsEntries,
   ];
 }

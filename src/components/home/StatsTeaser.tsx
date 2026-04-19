@@ -1,39 +1,35 @@
 import { GlassCard } from '@/components/ui/GlassCard';
-import type { AgentWithStats } from '@/lib/types';
 import { formatCount } from '@/lib/utils';
-import { Bot, Download, ShieldCheck, Star } from 'lucide-react';
+import { Bot, Download, ShieldCheck, Zap } from 'lucide-react';
 
-export function StatsTeaser({ agents }: { agents: AgentWithStats[] }) {
-  const totalAgents = agents.length;
-  const totalInstalls = agents.reduce((n, a) => n + (a.installs ?? 0), 0);
-  const totalStars = agents.reduce((n, a) => n + (a.stars ?? 0), 0);
-  const avgSafety = agents.length
-    ? Math.round(
-        agents.reduce((n, a) => n + (a.safetyScore ?? 0), 0) /
-          agents.filter((a) => a.safetyScore).length || 0
-      )
-    : 0;
+export interface StatsTeaserData {
+  agents: number;
+  installs: number;
+  last24hInstalls: number;
+  avgSafetyScore: number;
+}
 
+export function StatsTeaser({ data }: { data: StatsTeaserData }) {
   const items: { icon: React.ReactNode; label: string; value: string }[] = [
     {
       icon: <Bot className="h-4 w-4" />,
       label: 'Featured agents',
-      value: formatCount(totalAgents),
+      value: formatCount(data.agents),
     },
     {
       icon: <Download className="h-4 w-4" />,
-      label: 'Installs to date',
-      value: formatCount(totalInstalls),
+      label: 'Installs lifetime',
+      value: formatCount(data.installs),
     },
     {
-      icon: <Star className="h-4 w-4" />,
-      label: 'Stars across repos',
-      value: formatCount(totalStars),
+      icon: <Zap className="h-4 w-4" />,
+      label: 'Last 24 hours',
+      value: formatCount(data.last24hInstalls),
     },
     {
       icon: <ShieldCheck className="h-4 w-4" />,
       label: 'Avg. safety score',
-      value: `${avgSafety}/100`,
+      value: `${data.avgSafetyScore}/100`,
     },
   ];
 

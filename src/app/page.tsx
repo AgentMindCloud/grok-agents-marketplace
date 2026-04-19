@@ -7,6 +7,7 @@ import { NeonButton } from '@/components/ui/NeonButton';
 import { Section, SectionHeader } from '@/components/ui/Section';
 import { getAgents, getFeaturedAgents, getLatestAgents } from '@/lib/agents';
 import { getStarCounts } from '@/lib/github';
+import { getAllTotals, getCounts } from '@/lib/installs';
 import type { AgentWithStats } from '@/lib/types';
 import { ArrowRight } from 'lucide-react';
 
@@ -38,15 +39,36 @@ export default async function Home() {
     hydrateStars(latest),
   ]);
 
-  const allWithStats = hydratedAll as AgentWithStats[];
   const featuredWithStats = hydratedFeatured as AgentWithStats[];
   const latestWithStats = hydratedLatest as AgentWithStats[];
+
+  const [totals, perAgentCounts] = await Promise.all([
+    getAllTotals(),
+    Promise.all(hydratedAll.map(async (a) => ({ id: a.id, counts: await getCounts(a.id) }))),
+  ]);
+
+  const totalInstalls = hydratedAll.reduce((n, a) => {
+    const live = perAgentCounts.find((c) => c.id === a.id)?.counts.total ?? 0;
+    return n + Math.max(a.installs ?? 0, totals.get(a.id) ?? 0, live);
+  }, 0);
+  const last24h = perAgentCounts.reduce((n, c) => n + c.counts.last24h, 0);
+  const scored = hydratedAll.filter((a) => typeof a.safetyScore === 'number');
+  const avgSafetyScore = scored.length
+    ? Math.round(scored.reduce((n, a) => n + (a.safetyScore ?? 0), 0) / scored.length)
+    : 0;
 
   return (
     <div className="flex flex-col gap-20 pb-10 md:gap-28">
       <Hero />
 
-      <StatsTeaser agents={allWithStats} />
+      <StatsTeaser
+        data={{
+          agents: hydratedAll.length,
+          installs: totalInstalls,
+          last24hInstalls: last24h,
+          avgSafetyScore,
+        }}
+      />
 
       <Section>
         <SectionHeader

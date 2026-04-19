@@ -189,6 +189,12 @@ export default async function AgentDetailPage({
                   </NeonButton>
                 )}
               </div>
+              <Link
+                href={`/stats/agents/${agent.id}` as never}
+                className="text-center text-xs text-cyan hover:underline"
+              >
+                View install stats →
+              </Link>
             </GlassCard>
 
             <CreatorProfile creator={agent.creator} />

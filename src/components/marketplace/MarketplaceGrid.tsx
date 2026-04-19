@@ -2,11 +2,11 @@
 
 import { GlassCard } from '@/components/ui/GlassCard';
 import { NeonButton } from '@/components/ui/NeonButton';
-import { PR_TEMPLATE_URL } from '@/lib/constants';
+import { trackFilter, trackSearch } from '@/lib/tracking';
 import type { AgentWithStats, Category, Certification, SortKey } from '@/lib/types';
-import { fuzzyMatch } from '@/lib/utils';
+import { debounce, fuzzyMatch } from '@/lib/utils';
 import { useRouter, useSearchParams } from 'next/navigation';
-import { useEffect, useMemo, useState, useTransition } from 'react';
+import { useEffect, useMemo, useRef, useState, useTransition } from 'react';
 import { AgentCard } from './AgentCard';
 import { FilterPills } from './FilterPills';
 import { SearchBar } from './SearchBar';
@@ -96,10 +96,18 @@ export function MarketplaceGrid({ agents }: { agents: AgentWithStats[] }) {
     return sorted;
   }, [agents, q, categories, certifications, sort]);
 
-  const toggleCategory = (c: Category) =>
+  const toggleCategory = (c: Category) => {
     setCategories((xs) => (xs.includes(c) ? xs.filter((x) => x !== c) : [...xs, c]));
-  const toggleCert = (c: Certification) =>
+    trackFilter('category', c);
+  };
+  const toggleCert = (c: Certification) => {
     setCertifications((xs) => (xs.includes(c) ? xs.filter((x) => x !== c) : [...xs, c]));
+    trackFilter('certification', c);
+  };
+  const onSortChange = (s: SortKey) => {
+    setSort(s);
+    trackFilter('sort', s);
+  };
   const clearAll = () => {
     setQ('');
     setCategories([]);
@@ -107,17 +115,26 @@ export function MarketplaceGrid({ agents }: { agents: AgentWithStats[] }) {
     setSort('trending');
   };
 
+  const searchDebounceRef = useRef<((q: string) => void) | null>(null);
+  if (!searchDebounceRef.current) {
+    searchDebounceRef.current = debounce((next: string) => trackSearch(next), 600);
+  }
+  const onSearchChange = (next: string) => {
+    setQ(next);
+    searchDebounceRef.current?.(next);
+  };
+
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-[260px_1fr] lg:gap-10">
       <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
-        <SearchBar value={q} onChange={setQ} />
+        <SearchBar value={q} onChange={onSearchChange} />
         <FilterPills
           categories={categories}
           certifications={certifications}
           sort={sort}
           onToggleCategory={toggleCategory}
           onToggleCertification={toggleCert}
-          onSort={setSort}
+          onSort={onSortChange}
           onClear={clearAll}
         />
       </aside>
@@ -140,7 +157,7 @@ export function MarketplaceGrid({ agents }: { agents: AgentWithStats[] }) {
               <NeonButton variant="secondary" size="sm" onClick={clearAll}>
                 Clear filters
               </NeonButton>
-              <NeonButton variant="primary" size="sm" href={PR_TEMPLATE_URL} external>
+              <NeonButton variant="primary" size="sm" href="/submit">
                 Submit an agent
               </NeonButton>
             </div>
@@ -165,7 +182,7 @@ export function MarketplaceGrid({ agents }: { agents: AgentWithStats[] }) {
               boost new certs in the weekly digest.
             </p>
           </div>
-          <NeonButton variant="primary" size="md" href={PR_TEMPLATE_URL} external>
+          <NeonButton variant="primary" size="md" href="/submit">
             Submit your agent
           </NeonButton>
         </GlassCard>

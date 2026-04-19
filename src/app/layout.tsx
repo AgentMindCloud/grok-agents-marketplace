@@ -1,7 +1,9 @@
 import { Footer } from '@/components/layout/Footer';
 import { Header } from '@/components/layout/Header';
+import { Plausible } from '@/components/layout/Plausible';
 import { SkipToContent } from '@/components/layout/SkipToContent';
 import { ThemeProvider } from '@/components/layout/ThemeProvider';
+import { BRAND } from '@/lib/brand';
 import { DISCLAIMER, SITE_NAME, SITE_TAGLINE, SITE_URL } from '@/lib/constants';
 import type { Metadata, Viewport } from 'next';
 import { Inter, JetBrains_Mono, Space_Grotesk } from 'next/font/google';
@@ -28,7 +30,7 @@ const mono = JetBrains_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: '#0A0A0A',
+  themeColor: BRAND.bg,
   colorScheme: 'dark',
   width: 'device-width',
   initialScale: 1,
@@ -96,6 +98,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </main>
           <Footer />
         </ThemeProvider>
+        <Plausible />
       </body>
     </html>
   );

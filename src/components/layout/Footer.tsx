@@ -7,9 +7,12 @@ const COLS: { title: string; links: { href: string; label: string; external?: bo
     title: 'Marketplace',
     links: [
       { href: '/marketplace', label: 'Browse agents' },
-      { href: '/marketplace?sort=trending', label: 'Trending' },
-      { href: '/marketplace?cert=voice-ready', label: 'Voice-ready' },
-      { href: '/marketplace?cert=swarm-ready', label: 'Swarm-ready' },
+      { href: '/marketplace/sections/trending', label: 'Trending' },
+      { href: '/marketplace/sections/voice', label: 'Voice-ready' },
+      { href: '/marketplace/sections/swarm', label: 'Swarm-ready' },
+      { href: '/marketplace/sections/new', label: 'New' },
+      { href: '/marketplace/sections/beginner', label: 'Start here' },
+      { href: '/hall-of-fame', label: 'Hall of Fame' },
     ],
   },
   {
@@ -42,11 +45,7 @@ const COLS: { title: string; links: { href: string; label: string; external?: bo
     links: [
       { href: 'https://docs.grokinstall.dev', label: 'Documentation', external: true },
       { href: 'https://github.com/sponsors/JanSol0s', label: 'Sponsor', external: true },
-      {
-        href: 'https://github.com/AgentMindCloud/awesome-grok-agents',
-        label: 'Submit an agent',
-        external: true,
-      },
+      { href: '/submit', label: 'Submit an agent' },
       { href: 'https://x.com/JanSol0s', label: '@JanSol0s on X', external: true },
     ],
   },

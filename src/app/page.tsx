@@ -1,6 +1,7 @@
 import { FeaturedCarousel } from '@/components/home/FeaturedCarousel';
 import { Hero } from '@/components/home/Hero';
 import { LatestGrid } from '@/components/home/LatestGrid';
+import { SectionTeasers } from '@/components/home/SectionTeasers';
 import { StatsTeaser } from '@/components/home/StatsTeaser';
 import { NeonButton } from '@/components/ui/NeonButton';
 import { Section, SectionHeader } from '@/components/ui/Section';
@@ -46,6 +47,15 @@ export default async function Home() {
       <Hero />
 
       <StatsTeaser agents={allWithStats} />
+
+      <Section>
+        <SectionHeader
+          eyebrow="Sections"
+          title="Browse the way you build."
+          description="Curated cuts of the marketplace — trending, voice-ready, swarm-ready, and beginner picks."
+        />
+        <SectionTeasers />
+      </Section>
 
       <Section>
         <SectionHeader

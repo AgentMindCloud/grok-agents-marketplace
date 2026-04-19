@@ -1,6 +1,7 @@
 import { CreatorProfile } from '@/components/marketplace/CreatorProfile';
 import { InstallOnX } from '@/components/marketplace/InstallOnX';
 import { InstallTabs } from '@/components/marketplace/InstallTabs';
+import { TrackAgentView } from '@/components/marketplace/TrackAgentView';
 import { YamlSnippet } from '@/components/marketplace/YamlSnippet';
 import { CertificationBadgeRow } from '@/components/ui/CertificationBadge';
 import { CircuitTrace } from '@/components/ui/CircuitTrace';
@@ -57,6 +58,7 @@ export default async function AgentDetailPage({
 
   return (
     <div className="flex flex-col gap-10 pb-16">
+      <TrackAgentView agentId={agent.id} />
       <section className="relative overflow-hidden border-b border-border-subtle">
         <CircuitTrace density="sparse" />
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-8">
@@ -152,7 +154,7 @@ export default async function AgentDetailPage({
 
           <aside className="flex flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
             <GlassCard elevation="hero" padding="md" className="flex flex-col gap-4">
-              <InstallOnX agentId={agent.id} xInstallUrl={agent.x_install_url} />
+              <InstallOnX agentId={agent.id} repo={agent.repo} agentName={agent.name} />
               <div className="grid grid-cols-2 gap-2 pt-1">
                 <NeonButton
                   variant="secondary"

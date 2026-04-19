@@ -5,7 +5,7 @@
     "tagline": "Drafts, schedules, and publishes Grok-aware threads on X.",
     "description": "Post Autopilot writes in your voice, respects your content guardrails, and posts directly via the X developer API. Ships with a tuned safety policy that blocks 19 known prompt-injection vectors out of the box.",
     "category": "content",
-    "tags": ["threads", "scheduler", "x-api", "grok-native"],
+    "tags": ["threads", "scheduler", "x-api", "grok-native", "beginner-friendly"],
     "certifications": ["grok-native", "safety-max", "action-certified"],
     "creator": {
       "handle": "@JanSol0s",
@@ -93,7 +93,7 @@
     "tagline": "Collapses a 200-reply thread into a 5-bullet TL;DR.",
     "description": "Feed it any X thread URL and get a calibrated TL;DR with citations back to the original posts. Ideal for research, community management, and journalism workflows.",
     "category": "research",
-    "tags": ["tldr", "summary", "citations", "research"],
+    "tags": ["tldr", "summary", "citations", "research", "beginner-friendly"],
     "certifications": ["grok-native", "safety-max"],
     "creator": {
       "handle": "@mxr-labs",
@@ -113,7 +113,7 @@
     "tagline": "Suggests on-brand replies for developer-community accounts.",
     "description": "Trained on DevRel voice patterns from 42 OSS accounts. Generates replies you can approve in one tap, respects a custom style guide, and flags anything your brand team pre-listed.",
     "category": "marketing",
-    "tags": ["devrel", "replies", "style-guide", "brand-safety"],
+    "tags": ["devrel", "replies", "style-guide", "brand-safety", "beginner-friendly"],
     "certifications": ["grok-native", "action-certified"],
     "creator": {
       "handle": "@relay-studio",

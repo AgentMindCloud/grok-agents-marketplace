@@ -18,8 +18,9 @@ export const NEW_ISSUE_URL =
 
 export const NAV_ITEMS = [
   { href: '/marketplace', label: 'Marketplace' },
+  { href: '/hall-of-fame', label: 'Hall of Fame' },
+  { href: '/submit', label: 'Submit' },
   { href: 'https://docs.grokinstall.dev', label: 'Docs', external: true },
-  { href: 'https://github.com/sponsors/JanSol0s', label: 'Sponsors', external: true },
   { href: 'https://github.com/AgentMindCloud', label: 'GitHub', external: true },
 ] as const;
 

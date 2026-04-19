@@ -1,0 +1,2713 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500" role="img" aria-labelledby="banner-title banner-desc">
+  <title id="banner-title">grok-install — The open standard for one-click installable Grok-native agents on X</title>
+  <desc id="banner-desc">GrokInstall ecosystem repository hero banner with animated neon circuit traces on a deep black background.</desc>
+  <defs>
+    
+    <radialGradient id="hero-glow" cx="22%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.10"></stop>
+      <stop offset="40%" stop-color="#00F0FF" stop-opacity="0.04"></stop>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"></stop>
+    </radialGradient>
+    <linearGradient id="repo-text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="100%" stop-color="#00F0FF"></stop>
+    </linearGradient>
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  
+  <rect width="1500" height="500" fill="#0A0A0A"></rect>
+  <rect width="1500" height="500" fill="url(#hero-glow)"></rect>
+
+  
+  <g stroke="#00F0FF" stroke-width="0.3" stroke-opacity="0.06">
+    <line x1="0" y1="0" x2="0" y2="500"></line><line x1="50" y1="0" x2="50" y2="500"></line><line x1="100" y1="0" x2="100" y2="500"></line><line x1="150" y1="0" x2="150" y2="500"></line><line x1="200" y1="0" x2="200" y2="500"></line><line x1="250" y1="0" x2="250" y2="500"></line><line x1="300" y1="0" x2="300" y2="500"></line><line x1="350" y1="0" x2="350" y2="500"></line><line x1="400" y1="0" x2="400" y2="500"></line><line x1="450" y1="0" x2="450" y2="500"></line><line x1="500" y1="0" x2="500" y2="500"></line><line x1="550" y1="0" x2="550" y2="500"></line><line x1="600" y1="0" x2="600" y2="500"></line><line x1="650" y1="0" x2="650" y2="500"></line><line x1="700" y1="0" x2="700" y2="500"></line><line x1="750" y1="0" x2="750" y2="500"></line><line x1="800" y1="0" x2="800" y2="500"></line><line x1="850" y1="0" x2="850" y2="500"></line><line x1="900" y1="0" x2="900" y2="500"></line><line x1="950" y1="0" x2="950" y2="500"></line><line x1="1000" y1="0" x2="1000" y2="500"></line><line x1="1050" y1="0" x2="1050" y2="500"></line><line x1="1100" y1="0" x2="1100" y2="500"></line><line x1="1150" y1="0" x2="1150" y2="500"></line><line x1="1200" y1="0" x2="1200" y2="500"></line><line x1="1250" y1="0" x2="1250" y2="500"></line><line x1="1300" y1="0" x2="1300" y2="500"></line><line x1="1350" y1="0" x2="1350" y2="500"></line><line x1="1400" y1="0" x2="1400" y2="500"></line><line x1="1450" y1="0" x2="1450" y2="500"></line>
+    <line x1="0" y1="0" x2="1500" y2="0"></line><line x1="0" y1="50" x2="1500" y2="50"></line><line x1="0" y1="100" x2="1500" y2="100"></line><line x1="0" y1="150" x2="1500" y2="150"></line><line x1="0" y1="200" x2="1500" y2="200"></line><line x1="0" y1="250" x2="1500" y2="250"></line><line x1="0" y1="300" x2="1500" y2="300"></line><line x1="0" y1="350" x2="1500" y2="350"></line><line x1="0" y1="400" x2="1500" y2="400"></line><line x1="0" y1="450" x2="1500" y2="450"></line>
+  </g>
+
+  
+  <g stroke="#00F0FF" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="trace-1" d="M -10 90  L 240 90  L 280 130 L 540 130 L 580 170 L 1510 170"></path>
+    <path class="trace-2" d="M -10 410 L 320 410 L 360 370 L 720 370 L 760 410 L 1510 410"></path>
+    <path class="trace-3" d="M -10 250 L 110 250 L 150 290 L 410 290 L 450 250 L 810 250 L 850 220 L 1510 220"></path>
+    <path class="trace-4" d="M -10 320 L 180 320 L 220 350 L 480 350 L 520 320 L 1080 320 L 1120 290 L 1510 290"></path>
+  </g>
+
+  
+  <g fill="#00F0FF">
+    <circle class="data-1" cx="600" cy="250" r="2.5"></circle>
+    <circle class="data-2" cx="600" cy="250" r="2.5"></circle>
+    <circle class="data-3" cx="600" cy="250" r="2.5"></circle>
+  </g>
+
+  
+  <g transform="translate(60, 56)">
+    <rect x="-2" y="-14" width="3" height="20" fill="#00F0FF"></rect>
+    <text x="12" y="2" font-family="&#39;Space Grotesk&#39;, Inter, sans-serif" font-size="13" font-weight="500" fill="#00F0FF" letter-spacing="3.5">GROKINSTALL</text>
+    <text x="12" y="22" font-family="Inter, sans-serif" font-size="11" font-weight="400" fill="#E5E5E5" opacity="0.55" letter-spacing="2">ECOSYSTEM</text>
+  </g>
+
+  
+  <g transform="translate(60, 230)">
+    <text x="0" y="0" font-family="&#39;JetBrains Mono&#39;, &#39;SF Mono&#39;, Consolas, monospace" font-size="84" font-weight="700" fill="url(#repo-text)" letter-spacing="-1.5" filter="url(#neon-glow)">grok-install</text>
+    <text x="0" y="59" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#E5E5E5" opacity="0.88">The open standard for one-click installable Grok-native agents on X</text>
+  </g>
+
+  
+  <g transform="translate(60, 410)">
+    <g>
+      <rect rx="4" width="172" height="28" fill="#00F0FF" fill-opacity="0.08" stroke="#00F0FF" stroke-opacity="0.45" stroke-width="1"></rect>
+      <circle cx="14" cy="14" r="3" fill="#00F0FF"></circle>
+      <text x="94" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#00F0FF" text-anchor="middle" letter-spacing="2">GROK 4.20 NATIVE</text>
+    </g>
+    <g transform="translate(184, 0)">
+      <rect rx="4" width="172" height="28" fill="#00FF9D" fill-opacity="0.08" stroke="#00FF9D" stroke-opacity="0.45" stroke-width="1"></rect>
+      <circle cx="14" cy="14" r="3" fill="#00FF9D"></circle>
+      <text x="94" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#00FF9D" text-anchor="middle" letter-spacing="2">SAFETY CERTIFIED</text>
+    </g>
+  </g>
+
+  
+  <g>
+    
+    <circle class="ring-1" cx="1300" cy="250" r="80" fill="none" stroke="#00F0FF" stroke-width="1"></circle>
+    <circle class="ring-2" cx="1300" cy="250" r="80" fill="none" stroke="#00F0FF" stroke-width="1"></circle>
+    
+    <circle cx="1300" cy="250" r="100" fill="none" stroke="#00F0FF" stroke-width="0.5" stroke-dasharray="2 6" opacity="0.4"></circle>
+    <circle cx="1300" cy="250" r="140" fill="none" stroke="#00F0FF" stroke-width="0.5" stroke-dasharray="2 8" opacity="0.25"></circle>
+    
+    <line x1="1300" y1="250" x2="1200" y2="160" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1400" y2="160" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1200" y2="340" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1400" y2="340" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1180" y2="250" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1420" y2="250" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    
+    <circle cx="1200" cy="160" r="5" fill="#00FF9D" filter="url(#neon-glow)"></circle>
+    <circle cx="1400" cy="160" r="5" fill="#00FF9D" filter="url(#neon-glow)"></circle>
+    <circle cx="1200" cy="340" r="5" fill="#00FF9D" filter="url(#neon-glow)"></circle>
+    <circle cx="1400" cy="340" r="5" fill="#00FF9D" filter="url(#neon-glow)"></circle>
+    <circle cx="1180" cy="250" r="4" fill="#00F0FF" opacity="0.7"></circle>
+    <circle cx="1420" cy="250" r="4" fill="#00F0FF" opacity="0.7"></circle>
+    
+    <g class="node-pulse">
+      <circle cx="1300" cy="250" r="14" fill="#00F0FF" filter="url(#neon-glow)"></circle>
+      <circle cx="1300" cy="250" r="6" fill="#FFFFFF"></circle>
+    </g>
+  </g>
+
+  
+  <text x="1440" y="478" font-family="Inter, sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" opacity="0.32" text-anchor="end" letter-spacing="0.5">Built for Grok on X · Independent community project</text>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 500" width="1500" height="500" role="img" aria-labelledby="banner-title banner-desc">
+  <title id="banner-title">grok-install-brand — Brand assets, design tokens, and templates for the GrokInstall ecosystem</title>
+  <desc id="banner-desc">GrokInstall ecosystem repository hero banner with animated neon circuit traces on a deep black background.</desc>
+  <defs>
+    
+    <radialGradient id="hero-glow" cx="22%" cy="55%" r="55%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.10"></stop>
+      <stop offset="40%" stop-color="#00F0FF" stop-opacity="0.04"></stop>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"></stop>
+    </radialGradient>
+    <linearGradient id="repo-text" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF"></stop>
+      <stop offset="100%" stop-color="#00F0FF"></stop>
+    </linearGradient>
+    <filter id="neon-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"></feGaussianBlur>
+      <feMerge>
+        <feMergeNode in="blur"></feMergeNode>
+        <feMergeNode in="SourceGraphic"></feMergeNode>
+      </feMerge>
+    </filter>
+  </defs>
+
+  
+  <rect width="1500" height="500" fill="#0A0A0A"></rect>
+  <rect width="1500" height="500" fill="url(#hero-glow)"></rect>
+
+  
+  <g stroke="#00F0FF" stroke-width="0.3" stroke-opacity="0.06">
+    <line x1="0" y1="0" x2="0" y2="500"></line><line x1="50" y1="0" x2="50" y2="500"></line><line x1="100" y1="0" x2="100" y2="500"></line><line x1="150" y1="0" x2="150" y2="500"></line><line x1="200" y1="0" x2="200" y2="500"></line><line x1="250" y1="0" x2="250" y2="500"></line><line x1="300" y1="0" x2="300" y2="500"></line><line x1="350" y1="0" x2="350" y2="500"></line><line x1="400" y1="0" x2="400" y2="500"></line><line x1="450" y1="0" x2="450" y2="500"></line><line x1="500" y1="0" x2="500" y2="500"></line><line x1="550" y1="0" x2="550" y2="500"></line><line x1="600" y1="0" x2="600" y2="500"></line><line x1="650" y1="0" x2="650" y2="500"></line><line x1="700" y1="0" x2="700" y2="500"></line><line x1="750" y1="0" x2="750" y2="500"></line><line x1="800" y1="0" x2="800" y2="500"></line><line x1="850" y1="0" x2="850" y2="500"></line><line x1="900" y1="0" x2="900" y2="500"></line><line x1="950" y1="0" x2="950" y2="500"></line><line x1="1000" y1="0" x2="1000" y2="500"></line><line x1="1050" y1="0" x2="1050" y2="500"></line><line x1="1100" y1="0" x2="1100" y2="500"></line><line x1="1150" y1="0" x2="1150" y2="500"></line><line x1="1200" y1="0" x2="1200" y2="500"></line><line x1="1250" y1="0" x2="1250" y2="500"></line><line x1="1300" y1="0" x2="1300" y2="500"></line><line x1="1350" y1="0" x2="1350" y2="500"></line><line x1="1400" y1="0" x2="1400" y2="500"></line><line x1="1450" y1="0" x2="1450" y2="500"></line>
+    <line x1="0" y1="0" x2="1500" y2="0"></line><line x1="0" y1="50" x2="1500" y2="50"></line><line x1="0" y1="100" x2="1500" y2="100"></line><line x1="0" y1="150" x2="1500" y2="150"></line><line x1="0" y1="200" x2="1500" y2="200"></line><line x1="0" y1="250" x2="1500" y2="250"></line><line x1="0" y1="300" x2="1500" y2="300"></line><line x1="0" y1="350" x2="1500" y2="350"></line><line x1="0" y1="400" x2="1500" y2="400"></line><line x1="0" y1="450" x2="1500" y2="450"></line>
+  </g>
+
+  
+  <g stroke="#00F0FF" stroke-width="1.2" fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path class="trace-1" d="M -10 90  L 240 90  L 280 130 L 540 130 L 580 170 L 1510 170"></path>
+    <path class="trace-2" d="M -10 410 L 320 410 L 360 370 L 720 370 L 760 410 L 1510 410"></path>
+    <path class="trace-3" d="M -10 250 L 110 250 L 150 290 L 410 290 L 450 250 L 810 250 L 850 220 L 1510 220"></path>
+    <path class="trace-4" d="M -10 320 L 180 320 L 220 350 L 480 350 L 520 320 L 1080 320 L 1120 290 L 1510 290"></path>
+  </g>
+
+  
+  <g fill="#00F0FF">
+    <circle class="data-1" cx="600" cy="250" r="2.5"></circle>
+    <circle class="data-2" cx="600" cy="250" r="2.5"></circle>
+    <circle class="data-3" cx="600" cy="250" r="2.5"></circle>
+  </g>
+
+  
+  <g transform="translate(60, 56)">
+    <rect x="-2" y="-14" width="3" height="20" fill="#00F0FF"></rect>
+    <text x="12" y="2" font-family="&#39;Space Grotesk&#39;, Inter, sans-serif" font-size="13" font-weight="500" fill="#00F0FF" letter-spacing="3.5">GROKINSTALL</text>
+    <text x="12" y="22" font-family="Inter, sans-serif" font-size="11" font-weight="400" fill="#E5E5E5" opacity="0.55" letter-spacing="2">ECOSYSTEM</text>
+  </g>
+
+  
+  <g transform="translate(60, 230)">
+    <text x="0" y="0" font-family="&#39;JetBrains Mono&#39;, &#39;SF Mono&#39;, Consolas, monospace" font-size="64" font-weight="700" fill="url(#repo-text)" letter-spacing="-1.5" filter="url(#neon-glow)">grok-install-brand</text>
+    <text x="0" y="45" font-family="Inter, sans-serif" font-size="22" font-weight="400" fill="#E5E5E5" opacity="0.88">Brand assets, design tokens, and templates for the GrokInstall ecosystem</text>
+  </g>
+
+  
+  <g transform="translate(60, 410)">
+    <g>
+      <rect rx="4" width="136" height="28" fill="#00F0FF" fill-opacity="0.08" stroke="#00F0FF" stroke-opacity="0.45" stroke-width="1"></rect>
+      <circle cx="14" cy="14" r="3" fill="#00F0FF"></circle>
+      <text x="76" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#00F0FF" text-anchor="middle" letter-spacing="2">BRAND LOCKED</text>
+    </g>
+    <g transform="translate(148, 0)">
+      <rect rx="4" width="154" height="28" fill="#00FF9D" fill-opacity="0.08" stroke="#00FF9D" stroke-opacity="0.45" stroke-width="1"></rect>
+      <circle cx="14" cy="14" r="3" fill="#00FF9D"></circle>
+      <text x="85" y="18" font-family="Inter, sans-serif" font-size="11" font-weight="500" fill="#00FF9D" text-anchor="middle" letter-spacing="2">TEMPLATE READY</text>
+    </g>
+  </g>
+
+  
+  <g>
+    
+    <circle class="ring-1" cx="1300" cy="250" r="80" fill="none" stroke="#00F0FF" stroke-width="1"></circle>
+    <circle class="ring-2" cx="1300" cy="250" r="80" fill="none" stroke="#00F0FF" stroke-width="1"></circle>
+    
+    <circle cx="1300" cy="250" r="100" fill="none" stroke="#00F0FF" stroke-width="0.5" stroke-dasharray="2 6" opacity="0.4"></circle>
+    <circle cx="1300" cy="250" r="140" fill="none" stroke="#00F0FF" stroke-width="0.5" stroke-dasharray="2 8" opacity="0.25"></circle>
+    
+    <line x1="1300" y1="250" x2="1200" y2="160" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1400" y2="160" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1200" y2="340" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1400" y2="340" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1180" y2="250" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    <line x1="1300" y1="250" x2="1420" y2="250" stroke="#00F0FF" stroke-width="0.6" stroke-opacity="0.4"></line>
+    
+    <circle cx="1200" cy="160" r="5" fill="#00FF9D" filter="url(#neon-glow)"></circle>
+    <circle cx="1400" cy="160" r="5" fill="#00FF9D" filter="url(#neon-glow)"></circle>
+    <circle cx="1200" cy="340" r="5" fill="#00FF9D" filter="url(#neon-glow)"></circle>
+    <circle cx="1400" cy="340" r="5" fill="#00FF9D" filter="url(#neon-glow)"></circle>
+    <circle cx="1180" cy="250" r="4" fill="#00F0FF" opacity="0.7"></circle>
+    <circle cx="1420" cy="250" r="4" fill="#00F0FF" opacity="0.7"></circle>
+    
+    <g class="node-pulse">
+      <circle cx="1300" cy="250" r="14" fill="#00F0FF" filter="url(#neon-glow)"></circle>
+      <circle cx="1300" cy="250" r="6" fill="#FFFFFF"></circle>
+    </g>
+  </g>
+
+  
+  <text x="1440" y="478" font-family="Inter, sans-serif" font-size="10" font-weight="400" fill="#FFFFFF" opacity="0.32" text-anchor="end" letter-spacing="0.5">Built for Grok on X · Independent community project</text>
+</svg>
+# GrokInstall — Repos to create on GitHub
+
+This document is the exact paste-able content for creating the five new repos that the Master Plan + v1.1 Addendum calls for. Three are needed for upcoming sessions (vscode-grok-yaml, grok-install-action, grok-agents-marketplace); two come from Session 2 of the addendum (grok-repo-chatbot, grok-repo-bot-widget) and are included here so you can create them in one batch.
+
+For each repo:
+
+- **GitHub description** (350 char max) — paste into the description field at creation
+- **Topics** (max 20) — paste under repo Settings → Topics
+- **Initial visibility** — Public for all (it's an open ecosystem)
+- **License** — MIT
+- **Add a README** — leave **unchecked** at creation (Session 1's premium README sweep will create it)
+- **Add .gitignore** — leave unchecked (will be added per repo's stack)
+- **Default branch** — `main`
+- **Social preview image** — set after Session 1 generates the banner (use the generated SVG converted to 1280×640 PNG)
+
+Once created, each repo will get its premium README, hero banner, and `/docs/index.html` hub during Session 3 of the addendum (the sweep session).
+
+---
+
+## 1. `vscode-grok-yaml`
+
+**URL:** github.com/AgentMindCloud/vscode-grok-yaml
+
+### GitHub description
+```
+Official community VS Code extension for the GrokInstall ecosystem. Full IntelliSense, live validation, safety scanning, template gallery, and one-click deployment for all 14 YAML standards. Built for developers shipping Grok-native agents on X.
+```
+
+### Topics
+```
+vscode  vscode-extension  yaml  intellisense  grok  grok-agents  grok-install
+xai  multi-agent  voice-agents  ai-agents  developer-tools  yaml-language-server
+json-schema  ide-extension
+```
+
+### Tagline (used in hero banner + README + marketplace listing)
+```
+IntelliSense, validation, safety scanning, and one-click deployment for Grok-native agents on X
+```
+
+### Long description (used in OG/Twitter cards on the Hub page)
+```
+The official community VS Code extension for the GrokInstall ecosystem. Get full IntelliSense and live validation for all 14 YAML standards, run the safety scanner inline, browse and clone agent templates without leaving the editor, and deploy to X with one command. Free, open-source, and built by @JanSol0s.
+```
+
+### Hero banner pills (left, right)
+```
+VS CODE OFFICIAL    14 SCHEMAS LIVE
+```
+
+### Initial files Claude Code will create in Session 7
+- `package.json` — extension manifest with publisher, displayName, contributes.yamlValidation
+- `src/extension.ts` — activation, schema registration
+- `src/diagnostics/`, `src/status/`, `src/commands/`, `src/webview/`, `src/snippets/`
+- `schemas/` — local copy of all 14 JSON schemas from grok-yaml-standards
+- `assets/icon.png` — 128×128 brand icon
+- `README.md` — using premium template
+- `docs/index.html` — premium hub (with chatbot widget embedded, data-repo-id="vscode-grok-yaml")
+- `CHANGELOG.md`, `LICENSE`, `SECURITY.md`, `CONTRIBUTING.md`
+
+### Marketplace listing (when published to VS Code Marketplace, after Session 8)
+```
+Title:  GrokInstall — YAML & Agent Tools
+
+Display name: GrokInstall
+
+Categories: Programming Languages, Linters, Snippets, Other
+
+Description: Full IntelliSense, validation, safety scanning, template gallery, 
+and one-click deployment for the GrokInstall ecosystem. Author Grok-native agents 
+on X with the same polish as Terraform or GitHub Actions.
+```
+
+### Recommended pre-creation settings
+- Branch protection on `main` (require PR reviews after the repo is established)
+- Discussions: ON (categories: Announcements, Q&A, Show and tell, Ideas)
+- Issues: ON
+- Wiki: OFF (use /docs instead)
+- Projects: ON
+- Sponsorship: link to AgentMindCloud sponsor profile
+
+---
+
+## 2. `grok-install-action`
+
+**URL:** github.com/AgentMindCloud/grok-install-action
+
+### GitHub description
+```
+GitHub Action that auto-validates, safety-scans, and certifies every Grok-native agent on every push and PR. Inline annotations, Grok-Native Certified badge, beautiful PR comments. Part of the GrokInstall ecosystem.
+```
+
+### Topics
+```
+github-actions  github-marketplace  grok  grok-agents  grok-install  xai
+ci-cd  validation  safety-scanner  certification  yaml  agent-tooling
+multi-agent  voice-agents  pr-automation
+```
+
+### Tagline
+```
+Validate, secure, certify, and promote Grok-native agents automatically on every push and PR
+```
+
+### Long description (OG/Twitter)
+```
+The official GitHub Action for the GrokInstall ecosystem. Drop one workflow line into your repo and every push/PR runs full YAML validation, the safety scanner, and certification scoring. Get inline annotations like ESLint, beautiful color-coded PR comments, and a Grok-Native Certified badge committed automatically to your README. Built for repo maintainers who ship Grok agents at velocity.
+```
+
+### Hero banner pills
+```
+GITHUB MARKETPLACE    AUTO-CERTIFY
+```
+
+### Initial files Claude Code will create in Session 9
+- `action.yml` — composite action manifest (uses Node 20, defines inputs/outputs)
+- `scripts/run.sh`, `scripts/annotations.js`, `scripts/comment.js`, `scripts/badge.js`
+- `workflows-examples/basic.yml`, `workflows-examples/matrix.yml`, `workflows-examples/release.yml`
+- `tests/sample-agent/.grok/*` — fixture agent for integration testing
+- `tests/integration.yml` — workflow that runs the action against the fixture
+- `README.md` — using premium template (full inputs/outputs reference)
+- `docs/index.html` — premium hub with embedded chatbot (data-repo-id="grok-install-action")
+- `marketplace.yml` — GitHub Marketplace metadata
+- `LICENSE`, `SECURITY.md`, `CONTRIBUTING.md`, `CHANGELOG.md`
+- `.github/workflows/test.yml` — CI for the action itself
+
+### GitHub Marketplace listing (published after Session 9)
+```
+Name:           GrokInstall Action
+Tagline:        Validate, secure, certify Grok-native agents on every push and PR
+Primary color:  #00F0FF (cyan)
+Icon:           Custom (zap or shield with cyan glow — use /icons/action.svg as base)
+Categories:     Code Quality, Continuous Integration
+
+Long description (paste this):
+The official GitHub Action for the GrokInstall ecosystem. Drop a single workflow 
+line into your repo and every push and PR runs full YAML validation, the safety 
+scanner, and Grok-Native certification scoring. Get inline error annotations 
+(like ESLint), beautiful color-coded PR comments with one-click fix suggestions, 
+and a certification badge auto-committed to your README. Configurable strict/warn 
+modes, supports monorepos, pinned versions, and minimal permissions.
+```
+
+### Required permissions when this action runs in user repos
+```yaml
+permissions:
+  contents: read           # to checkout
+  pull-requests: write     # to comment on PRs
+  checks: write            # to write check annotations
+  issues: write            # only if comment-on-pr is enabled
+```
+
+---
+
+## 3. `grok-agents-marketplace`
+
+**URL:** github.com/AgentMindCloud/grok-agents-marketplace
+
+### GitHub description
+```
+The community marketplace, adoption dashboard, and landing page for Grok-native agents on X. Built with Next.js 15. Live at grokagents.dev.
+```
+
+### Topics
+```
+nextjs  marketplace  grok  grok-agents  xai  grok-install  ai-agents
+voice-agents  multi-agent  dashboard  vercel  tailwindcss  shadcn-ui
+typescript  open-source-community
+```
+
+### Tagline
+```
+The community marketplace for Grok-native agents on X
+```
+
+### Long description (OG/Twitter)
+```
+grokagents.dev — the open community marketplace for discovering, installing, and showcasing Grok-native agents on X. Search certified templates, one-click install on X, see live adoption stats, and submit your own agents via PR. Built with Next.js 15 + Vercel by AgentMindCloud and the open-source community.
+```
+
+### Hero banner pills
+```
+GROKAGENTS.DEV    LIVE
+```
+
+### Initial files Claude Code will create in Session 12
+- Full Next.js 15 App Router scaffold
+- `app/` — layout, marketplace, agent detail pages
+- `app/stats/` — adoption dashboard (Session 14)
+- `app/sponsors/` — sponsors page (Session 15)
+- `app/api/` — telemetry endpoint, install tracking, public stats API
+- `components/ui/` — GlassCard, NeonButton, CertificationBadge, StatPill (brand component lib)
+- `lib/` — agents.ts, github.ts, telemetry-queries.ts
+- `tailwind.config.ts` — imports brand preset from grok-install-brand
+- `vercel.json`, `.env.example`, `README.md` (premium template)
+- `/docs/index.html` — NOT needed here (this IS the website; the chatbot widget is embedded directly into `app/layout.tsx` instead)
+
+### Vercel project settings (when deploying)
+```
+Framework Preset:    Next.js
+Build Command:       next build (default)
+Install Command:     pnpm install
+Output Directory:    .next (default)
+Node version:        20.x
+
+Environment variables:
+  GITHUB_TOKEN              (Personal Access Token, classic, public_repo only — for higher API rate limit)
+  KV_URL                    (Vercel KV — set up via Vercel dashboard)
+  KV_REST_API_URL           (auto-populated by Vercel KV integration)
+  KV_REST_API_TOKEN         (auto-populated)
+  POSTGRES_URL              (Vercel Postgres — set up via dashboard, Session 14 needs it)
+  TELEMETRY_HMAC_SECRET     (random 32-byte hex; CLI signs payloads with this)
+  PLAUSIBLE_DOMAIN          grokagents.dev
+```
+
+### Custom domain (DNS setup at Hostinger or domain registrar)
+```
+Type   Name              Value
+A      @                 76.76.21.21        (Vercel)
+CNAME  www               cname.vercel-dns.com.
+CNAME  marketplace       cname.vercel-dns.com.   (optional alias)
+CNAME  stats             cname.vercel-dns.com.   (optional alias)
+```
+
+### Recommended pre-creation settings
+- Branch protection on `main`: require PR + Vercel preview check
+- Discussions: ON (categories: Announcements, Agent submissions, Feedback, Q&A)
+- Issues: ON with templates for Bug / Agent submission / Feature request
+- Pages: OFF (Vercel handles hosting, not GitHub Pages)
+- Sponsorship: link to AgentMindCloud sponsor profile
+
+---
+
+## 4. `grok-repo-chatbot` *(Session 2 of v1.1 addendum — backend)*
+
+**URL:** github.com/AgentMindCloud/grok-repo-chatbot
+
+### GitHub description
+```
+Shared Grok-powered assistant backend for every GrokInstall repo. Per-repo system prompts, SSE streaming, cost-capped, self-hosted. Powered by xAI Grok.
+```
+
+### Topics
+```
+grok  xai  chatbot  sse  nodejs  express  grok-api  grok-install
+repo-assistant  ai-assistant  typescript  render-deployment  rate-limited
+grok-fast  grok-4
+```
+
+### Tagline
+```
+One backend, infinitely many repo-specific Grok assistants
+```
+
+### Long description (OG/Twitter)
+```
+The shared backend that powers a Grok-native assistant on every GrokInstall repo. One Node.js + Express service, per-repo system prompts loaded from JSON config, server-side rate limits and cost caps, fully open-source and auditable. Drop a new repo's config into /repos/ and it gets its own assistant for free.
+```
+
+### Hero banner pills
+```
+POWERED BY GROK 4    SSE STREAMING
+```
+
+### Initial files Claude Code will create in Session 2 (addendum)
+- `server.ts` — Express app with /api/chat (SSE), /api/feedback, /api/health, /api/stats
+- `lib/xai-client.ts` — thin wrapper around xAI's API
+- `lib/cost-guard.ts` — server-side monthly USD cap enforcement
+- `lib/rate-limiter.ts` — per-session and per-IP limits
+- `lib/cors.ts` — strict allowlist
+- `repos/grok-install.json`, `repos/grok-yaml-standards.json`, ... one per repo
+- `Dockerfile`, `render.yaml`, `.env.example`
+- `README.md` (premium template), `docs/index.html` (premium hub)
+- `tests/chat.test.ts`
+- `LICENSE`, `SECURITY.md`, `CONTRIBUTING.md`, `CHANGELOG.md`
+
+### Render deployment settings
+```
+Service Type:        Web Service
+Region:              Singapore (closest to Vietnam) or Frankfurt (closest to most users)
+Branch:              main
+Runtime:             Node 20
+Build command:       pnpm install && pnpm build
+Start command:       node dist/server.js
+Health check path:   /api/health
+Plan:                Free (start) or Starter $7/mo (production — keeps service warm 24/7)
+
+Environment variables:
+  XAI_API_KEY                 (from console.x.ai → API Keys)
+  GROK_MONTHLY_CAP_USD        50
+  CORS_ALLOWED_ORIGINS        https://grokagents.dev,https://agentmindcloud.github.io
+  INTERNAL_STATS_SECRET       (random 32-byte hex)
+  NODE_ENV                    production
+  TELEMETRY_HMAC_SECRET       (matches the marketplace's value)
+```
+
+### Custom domain
+```
+Render auto-provides:  grok-repo-chatbot.onrender.com
+Custom subdomain:      repo-bot.grokagents.dev
+                       CNAME repo-bot → grok-repo-chatbot.onrender.com
+```
+
+### Privacy / abuse / cost notes
+- API key NEVER in widget code or any frontend file. It only exists in Render env.
+- Every request requires a valid `repo_id` from the `/repos/` config — unknown IDs are 404.
+- Rate limit defaults: 20/session/hour, 200/session/day, 50/IP/hour.
+- Cost cap: server refuses new requests when monthly spend exceeds GROK_MONTHLY_CAP_USD.
+- No PII collected. Session IDs are random UUIDs in the widget's localStorage.
+- Feedback (thumbs) stored to local JSONL or Vercel KV for review.
+
+---
+
+## 5. `grok-repo-bot-widget` *(Session 2 of v1.1 addendum — embeddable)*
+
+**URL:** github.com/AgentMindCloud/grok-repo-bot-widget
+
+### GitHub description
+```
+Embeddable Grok chatbot widget — drop one script tag into any HTML page and get a brand-themed assistant. ~25KB, zero dependencies, single file. Vanilla JS.
+```
+
+### Topics
+```
+chatbot  widget  embeddable  vanilla-js  grok  xai  grok-install  single-file
+shadow-dom  sse-streaming  no-framework  cdn-distributed  jsdelivr
+typescript-build  esbuild
+```
+
+### Tagline
+```
+One-line embeddable Grok chatbot widget for any HTML page
+```
+
+### Long description (OG/Twitter)
+```
+A 25KB, zero-dependency, vanilla-JS chat widget that drops into any HTML page with a single script tag. Brand-themed (dark neon cyber-premium), accessible, mobile-responsive, Shadow-DOM isolated, SSE streaming, markdown rendering, suggested questions, opt-in feedback. Pairs with grok-repo-chatbot for the backend.
+```
+
+### Hero banner pills
+```
+25KB · ZERO DEPS    SINGLE SCRIPT TAG
+```
+
+### Initial files Claude Code will create in Session 2 (addendum)
+- `src/widget.ts` — main widget class (entire UX in one file)
+- `src/styles.ts` — exported CSS string injected into Shadow DOM
+- `src/markdown.ts` — minimal markdown parser
+- `src/icons.ts` — inline SVG icons
+- `build.js` — esbuild config producing `dist/widget.js` and `dist/widget.min.js`
+- `examples/embed.html` — minimal embed test page
+- `examples/embed-fullhub.html` — uses the Session 1 hub template as host
+- `package.json`, `tsconfig.json`, `.eslintrc.cjs`
+- `README.md` (premium template), `docs/index.html` (premium hub with the widget self-embedded as the demo)
+- `publish.md` — instructions for tag-based jsDelivr publishing
+- `LICENSE`, `SECURITY.md`, `CHANGELOG.md`
+
+### Distribution
+```
+Primary CDN:    jsDelivr (zero config — auto-syncs from GitHub release tags)
+URL pattern:    https://cdn.jsdelivr.net/gh/AgentMindCloud/grok-repo-bot-widget@v1.0.0/dist/widget.min.js
+Latest tag:     https://cdn.jsdelivr.net/gh/AgentMindCloud/grok-repo-bot-widget@latest/dist/widget.min.js
+
+Embedding (the canonical one-liner):
+
+<script src="https://cdn.jsdelivr.net/gh/AgentMindCloud/grok-repo-bot-widget@latest/dist/widget.min.js"
+        data-repo-id="grok-install"
+        data-api-url="https://repo-bot.grokagents.dev/api/chat"
+        defer></script>
+```
+
+### Bundle size budget
+- Target: < 25KB minified, < 10KB gzipped
+- CI fails the build if the bundle exceeds 30KB minified
+- Include a size badge in the README using shields.io bundlephobia or a custom JSON badge
+
+---
+
+## Optional: bash one-liners for batch creation via gh CLI
+
+If you have the GitHub CLI configured (`gh auth login`), you can create all 5 repos at once with the right metadata using this script. Save as `create-repos.sh`, make executable, and run.
+
+```bash
+#!/usr/bin/env bash
+set -e
+ORG="AgentMindCloud"
+
+# 1. vscode-grok-yaml
+gh repo create "$ORG/vscode-grok-yaml" \
+  --public \
+  --description "Official community VS Code extension for the GrokInstall ecosystem. Full IntelliSense, live validation, safety scanning, template gallery, and one-click deployment for all 14 YAML standards." \
+  --license MIT
+
+gh repo edit "$ORG/vscode-grok-yaml" --add-topic vscode --add-topic vscode-extension \
+  --add-topic yaml --add-topic intellisense --add-topic grok --add-topic grok-agents \
+  --add-topic grok-install --add-topic xai --add-topic multi-agent --add-topic voice-agents
+
+# 2. grok-install-action
+gh repo create "$ORG/grok-install-action" \
+  --public \
+  --description "GitHub Action that auto-validates, safety-scans, and certifies every Grok-native agent on every push and PR. Part of the GrokInstall ecosystem." \
+  --license MIT
+
+gh repo edit "$ORG/grok-install-action" --add-topic github-actions --add-topic github-marketplace \
+  --add-topic grok --add-topic grok-agents --add-topic grok-install --add-topic xai \
+  --add-topic ci-cd --add-topic validation --add-topic safety-scanner --add-topic certification
+
+# 3. grok-agents-marketplace
+gh repo create "$ORG/grok-agents-marketplace" \
+  --public \
+  --description "The community marketplace, adoption dashboard, and landing page for Grok-native agents on X. Built with Next.js 15. Live at grokagents.dev." \
+  --license MIT
+
+gh repo edit "$ORG/grok-agents-marketplace" --add-topic nextjs --add-topic marketplace \
+  --add-topic grok --add-topic grok-agents --add-topic xai --add-topic grok-install \
+  --add-topic ai-agents --add-topic voice-agents --add-topic multi-agent --add-topic dashboard
+
+# 4. grok-repo-chatbot
+gh repo create "$ORG/grok-repo-chatbot" \
+  --public \
+  --description "Shared Grok-powered assistant backend for every GrokInstall repo. Per-repo system prompts, SSE streaming, cost-capped, self-hosted. Powered by xAI Grok." \
+  --license MIT
+
+gh repo edit "$ORG/grok-repo-chatbot" --add-topic grok --add-topic xai --add-topic chatbot \
+  --add-topic sse --add-topic nodejs --add-topic express --add-topic grok-api \
+  --add-topic grok-install --add-topic repo-assistant --add-topic ai-assistant
+
+# 5. grok-repo-bot-widget
+gh repo create "$ORG/grok-repo-bot-widget" \
+  --public \
+  --description "Embeddable Grok chatbot widget — drop one script tag into any HTML page and get a brand-themed assistant. ~25KB, zero dependencies, single file. Vanilla JS." \
+  --license MIT
+
+gh repo edit "$ORG/grok-repo-bot-widget" --add-topic chatbot --add-topic widget \
+  --add-topic embeddable --add-topic vanilla-js --add-topic grok --add-topic xai \
+  --add-topic grok-install --add-topic single-file --add-topic shadow-dom
+
+echo ""
+echo "✓ All 5 repos created. Next: enable Discussions on each, set sponsor link to AgentMindCloud, and wait for the Session sweeps to populate them."
+```
+
+---
+
+## Summary checklist
+
+When you're done with this prep step, you should have:
+
+- [ ] `vscode-grok-yaml` created · public · MIT · description + topics set
+- [ ] `grok-install-action` created · public · MIT · description + topics set
+- [ ] `grok-agents-marketplace` created · public · MIT · description + topics set
+- [ ] `grok-repo-chatbot` created · public · MIT · description + topics set
+- [ ] `grok-repo-bot-widget` created · public · MIT · description + topics set
+- [ ] xAI API key obtained from console.x.ai (needed before Session 2 of addendum)
+- [ ] (Optional) Custom domain `grokagents.dev` purchased — needed before Session 13 (LAUNCH)
+- [ ] Render account ready — needed before Session 2 of addendum (chatbot backend deploy)
+- [ ] Vercel account ready — needed before Session 12 (marketplace scaffold)
+
+The repos sit empty until Claude Code populates them in their respective sessions. That's intentional — Session 1 (premium template) → Session 3 (sweep) will fill them all in one coordinated pass with consistent branding.
+
+---
+
+*End of repo descriptions doc · v1.0*
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="Action">
+  <circle cx="22" cy="22" r="16" fill="none" stroke="#00F0FF" stroke-width="1.5"></circle>
+  <path d="M 18 14 L 30 22 L 18 30 Z" fill="#00F0FF"></path>
+  <circle cx="22" cy="22" r="16" fill="none" stroke="#00FF9D" stroke-width="0.5" stroke-dasharray="3 4" opacity="0.6"></circle>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="Certified">
+  <path d="M 22 4 L 30 8 L 36 8 L 36 18 Q 36 30 22 38 Q 8 30 8 18 L 8 8 L 14 8 Z" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linejoin="round"></path>
+  <path d="M 16 22 L 20 26 L 28 18" fill="none" stroke="#00FF9D" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="Install">
+  <rect x="6" y="22" width="32" height="16" rx="2" fill="none" stroke="#00F0FF" stroke-width="1.5"></rect>
+  <path d="M 22 6 L 22 26 M 14 18 L 22 26 L 30 18" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+  <circle cx="22" cy="33" r="1.5" fill="#00FF9D"></circle>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="Marketplace">
+  <path d="M 4 14 L 8 6 L 36 6 L 40 14" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linejoin="round"></path>
+  <rect x="6" y="14" width="32" height="24" rx="2" fill="none" stroke="#00F0FF" stroke-width="1.5"></rect>
+  <line x1="4" y1="14" x2="40" y2="14" stroke="#00F0FF" stroke-width="1.5"></line>
+  <rect x="12" y="20" width="6" height="6" rx="1" fill="#00FF9D"></rect>
+  <rect x="22" y="20" width="6" height="6" rx="1" fill="#00FF9D" opacity="0.5"></rect>
+  <rect x="12" y="30" width="6" height="4" rx="1" fill="#00F0FF" opacity="0.5"></rect>
+  <rect x="22" y="30" width="6" height="4" rx="1" fill="#00F0FF"></rect>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="Scanner">
+  <rect x="6" y="6" width="32" height="32" rx="3" fill="none" stroke="#00F0FF" stroke-width="1.5"></rect>
+  <line x1="6" y1="22" x2="38" y2="22" stroke="#00FF9D" stroke-width="1.5"></line>
+  <circle cx="14" cy="14" r="2" fill="#00F0FF"></circle>
+  <circle cx="22" cy="14" r="2" fill="#00F0FF" opacity="0.5"></circle>
+  <circle cx="30" cy="14" r="2" fill="#00F0FF" opacity="0.3"></circle>
+  <circle cx="14" cy="30" r="2" fill="#00F0FF" opacity="0.5"></circle>
+  <circle cx="22" cy="30" r="2" fill="#00F0FF"></circle>
+  <circle cx="30" cy="30" r="2" fill="#00F0FF" opacity="0.3"></circle>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="Swarm">
+  <circle cx="22" cy="22" r="6" fill="none" stroke="#00F0FF" stroke-width="1.5"></circle>
+  <circle cx="22" cy="22" r="2.5" fill="#00F0FF"></circle>
+  <circle cx="9" cy="9" r="3" fill="#00FF9D"></circle>
+  <circle cx="35" cy="9" r="3" fill="#00FF9D"></circle>
+  <circle cx="9" cy="35" r="3" fill="#00FF9D"></circle>
+  <circle cx="35" cy="35" r="3" fill="#00FF9D"></circle>
+  <line x1="22" y1="22" x2="11" y2="11" stroke="#00F0FF" stroke-width="0.7" opacity="0.6"></line>
+  <line x1="22" y1="22" x2="33" y2="11" stroke="#00F0FF" stroke-width="0.7" opacity="0.6"></line>
+  <line x1="22" y1="22" x2="11" y2="33" stroke="#00F0FF" stroke-width="0.7" opacity="0.6"></line>
+  <line x1="22" y1="22" x2="33" y2="33" stroke="#00F0FF" stroke-width="0.7" opacity="0.6"></line>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="Voice">
+  <rect x="18" y="8" width="8" height="20" rx="4" fill="none" stroke="#00F0FF" stroke-width="1.5"></rect>
+  <path d="M 12 22 Q 12 30 22 30 Q 32 30 32 22" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round"></path>
+  <line x1="22" y1="30" x2="22" y2="36" stroke="#00F0FF" stroke-width="1.5"></line>
+  <line x1="16" y1="36" x2="28" y2="36" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round"></line>
+  <circle cx="6" cy="22" r="1.5" fill="#00FF9D"></circle>
+  <circle cx="38" cy="22" r="1.5" fill="#00FF9D"></circle>
+  <line x1="2" y1="22" x2="6" y2="22" stroke="#00FF9D" stroke-width="1.5" stroke-linecap="round"></line>
+  <line x1="38" y1="22" x2="42" y2="22" stroke="#00FF9D" stroke-width="1.5" stroke-linecap="round"></line>
+</svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 44 44" width="44" height="44" role="img" aria-label="VS Code">
+  <rect x="4" y="6" width="36" height="32" rx="3" fill="none" stroke="#00F0FF" stroke-width="1.5"></rect>
+  <line x1="4" y1="13" x2="40" y2="13" stroke="#00F0FF" stroke-width="1.5"></line>
+  <circle cx="9" cy="9.5" r="1" fill="#00FF9D"></circle>
+  <circle cx="13" cy="9.5" r="1" fill="#00FF9D" opacity="0.6"></circle>
+  <circle cx="17" cy="9.5" r="1" fill="#00FF9D" opacity="0.3"></circle>
+  <text x="22" y="29" font-family="&#39;JetBrains Mono&#39;, monospace" font-size="9" fill="#00F0FF" text-anchor="middle" font-weight="700">&lt;/&gt;</text>
+</svg>
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  GROKINSTALL — PREMIUM HUB TEMPLATE v1.0
+  ════════════════════════════════════════════════════════════════════════
+  Single-file HTML that becomes /docs/index.html in every ecosystem repo.
+  Deployed via GitHub Pages from /docs to: agentmindcloud.github.io/{repo}
+  
+  TOKENS TO REPLACE per-repo (use sed or any templating):
+    {{REPO_NAME}}             grok-install
+    {{REPO_TAGLINE}}          The open standard for one-click installable Grok-native agents on X
+    {{REPO_DESCRIPTION}}      2-3 sentence description for OG/Twitter cards
+    {{REPO_FULL_PATH}}        AgentMindCloud/grok-install
+    {{REPO_HUB_DOMAIN}}       agentmindcloud.github.io/grok-install (or grok-install.grokagents.dev)
+    {{REPO_INSTALL_CMD}}      The primary one-line install command
+    {{ARCH_DIAGRAM_BODY}}     The Mermaid graph body (without the ```mermaid fences)
+    {{CHATBOT_REPO_ID}}       The repo's chatbot system prompt key (e.g. "grok-install")
+    {{CHATBOT_API_URL}}       https://repo-bot.grokagents.dev/api/chat
+    {{CHATBOT_WIDGET_VERSION}} latest  (or pin to a specific tag like v1.0.0)
+    {{REPO_DOC_LINKS}}        — see the Documentation section, expand the doc cards
+    {{FEATURE_GRID}}          — see the Features section, six feature cards
+
+  PERFORMANCE TARGETS (Lighthouse mobile):
+    Performance:    95+
+    Accessibility:  100
+    Best Practices: 100
+    SEO:            100
+  
+  CONSTRAINTS:
+    - Single file. No build step. No npm dependencies.
+    - Only external resources: Google Fonts, mermaid.js (CDN), the chatbot widget.
+    - All brand colors via CSS custom properties.
+    - WCAG AA contrast minimum.
+    - prefers-reduced-motion respected throughout.
+  ════════════════════════════════════════════════════════════════════════
+-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#0A0A0A">
+  <meta name="color-scheme" content="dark">
+
+  <title>{{REPO_NAME}} — {{REPO_TAGLINE}} · GrokInstall</title>
+  <meta name="description" content="{{REPO_DESCRIPTION}}">
+
+  <!-- Open Graph / Twitter card -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://{{REPO_HUB_DOMAIN}}">
+  <meta property="og:title" content="{{REPO_NAME}} — {{REPO_TAGLINE}}">
+  <meta property="og:description" content="{{REPO_DESCRIPTION}}">
+  <meta property="og:image" content="https://raw.githubusercontent.com/{{REPO_FULL_PATH}}/main/docs/og-image.png">
+  <meta property="og:site_name" content="GrokInstall">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@JanSol0s">
+  <meta name="twitter:creator" content="@JanSol0s">
+  <meta name="twitter:title" content="{{REPO_NAME}} — {{REPO_TAGLINE}}">
+  <meta name="twitter:description" content="{{REPO_DESCRIPTION}}">
+  <meta name="twitter:image" content="https://raw.githubusercontent.com/{{REPO_FULL_PATH}}/main/docs/og-image.png">
+  <link rel="canonical" href="https://{{REPO_HUB_DOMAIN}}">
+
+  <!-- Structured data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "{{REPO_NAME}}",
+    "description": "{{REPO_DESCRIPTION}}",
+    "url": "https://{{REPO_HUB_DOMAIN}}",
+    "applicationCategory": "DeveloperApplication",
+    "operatingSystem": "Cross-platform",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+    "publisher": { "@type": "Organization", "name": "AgentMindCloud" }
+  }
+  </script>
+
+  <!-- Favicon (use a tiny inline SVG as data URL — zero extra request) -->
+  <link rel="icon" href="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='6' fill='%2300F0FF'/><circle cx='16' cy='16' r='12' fill='none' stroke='%2300F0FF' stroke-width='1' stroke-dasharray='2 3'/></svg>">
+
+  <!-- Preconnect to font origins -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.github.com">
+
+  <!-- Fonts (subset to weights actually used) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* ═══════════════════════════════════════════════════
+       BRAND TOKENS — locked, do not modify per-repo
+       ═══════════════════════════════════════════════════ */
+    :root {
+      --gi-bg:               #0A0A0A;
+      --gi-surface:          rgba(255, 255, 255, 0.04);
+      --gi-surface-2:        rgba(255, 255, 255, 0.06);
+      --gi-surface-hover:    rgba(255, 255, 255, 0.08);
+      --gi-border:           rgba(0, 240, 255, 0.15);
+      --gi-border-strong:    rgba(0, 240, 255, 0.40);
+      --gi-text:             #FFFFFF;
+      --gi-text-muted:       #E5E5E5;
+      --gi-text-dim:         rgba(255, 255, 255, 0.5);
+      --gi-cyan:             #00F0FF;
+      --gi-cyan-dim:         rgba(0, 240, 255, 0.7);
+      --gi-cyan-glow:        0 0 16px rgba(0, 240, 255, 0.45);
+      --gi-cyan-glow-soft:   0 0 24px rgba(0, 240, 255, 0.18);
+      --gi-green:            #00FF9D;
+      --gi-green-glow:       0 0 16px rgba(0, 255, 157, 0.45);
+      --gi-danger:           #FF2D55;
+
+      --gi-radius-sm:        8px;
+      --gi-radius-md:        16px;
+      --gi-radius-lg:        24px;
+
+      --gi-blur:             blur(20px);
+
+      --gi-font-display:     'Space Grotesk', Inter, -apple-system, BlinkMacSystemFont, sans-serif;
+      --gi-font-body:        'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --gi-font-mono:        'JetBrains Mono', 'SF Mono', Consolas, Monaco, monospace;
+
+      --gi-container:        1200px;
+      --gi-header-h:         64px;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       RESET + BASE
+       ═══════════════════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      background: var(--gi-bg);
+      color: var(--gi-text);
+      font-family: var(--gi-font-body);
+      font-size: 16px;
+      line-height: 1.65;
+      font-weight: 400;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+    img, svg { display: block; max-width: 100%; }
+    a { color: var(--gi-cyan); text-decoration: none; transition: color .2s ease; }
+    a:hover { color: var(--gi-text); }
+    a:focus-visible, button:focus-visible {
+      outline: 2px solid var(--gi-cyan);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    button { font: inherit; cursor: pointer; border: none; background: none; color: inherit; }
+    code, pre { font-family: var(--gi-font-mono); font-size: 14px; }
+    h1, h2, h3, h4 {
+      font-family: var(--gi-font-display);
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      margin: 0;
+      line-height: 1.2;
+    }
+    h1 { font-size: clamp(2rem, 5vw, 3.5rem); font-weight: 700; }
+    h2 { font-size: clamp(1.5rem, 3.5vw, 2.25rem); }
+    h3 { font-size: 1.25rem; }
+    p  { margin: 0 0 1rem; }
+
+    /* Skip link */
+    .skip-link {
+      position: absolute; left: -9999px; top: 0;
+      padding: 12px 16px; background: var(--gi-cyan); color: var(--gi-bg);
+      font-weight: 600; z-index: 1000;
+    }
+    .skip-link:focus { left: 0; }
+
+    /* Container */
+    .container {
+      max-width: var(--gi-container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       HEADER — sticky glassmorphic
+       ═══════════════════════════════════════════════════ */
+    .site-header {
+      position: sticky; top: 0;
+      height: var(--gi-header-h);
+      background: rgba(10, 10, 10, 0.7);
+      backdrop-filter: var(--gi-blur);
+      -webkit-backdrop-filter: var(--gi-blur);
+      border-bottom: 1px solid var(--gi-border);
+      z-index: 100;
+    }
+    .site-header .container {
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-family: var(--gi-font-display);
+      font-weight: 600;
+      font-size: 15px;
+      letter-spacing: 1px;
+      color: var(--gi-text);
+    }
+    .brand:hover { color: var(--gi-cyan); }
+    .brand-mark {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--gi-cyan), transparent 70%);
+      border: 1px solid var(--gi-cyan);
+      box-shadow: var(--gi-cyan-glow-soft);
+    }
+    .brand-mark::after {
+      content: '';
+      display: block;
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gi-cyan);
+      margin: 9px;
+      box-shadow: var(--gi-cyan-glow);
+    }
+    .nav-links {
+      display: flex; align-items: center; gap: 4px;
+      list-style: none; margin: 0; padding: 0;
+    }
+    .nav-links a {
+      display: inline-block;
+      padding: 8px 14px;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--gi-text-muted);
+      border-radius: var(--gi-radius-sm);
+      transition: all .2s ease;
+    }
+    .nav-links a:hover {
+      color: var(--gi-cyan);
+      background: var(--gi-surface);
+    }
+    .nav-links .nav-cta {
+      background: var(--gi-cyan);
+      color: var(--gi-bg);
+      font-weight: 600;
+      padding: 8px 16px;
+      box-shadow: var(--gi-cyan-glow-soft);
+    }
+    .nav-links .nav-cta:hover {
+      background: var(--gi-text);
+      color: var(--gi-bg);
+      box-shadow: var(--gi-cyan-glow);
+    }
+    .nav-toggle { display: none; }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .nav-toggle {
+        display: flex; flex-direction: column; gap: 4px;
+        padding: 8px;
+        cursor: pointer;
+      }
+      .nav-toggle span {
+        display: block; width: 22px; height: 2px;
+        background: var(--gi-text); border-radius: 2px;
+        transition: all .2s;
+      }
+      .nav-open .nav-links {
+        display: flex; flex-direction: column;
+        position: absolute; top: var(--gi-header-h); left: 0; right: 0;
+        background: var(--gi-bg); padding: 16px;
+        border-bottom: 1px solid var(--gi-border);
+        gap: 0;
+      }
+      .nav-open .nav-links a { padding: 14px 16px; }
+    }
+
+    /* ═══════════════════════════════════════════════════
+       HERO
+       ═══════════════════════════════════════════════════ */
+    .hero {
+      position: relative;
+      padding: 80px 0 100px;
+      overflow: hidden;
+      isolation: isolate;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      z-index: -1;
+      pointer-events: none;
+    }
+    .hero-bg svg { width: 100%; height: 100%; opacity: 0.5; }
+
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 14px;
+      font-family: var(--gi-font-display);
+      font-size: 12px; font-weight: 500; letter-spacing: 2px;
+      color: var(--gi-cyan);
+      background: var(--gi-surface);
+      border: 1px solid var(--gi-border);
+      border-radius: 999px;
+      margin-bottom: 24px;
+    }
+    .eyebrow::before {
+      content: '';
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gi-cyan);
+      box-shadow: var(--gi-cyan-glow);
+    }
+    .hero h1 {
+      font-family: var(--gi-font-mono);
+      background: linear-gradient(120deg, var(--gi-text) 0%, var(--gi-cyan) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      margin-bottom: 16px;
+      max-width: 900px;
+    }
+    .hero-tagline {
+      font-size: clamp(1.1rem, 2vw, 1.35rem);
+      color: var(--gi-text-muted);
+      max-width: 720px;
+      margin: 0 0 36px;
+      line-height: 1.5;
+    }
+
+    /* CTA buttons */
+    .cta-row { display: flex; flex-wrap: wrap; gap: 12px; margin-bottom: 48px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 14px 24px;
+      font-family: var(--gi-font-display);
+      font-size: 14px; font-weight: 600;
+      letter-spacing: 0.5px;
+      border-radius: var(--gi-radius-md);
+      border: 1px solid transparent;
+      transition: all .2s ease;
+      text-decoration: none;
+      cursor: pointer;
+    }
+    .btn-primary {
+      background: var(--gi-cyan); color: var(--gi-bg);
+      box-shadow: var(--gi-cyan-glow-soft);
+    }
+    .btn-primary:hover {
+      background: var(--gi-text); color: var(--gi-bg);
+      box-shadow: var(--gi-cyan-glow);
+      transform: translateY(-1px);
+    }
+    .btn-secondary {
+      background: var(--gi-surface); color: var(--gi-text);
+      border-color: var(--gi-border);
+    }
+    .btn-secondary:hover {
+      background: var(--gi-surface-hover); color: var(--gi-cyan);
+      border-color: var(--gi-border-strong);
+    }
+    .btn-icon { width: 16px; height: 16px; }
+
+    /* Stats row */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+      max-width: 720px;
+    }
+    .stat-card {
+      padding: 20px 16px;
+      background: var(--gi-surface);
+      border: 1px solid var(--gi-border);
+      border-radius: var(--gi-radius-md);
+      backdrop-filter: var(--gi-blur);
+      -webkit-backdrop-filter: var(--gi-blur);
+    }
+    .stat-value {
+      font-family: var(--gi-font-mono);
+      font-size: clamp(1.4rem, 2.5vw, 1.75rem);
+      font-weight: 700;
+      color: var(--gi-cyan);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .stat-label {
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gi-text-dim);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .skeleton {
+      display: inline-block;
+      width: 60px; height: 24px;
+      background: linear-gradient(90deg, var(--gi-surface) 0%, var(--gi-surface-hover) 50%, var(--gi-surface) 100%);
+      background-size: 200% 100%;
+      animation: shimmer 1.4s ease-in-out infinite;
+      border-radius: 4px;
+    }
+    @keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+    @media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }
+
+    /* ═══════════════════════════════════════════════════
+       SECTIONS
+       ═══════════════════════════════════════════════════ */
+    section {
+      padding: 80px 0;
+      position: relative;
+    }
+    .section-eyebrow {
+      font-family: var(--gi-font-display);
+      font-size: 12px; font-weight: 500; letter-spacing: 3px;
+      color: var(--gi-cyan); text-transform: uppercase;
+      margin-bottom: 12px;
+      display: block;
+    }
+    .section-title { margin-bottom: 16px; }
+    .section-lede {
+      font-size: 1.1rem;
+      color: var(--gi-text-muted);
+      max-width: 640px;
+      margin-bottom: 48px;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       INSTALL SECTION — tabbed code blocks
+       ═══════════════════════════════════════════════════ */
+    .install-tabs {
+      display: flex; gap: 4px;
+      padding: 4px;
+      background: var(--gi-surface);
+      border: 1px solid var(--gi-border);
+      border-radius: var(--gi-radius-md);
+      width: fit-content;
+      margin-bottom: 16px;
+    }
+    .install-tabs button {
+      padding: 8px 16px;
+      font-size: 13px; font-weight: 500;
+      color: var(--gi-text-dim);
+      border-radius: 10px;
+      transition: all .2s ease;
+    }
+    .install-tabs button[aria-selected="true"] {
+      color: var(--gi-bg);
+      background: var(--gi-cyan);
+    }
+    .install-tabs button:hover:not([aria-selected="true"]) {
+      color: var(--gi-text);
+      background: var(--gi-surface-hover);
+    }
+    .codeblock {
+      position: relative;
+      background: #050505;
+      border: 1px solid var(--gi-border);
+      border-radius: var(--gi-radius-md);
+      padding: 20px 56px 20px 20px;
+      overflow-x: auto;
+    }
+    .codeblock code {
+      color: var(--gi-cyan);
+      font-size: 14px;
+      white-space: pre;
+    }
+    .codeblock::before {
+      content: '$';
+      color: var(--gi-text-dim);
+      margin-right: 12px;
+    }
+    .codeblock .copy-btn {
+      position: absolute; top: 12px; right: 12px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 500;
+      color: var(--gi-text-dim);
+      background: var(--gi-surface);
+      border: 1px solid var(--gi-border);
+      border-radius: var(--gi-radius-sm);
+      letter-spacing: 1px;
+      transition: all .15s ease;
+    }
+    .codeblock .copy-btn:hover {
+      color: var(--gi-cyan);
+      border-color: var(--gi-border-strong);
+    }
+    .codeblock .copy-btn.copied {
+      color: var(--gi-green);
+      border-color: var(--gi-green);
+    }
+    .install-panel { display: none; }
+    .install-panel.active { display: block; }
+
+    /* ═══════════════════════════════════════════════════
+       LIVE STATUS PANEL
+       ═══════════════════════════════════════════════════ */
+    .status-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px;
+    }
+    .status-card {
+      padding: 24px;
+      background: var(--gi-surface);
+      border: 1px solid var(--gi-border);
+      border-radius: var(--gi-radius-md);
+      backdrop-filter: var(--gi-blur);
+      -webkit-backdrop-filter: var(--gi-blur);
+      transition: all .2s ease;
+    }
+    .status-card:hover {
+      border-color: var(--gi-border-strong);
+      transform: translateY(-2px);
+    }
+    .status-card-label {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 12px;
+      font-weight: 500;
+      color: var(--gi-text-dim);
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .status-card-label::before {
+      content: '';
+      display: inline-block;
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--gi-green);
+      box-shadow: var(--gi-green-glow);
+    }
+    .status-card-value {
+      font-family: var(--gi-font-mono);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--gi-text);
+      line-height: 1.1;
+    }
+    .status-card-sub {
+      font-size: 13px;
+      color: var(--gi-text-dim);
+      margin-top: 4px;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       FEATURES GRID
+       ═══════════════════════════════════════════════════ */
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+    }
+    .feature-card {
+      padding: 32px 24px;
+      background: var(--gi-surface);
+      border: 1px solid var(--gi-border);
+      border-radius: var(--gi-radius-lg);
+      transition: all .25s ease;
+    }
+    .feature-card:hover {
+      border-color: var(--gi-border-strong);
+      background: var(--gi-surface-2);
+      transform: translateY(-3px);
+      box-shadow: var(--gi-cyan-glow-soft);
+    }
+    .feature-icon {
+      width: 48px; height: 48px;
+      display: flex; align-items: center; justify-content: center;
+      background: rgba(0, 240, 255, 0.08);
+      border: 1px solid var(--gi-border-strong);
+      border-radius: var(--gi-radius-md);
+      margin-bottom: 20px;
+    }
+    .feature-card h3 { color: var(--gi-text); margin-bottom: 8px; font-size: 1.15rem; }
+    .feature-card p {
+      color: var(--gi-text-muted);
+      font-size: 14px;
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       MERMAID
+       ═══════════════════════════════════════════════════ */
+    .mermaid-wrap {
+      padding: 32px;
+      background: var(--gi-surface);
+      border: 1px solid var(--gi-border);
+      border-radius: var(--gi-radius-lg);
+      overflow-x: auto;
+    }
+    .mermaid {
+      text-align: center;
+      min-height: 200px;
+    }
+    /* Mermaid container shim while loading */
+    .mermaid-loading {
+      color: var(--gi-text-dim);
+      text-align: center;
+      font-family: var(--gi-font-mono);
+      font-size: 14px;
+      padding: 40px 0;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       DOCS GRID
+       ═══════════════════════════════════════════════════ */
+    .docs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 16px;
+    }
+    .doc-card {
+      display: block;
+      padding: 24px;
+      background: var(--gi-surface);
+      border: 1px solid var(--gi-border);
+      border-radius: var(--gi-radius-md);
+      color: var(--gi-text);
+      transition: all .2s ease;
+    }
+    .doc-card:hover {
+      border-color: var(--gi-cyan);
+      background: var(--gi-surface-hover);
+      color: var(--gi-text);
+    }
+    .doc-card-title {
+      display: flex; align-items: center; justify-content: space-between;
+      font-family: var(--gi-font-display);
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+    .doc-card-arrow {
+      color: var(--gi-cyan);
+      transition: transform .2s ease;
+    }
+    .doc-card:hover .doc-card-arrow { transform: translateX(4px); }
+    .doc-card-desc {
+      color: var(--gi-text-dim);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    /* ═══════════════════════════════════════════════════
+       FINAL CTA
+       ═══════════════════════════════════════════════════ */
+    .final-cta {
+      text-align: center;
+      padding: 80px 24px;
+      background: var(--gi-surface);
+      border: 1px solid var(--gi-border);
+      border-radius: var(--gi-radius-lg);
+      margin: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .final-cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(0, 240, 255, 0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final-cta h2 { margin-bottom: 12px; position: relative; }
+    .final-cta p {
+      color: var(--gi-text-muted);
+      max-width: 540px; margin: 0 auto 32px;
+      position: relative;
+    }
+    .final-cta .cta-row { justify-content: center; margin-bottom: 0; }
+
+    /* ═══════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════ */
+    footer.site-footer {
+      border-top: 1px solid var(--gi-border);
+      padding: 48px 0 32px;
+      color: var(--gi-text-dim);
+      font-size: 13px;
+      line-height: 1.7;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 32px;
+    }
+    .footer-brand { color: var(--gi-text-muted); }
+    .footer-brand strong {
+      display: block;
+      color: var(--gi-text); font-family: var(--gi-font-display);
+      font-size: 16px; margin-bottom: 8px; letter-spacing: 1px;
+    }
+    .footer-col h4 {
+      color: var(--gi-text); font-size: 12px;
+      letter-spacing: 2px; text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .footer-col ul { list-style: none; padding: 0; margin: 0; }
+    .footer-col li { margin-bottom: 8px; }
+    .footer-col a { color: var(--gi-text-dim); }
+    .footer-col a:hover { color: var(--gi-cyan); }
+    .footer-disclaimer {
+      padding-top: 24px;
+      border-top: 1px solid var(--gi-border);
+      text-align: center;
+      color: var(--gi-text-dim);
+      font-size: 12px;
+    }
+    .footer-disclaimer strong { color: var(--gi-text-muted); }
+    @media (max-width: 768px) {
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+      .footer-brand { grid-column: 1 / -1; }
+    }
+  </style>
+</head>
+
+<body>
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- ═══════════════════════════════════════════════════
+       HEADER
+       ═══════════════════════════════════════════════════ -->
+  <header class="site-header">
+    <div class="container">
+      <a href="https://{{REPO_HUB_DOMAIN}}" class="brand" aria-label="GrokInstall — {{REPO_NAME}}">
+        <span class="brand-mark" aria-hidden="true"></span>
+        <span>GROKINSTALL</span>
+      </a>
+      <nav aria-label="Main">
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#install">Install</a></li>
+          <li><a href="#docs">Docs</a></li>
+          <li><a href="https://grokagents.dev">Marketplace</a></li>
+          <li><a href="https://github.com/{{REPO_FULL_PATH}}">GitHub</a></li>
+          <li><a href="https://github.com/sponsors/AgentMindCloud" class="nav-cta">Sponsor</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <!-- ═══════════════════════════════════════════════════
+         HERO
+         ═══════════════════════════════════════════════════ -->
+    <section class="hero">
+      <div class="hero-bg" aria-hidden="true">
+        <svg viewBox="0 0 1200 800" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="hero-radial" cx="20%" cy="40%" r="60%">
+              <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.15"/>
+              <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+            </radialGradient>
+            <style>
+              @keyframes hero-trace {
+                0%, 100% { opacity: 0.10; }
+                50%      { opacity: 0.35; }
+              }
+              .ht-1 { animation: hero-trace 6s ease-in-out infinite; }
+              .ht-2 { animation: hero-trace 6s ease-in-out infinite 1.5s; }
+              .ht-3 { animation: hero-trace 6s ease-in-out infinite 3s; }
+              .ht-4 { animation: hero-trace 6s ease-in-out infinite 4.5s; }
+              @media (prefers-reduced-motion: reduce) { .ht-1, .ht-2, .ht-3, .ht-4 { animation: none; opacity: 0.2; } }
+            </style>
+          </defs>
+          <rect width="1200" height="800" fill="url(#hero-radial)"/>
+          <g stroke="#00F0FF" stroke-width="1" fill="none">
+            <path class="ht-1" d="M -10 100 L 300 100 L 350 150 L 700 150 L 750 200 L 1210 200"/>
+            <path class="ht-2" d="M -10 700 L 250 700 L 300 650 L 650 650 L 700 700 L 1210 700"/>
+            <path class="ht-3" d="M -10 350 L 200 350 L 250 400 L 550 400 L 600 350 L 1210 350"/>
+            <path class="ht-4" d="M -10 500 L 350 500 L 400 550 L 800 550 L 850 500 L 1210 500"/>
+          </g>
+        </svg>
+      </div>
+
+      <div class="container">
+        <div class="eyebrow">{{REPO_NAME}} · GROKINSTALL ECOSYSTEM</div>
+        <h1>{{REPO_NAME}}</h1>
+        <p class="hero-tagline">{{REPO_TAGLINE}}</p>
+
+        <div class="cta-row">
+          <button class="btn btn-primary" data-copy="{{REPO_INSTALL_CMD}}">
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 6V13a1 1 0 001 1h8a1 1 0 001-1V6M5 6L8 3l3 3M8 3v8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Quick install</span>
+          </button>
+          <a class="btn btn-secondary" href="https://github.com/{{REPO_FULL_PATH}}">
+            <svg class="btn-icon" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 .2a8 8 0 00-2.5 15.6c.4.07.55-.17.55-.39v-1.4c-2.22.48-2.7-1.07-2.7-1.07-.36-.93-.89-1.18-.89-1.18-.73-.5.05-.49.05-.49.81.06 1.23.83 1.23.83.72 1.22 1.87.87 2.33.66.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.83-2.15-.08-.2-.36-1.02.08-2.13 0 0 .67-.21 2.2.82A7.6 7.6 0 018 4.07c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.11.16 1.93.08 2.13.51.56.83 1.28.83 2.15 0 3.07-1.87 3.74-3.65 3.94.29.25.54.73.54 1.48v2.2c0 .22.15.46.55.39A8 8 0 008 .2"/></svg>
+            <span>Open in GitHub</span>
+          </a>
+        </div>
+
+        <div class="stats-row" id="hero-stats">
+          <div class="stat-card">
+            <div class="stat-value" data-stat="stars"><span class="skeleton" aria-label="Loading"></span></div>
+            <div class="stat-label">Stars</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-stat="forks"><span class="skeleton" aria-label="Loading"></span></div>
+            <div class="stat-label">Forks</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-stat="contributors"><span class="skeleton" aria-label="Loading"></span></div>
+            <div class="stat-label">Contributors</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-value" data-stat="version"><span class="skeleton" aria-label="Loading"></span></div>
+            <div class="stat-label">Version</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         INSTALL — tabbed code blocks
+         ═══════════════════════════════════════════════════ -->
+    <section id="install">
+      <div class="container">
+        <span class="section-eyebrow">Get started</span>
+        <h2 class="section-title">One command. That's it.</h2>
+        <p class="section-lede">Pick your tool — the install works on macOS, Linux, and Windows.</p>
+
+        <div class="install-tabs" role="tablist">
+          <button role="tab" aria-selected="true"  aria-controls="panel-npx"  data-tab="npx">npx</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-npm"  data-tab="npm">npm</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-pnpm" data-tab="pnpm">pnpm</button>
+          <button role="tab" aria-selected="false" aria-controls="panel-bun"  data-tab="bun">bun</button>
+        </div>
+
+        <div role="tabpanel" id="panel-npx" class="install-panel active">
+          <div class="codeblock"><code>{{REPO_INSTALL_CMD}}</code><button class="copy-btn" data-copy-target="0" aria-label="Copy command">COPY</button></div>
+        </div>
+        <div role="tabpanel" id="panel-npm" class="install-panel">
+          <div class="codeblock"><code>npm install -g {{REPO_NAME}}</code><button class="copy-btn" data-copy-target="1" aria-label="Copy command">COPY</button></div>
+        </div>
+        <div role="tabpanel" id="panel-pnpm" class="install-panel">
+          <div class="codeblock"><code>pnpm add -g {{REPO_NAME}}</code><button class="copy-btn" data-copy-target="2" aria-label="Copy command">COPY</button></div>
+        </div>
+        <div role="tabpanel" id="panel-bun" class="install-panel">
+          <div class="codeblock"><code>bun add -g {{REPO_NAME}}</code><button class="copy-btn" data-copy-target="3" aria-label="Copy command">COPY</button></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         LIVE STATUS PANEL
+         ═══════════════════════════════════════════════════ -->
+    <section id="status">
+      <div class="container">
+        <span class="section-eyebrow">Live status</span>
+        <h2 class="section-title">Always shipping.</h2>
+        <p class="section-lede">Real-time data from the GitHub API — no caching, just truth.</p>
+
+        <div class="status-grid">
+          <div class="status-card">
+            <div class="status-card-label">Latest release</div>
+            <div class="status-card-value" data-stat="version-full"><span class="skeleton"></span></div>
+            <div class="status-card-sub" data-stat="version-date"><span class="skeleton"></span></div>
+          </div>
+          <div class="status-card">
+            <div class="status-card-label">Last commit</div>
+            <div class="status-card-value" data-stat="commit-rel"><span class="skeleton"></span></div>
+            <div class="status-card-sub" data-stat="commit-msg"><span class="skeleton"></span></div>
+          </div>
+          <div class="status-card">
+            <div class="status-card-label">Open issues</div>
+            <div class="status-card-value" data-stat="issues"><span class="skeleton"></span></div>
+            <div class="status-card-sub">All triaged within 48h</div>
+          </div>
+          <div class="status-card">
+            <div class="status-card-label">Build status</div>
+            <div class="status-card-value" data-stat="build" style="color: var(--gi-green);">PASSING</div>
+            <div class="status-card-sub">CI · all checks green</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         ARCHITECTURE — Mermaid renders here
+         ═══════════════════════════════════════════════════ -->
+    <section id="architecture">
+      <div class="container">
+        <span class="section-eyebrow">Architecture</span>
+        <h2 class="section-title">How it fits together.</h2>
+        <p class="section-lede">From your editor to a live agent on X — fully validated and certified along the way.</p>
+
+        <div class="mermaid-wrap">
+          <div class="mermaid-loading" id="mermaid-loading">Loading diagram...</div>
+          <pre class="mermaid" style="display:none;">
+{{ARCH_DIAGRAM_BODY}}
+          </pre>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FEATURES
+         ═══════════════════════════════════════════════════ -->
+    <section id="features">
+      <div class="container">
+        <span class="section-eyebrow">Features</span>
+        <h2 class="section-title">Everything you need to ship Grok-native agents.</h2>
+        <p class="section-lede">Six pillars that make this repo essential to the GrokInstall ecosystem.</p>
+
+        <div class="features-grid">
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2v14M5 9l7 7 7-7M3 21h18"/>
+              </svg>
+            </div>
+            <h3>{{FEATURE_1_TITLE}}</h3>
+            <p>{{FEATURE_1_DESC}}</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="3" y="3" width="18" height="18" rx="2"/>
+                <path d="M3 12h18M9 8h.01M9 16h.01"/>
+              </svg>
+            </div>
+            <h3>{{FEATURE_2_TITLE}}</h3>
+            <p>{{FEATURE_2_DESC}}</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="3"/>
+                <circle cx="5" cy="5" r="2"/>
+                <circle cx="19" cy="5" r="2"/>
+                <circle cx="5" cy="19" r="2"/>
+                <circle cx="19" cy="19" r="2"/>
+                <path d="M12 12L5 5M12 12l7-7M12 12l-7 7M12 12l7 7"/>
+              </svg>
+            </div>
+            <h3>{{FEATURE_3_TITLE}}</h3>
+            <p>{{FEATURE_3_DESC}}</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect x="9" y="3" width="6" height="11" rx="3"/>
+                <path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/>
+              </svg>
+            </div>
+            <h3>{{FEATURE_4_TITLE}}</h3>
+            <p>{{FEATURE_4_DESC}}</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2L3 7v6c0 5 3.5 9 9 11 5.5-2 9-6 9-11V7l-9-5z"/>
+                <path d="M9 12l2 2 4-4" stroke="#00FF9D" stroke-width="2"/>
+              </svg>
+            </div>
+            <h3>{{FEATURE_5_TITLE}}</h3>
+            <p>{{FEATURE_5_DESC}}</p>
+          </article>
+
+          <article class="feature-card">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="#00F0FF" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M2 7l4-4h12l4 4M2 7v13a1 1 0 001 1h18a1 1 0 001-1V7M2 7h20M8 12h8"/>
+              </svg>
+            </div>
+            <h3>{{FEATURE_6_TITLE}}</h3>
+            <p>{{FEATURE_6_DESC}}</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         DOCS EXPLORER
+         ═══════════════════════════════════════════════════ -->
+    <section id="docs">
+      <div class="container">
+        <span class="section-eyebrow">Documentation</span>
+        <h2 class="section-title">Read or ask the assistant.</h2>
+        <p class="section-lede">All the docs are here — but the Grok-powered chat (bottom-right) often answers faster than you can read.</p>
+
+        <div class="docs-grid">
+          <a href="https://github.com/{{REPO_FULL_PATH}}#quick-start" class="doc-card">
+            <div class="doc-card-title">Quick start <span class="doc-card-arrow">→</span></div>
+            <div class="doc-card-desc">From zero to a working Grok agent in 60 seconds.</div>
+          </a>
+          <a href="https://github.com/{{REPO_FULL_PATH}}/blob/main/docs/concepts.md" class="doc-card">
+            <div class="doc-card-title">Core concepts <span class="doc-card-arrow">→</span></div>
+            <div class="doc-card-desc">YAML standards, CLI commands, certification levels explained.</div>
+          </a>
+          <a href="https://github.com/{{REPO_FULL_PATH}}/blob/main/docs/safety.md" class="doc-card">
+            <div class="doc-card-title">Safety scanner <span class="doc-card-arrow">→</span></div>
+            <div class="doc-card-desc">How the safety scanner works and how to score 100/100.</div>
+          </a>
+          <a href="https://github.com/{{REPO_FULL_PATH}}/blob/main/docs/examples.md" class="doc-card">
+            <div class="doc-card-title">Examples <span class="doc-card-arrow">→</span></div>
+            <div class="doc-card-desc">Copy-paste templates for the most common patterns.</div>
+          </a>
+          <a href="https://github.com/{{REPO_FULL_PATH}}/blob/main/CONTRIBUTING.md" class="doc-card">
+            <div class="doc-card-title">Contributing <span class="doc-card-arrow">→</span></div>
+            <div class="doc-card-desc">Open a PR, suggest a feature, file a bug.</div>
+          </a>
+          <a href="https://grokagents.dev" class="doc-card">
+            <div class="doc-card-title">Marketplace <span class="doc-card-arrow">→</span></div>
+            <div class="doc-card-desc">Browse certified agents and one-click install on X.</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════
+         FINAL CTA
+         ═══════════════════════════════════════════════════ -->
+    <div class="container">
+      <div class="final-cta">
+        <h2>Try the Grok-powered assistant.</h2>
+        <p>Click the chat button bottom-right — the {{REPO_NAME}} assistant can answer anything about this repo, in real time.</p>
+        <div class="cta-row">
+          <button class="btn btn-primary" onclick="window.GrokRepoBot && window.GrokRepoBot.open()">
+            <span>Open the assistant</span>
+          </button>
+          <a class="btn btn-secondary" href="https://github.com/{{REPO_FULL_PATH}}">
+            <span>Browse on GitHub</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- ═══════════════════════════════════════════════════
+       FOOTER
+       ═══════════════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <strong>GROKINSTALL</strong>
+          The open standard for one-click installable Grok-native agents on X.
+          <br><br>
+          Built for Grok on X · Independent community project.
+        </div>
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul>
+            <li><a href="https://grokagents.dev">Marketplace</a></li>
+            <li><a href="https://grokagents.dev/stats">Adoption stats</a></li>
+            <li><a href="https://github.com/AgentMindCloud/awesome-grok-agents">Templates</a></li>
+            <li><a href="#install">Install</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Build</h4>
+          <ul>
+            <li><a href="https://github.com/AgentMindCloud/grok-yaml-standards">YAML standards</a></li>
+            <li><a href="https://github.com/AgentMindCloud/grok-install-cli">CLI</a></li>
+            <li><a href="https://github.com/AgentMindCloud/vscode-grok-yaml">VS Code ext</a></li>
+            <li><a href="https://github.com/AgentMindCloud/grok-install-action">GitHub Action</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Connect</h4>
+          <ul>
+            <li><a href="https://github.com/AgentMindCloud">GitHub</a></li>
+            <li><a href="https://x.com/JanSol0s">X / @JanSol0s</a></li>
+            <li><a href="https://github.com/sponsors/AgentMindCloud">Sponsor</a></li>
+            <li><a href="https://github.com/{{REPO_FULL_PATH}}/issues">Report a bug</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-disclaimer">
+        <strong>GrokInstall is an independent community project.</strong> Not affiliated with xAI, Grok, or X.
+        <br>
+        Built with ♢ by <a href="https://x.com/JanSol0s">@JanSol0s</a> and the open-source community.
+      </div>
+    </div>
+  </footer>
+
+  <!-- ═══════════════════════════════════════════════════
+       SCRIPTS
+       ═══════════════════════════════════════════════════ -->
+  <script>
+    // ─── Mobile nav toggle ──────────────────────────────────────
+    document.querySelector('.nav-toggle')?.addEventListener('click', (e) => {
+      const header = e.currentTarget.closest('header');
+      header.classList.toggle('nav-open');
+      const expanded = header.classList.contains('nav-open');
+      e.currentTarget.setAttribute('aria-expanded', String(expanded));
+    });
+
+    // ─── Install tabs ───────────────────────────────────────────
+    document.querySelectorAll('.install-tabs button').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.install-tabs button').forEach((b) => b.setAttribute('aria-selected', 'false'));
+        document.querySelectorAll('.install-panel').forEach((p) => p.classList.remove('active'));
+        btn.setAttribute('aria-selected', 'true');
+        document.getElementById('panel-' + btn.dataset.tab).classList.add('active');
+      });
+    });
+
+    // ─── Copy buttons ───────────────────────────────────────────
+    document.querySelectorAll('[data-copy], .copy-btn').forEach((btn) => {
+      btn.addEventListener('click', async () => {
+        const cmd = btn.dataset.copy || btn.closest('.codeblock').querySelector('code').textContent;
+        try {
+          await navigator.clipboard.writeText(cmd);
+          const original = btn.textContent;
+          btn.textContent = '✓ COPIED';
+          btn.classList.add('copied');
+          setTimeout(() => {
+            btn.textContent = original;
+            btn.classList.remove('copied');
+          }, 1500);
+        } catch (e) {
+          // graceful fallback — older browsers
+          const ta = document.createElement('textarea');
+          ta.value = cmd;
+          document.body.appendChild(ta);
+          ta.select();
+          document.execCommand('copy');
+          ta.remove();
+        }
+      });
+    });
+
+    // ─── Live GitHub data ───────────────────────────────────────
+    (async function loadGitHubData() {
+      const REPO = '{{REPO_FULL_PATH}}';
+      const CACHE_KEY = 'gi-gh-' + REPO;
+      const CACHE_TTL = 10 * 60 * 1000; // 10 minutes
+
+      const setEl = (sel, val) => {
+        document.querySelectorAll('[data-stat="' + sel + '"]').forEach((el) => {
+          el.innerHTML = val;
+        });
+      };
+
+      const formatRel = (date) => {
+        const diff = Date.now() - new Date(date).getTime();
+        const m = Math.floor(diff / 60000);
+        const h = Math.floor(diff / 3600000);
+        const d = Math.floor(diff / 86400000);
+        if (m < 60) return m + 'm ago';
+        if (h < 24) return h + 'h ago';
+        if (d < 30) return d + 'd ago';
+        return Math.floor(d / 30) + 'mo ago';
+      };
+
+      const formatNum = (n) => {
+        if (n >= 1000) return (n / 1000).toFixed(1) + 'k';
+        return String(n);
+      };
+
+      const renderData = (data) => {
+        setEl('stars', formatNum(data.stars || 0));
+        setEl('forks', formatNum(data.forks || 0));
+        setEl('contributors', data.contributors || '—');
+        setEl('version', data.version || 'pre-release');
+        setEl('version-full', data.version || 'No release yet');
+        setEl('version-date', data.versionDate ? formatRel(data.versionDate) : '');
+        setEl('commit-rel', data.commitRel || '—');
+        setEl('commit-msg', data.commitMsg || '');
+        setEl('issues', data.issues != null ? data.issues : '—');
+      };
+
+      // Try cache first
+      try {
+        const cached = JSON.parse(localStorage.getItem(CACHE_KEY) || 'null');
+        if (cached && Date.now() - cached.t < CACHE_TTL) {
+          renderData(cached.d);
+          return;
+        }
+      } catch {}
+
+      try {
+        const [repo, release, commit, contribs] = await Promise.all([
+          fetch('https://api.github.com/repos/' + REPO).then(r => r.ok ? r.json() : null),
+          fetch('https://api.github.com/repos/' + REPO + '/releases/latest').then(r => r.ok ? r.json() : null).catch(() => null),
+          fetch('https://api.github.com/repos/' + REPO + '/commits?per_page=1').then(r => r.ok ? r.json() : null),
+          fetch('https://api.github.com/repos/' + REPO + '/contributors?per_page=100&anon=true').then(r => r.ok ? r.json() : null),
+        ]);
+
+        if (!repo) throw new Error('Repo not found');
+
+        const data = {
+          stars: repo.stargazers_count,
+          forks: repo.forks_count,
+          contributors: contribs ? contribs.length : null,
+          issues: repo.open_issues_count,
+          version: release ? release.tag_name : null,
+          versionDate: release ? release.published_at : null,
+          commitRel: commit && commit[0] ? formatRel(commit[0].commit.author.date) : null,
+          commitMsg: commit && commit[0] ? commit[0].commit.message.split('\n')[0].slice(0, 60) : null,
+        };
+
+        localStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), d: data }));
+        renderData(data);
+      } catch (e) {
+        // Soft fail — show dashes
+        renderData({});
+      }
+    })();
+
+    // ─── Mermaid (lazy load when section in view) ──────────────
+    (function loadMermaid() {
+      const target = document.getElementById('architecture');
+      if (!target) return;
+
+      const init = async () => {
+        const { default: mermaid } = await import('https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs');
+        mermaid.initialize({
+          startOnLoad: false,
+          theme: 'base',
+          themeVariables: {
+            primaryColor: '#0A0A0A',
+            primaryTextColor: '#FFFFFF',
+            primaryBorderColor: '#00F0FF',
+            lineColor: '#00F0FF',
+            secondaryColor: '#1a1a1a',
+            tertiaryColor: '#0A0A0A',
+            background: 'transparent',
+            mainBkg: '#0A0A0A',
+            secondBkg: '#1a1a1a',
+            fontFamily: 'Inter, sans-serif',
+            fontSize: '14px',
+          },
+          securityLevel: 'loose',
+        });
+        const el = document.querySelector('.mermaid');
+        document.getElementById('mermaid-loading').style.display = 'none';
+        el.style.display = 'block';
+        await mermaid.run({ nodes: [el] });
+      };
+
+      // Lazy-load via IntersectionObserver
+      if ('IntersectionObserver' in window) {
+        const obs = new IntersectionObserver((entries) => {
+          if (entries[0].isIntersecting) { init(); obs.disconnect(); }
+        }, { rootMargin: '200px' });
+        obs.observe(target);
+      } else {
+        init();
+      }
+    })();
+  </script>
+
+  <!-- ═══════════════════════════════════════════════════
+       GROK CHATBOT WIDGET (deferred, loads after page)
+       ═══════════════════════════════════════════════════ -->
+  <script
+    src="https://cdn.jsdelivr.net/gh/AgentMindCloud/grok-repo-bot-widget@{{CHATBOT_WIDGET_VERSION}}/dist/widget.min.js"
+    data-repo-id="{{CHATBOT_REPO_ID}}"
+    data-api-url="{{CHATBOT_API_URL}}"
+    defer></script>
+</body>
+</html>
+
+<!--
+  ════════════════════════════════════════════════════════════════════════
+  GROKINSTALL — PREMIUM README TEMPLATE v1.0
+  ════════════════════════════════════════════════════════════════════════
+  This is the flagship README template every GrokInstall ecosystem repo
+  inherits. Designed to render as a magazine-style page on github.com:
+  animated SVG hero, dense status dashboard, Mermaid architecture diagram,
+  cinematic <details> blocks, and a giant CTA pointing to the Premium Hub
+  (which is where the live chatbot + neon brand experience lives).
+
+  USAGE
+  ─────
+  Copy this file to a target repo as README.md and replace these tokens:
+
+    {{REPO_NAME}}             grok-install
+    {{REPO_TAGLINE}}          The open standard for one-click installable Grok-native agents on X
+    {{REPO_DESCRIPTION}}      A 2-3 sentence description used in OG/Twitter cards
+    {{REPO_FULL_PATH}}        AgentMindCloud/grok-install
+    {{REPO_HUB_URL}}          https://agentmindcloud.github.io/grok-install
+    {{REPO_INSTALL_CMD}}      npx grok-install-cli init my-agent
+    {{ARCH_DIAGRAM_BODY}}     The Mermaid graph body (without the ```mermaid fences)
+    {{FEATURE_1_TITLE}}       (etc) — see the four feature cells in the grid
+    {{USE_CASE_1_TITLE}}      (etc) — see the three use case cards
+    {{NPM_PACKAGE_NAME}}      grok-install-cli  (only if applicable, else delete the npm badge)
+    {{VSCODE_EXT_ID}}         agentmindcloud.grokinstall (only if applicable)
+
+  DO NOT edit the hero banner <picture> block — point it at the generated
+  SVG in /assets/banner.svg of the target repo (use the banner generator
+  in grok-install-brand/generators/banner-svg.js to produce one).
+
+  GitHub README sandboxing notes — what works and what does not:
+    ✓ Animated SVG via <img>/<picture> — animations preserved by camo
+    ✓ HTML <details>, <table>, <picture>, <source>, <a>, <img>, <kbd>, <sub>, <sup>
+    ✓ <div align="center"> and <p align="center"> still work
+    ✓ Mermaid in ```mermaid blocks
+    ✓ shields.io badges with style=for-the-badge
+    ✗ <script>, <style>, inline style attributes (sanitized)
+    ✗ class= attribute (sanitized)
+    ✗ JS-driven anything
+
+  ════════════════════════════════════════════════════════════════════════
+-->
+
+<div align="center">
+
+<!-- ═══ HERO BANNER ═══ -->
+<picture>
+  <source media="(prefers-color-scheme: dark)"  srcset="https://raw.githubusercontent.com/{{REPO_FULL_PATH}}/main/assets/banner.svg">
+  <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/{{REPO_FULL_PATH}}/main/assets/banner.svg">
+  <img alt="{{REPO_NAME}} — {{REPO_TAGLINE}}" src="https://raw.githubusercontent.com/{{REPO_FULL_PATH}}/main/assets/banner.svg" width="100%">
+</picture>
+
+<br>
+
+<!-- ═══ STATUS DASHBOARD — dense badge row ═══ -->
+
+[![License](https://img.shields.io/github/license/{{REPO_FULL_PATH}}?style=for-the-badge&color=00F0FF&labelColor=0A0A0A&label=license)](LICENSE)
+[![Version](https://img.shields.io/github/v/release/{{REPO_FULL_PATH}}?style=for-the-badge&color=00FF9D&labelColor=0A0A0A&label=version&include_prereleases)](https://github.com/{{REPO_FULL_PATH}}/releases)
+[![Stars](https://img.shields.io/github/stars/{{REPO_FULL_PATH}}?style=for-the-badge&color=00F0FF&labelColor=0A0A0A&label=stars)](https://github.com/{{REPO_FULL_PATH}}/stargazers)
+[![Build](https://img.shields.io/github/actions/workflow/status/{{REPO_FULL_PATH}}/ci.yml?style=for-the-badge&color=00FF9D&labelColor=0A0A0A&label=build)](https://github.com/{{REPO_FULL_PATH}}/actions)
+[![Contributors](https://img.shields.io/github/contributors/{{REPO_FULL_PATH}}?style=for-the-badge&color=00F0FF&labelColor=0A0A0A&label=contributors)](https://github.com/{{REPO_FULL_PATH}}/graphs/contributors)
+[![Last commit](https://img.shields.io/github/last-commit/{{REPO_FULL_PATH}}?style=for-the-badge&color=E5E5E5&labelColor=0A0A0A&label=last%20commit)](https://github.com/{{REPO_FULL_PATH}}/commits)
+
+[![Grok-Native Certified](https://img.shields.io/badge/Grok--Native-Certified-00F0FF?style=for-the-badge&labelColor=0A0A0A)](https://grokagents.dev)
+[![Safety Score](https://img.shields.io/badge/Safety-100%2F100-00FF9D?style=for-the-badge&labelColor=0A0A0A)](https://grokagents.dev)
+[![Built for Grok on X](https://img.shields.io/badge/Built%20for-Grok%20on%20X-00F0FF?style=for-the-badge&labelColor=0A0A0A)](https://x.com/JanSol0s)
+[![Sponsor](https://img.shields.io/badge/Sponsor-AgentMindCloud-00FF9D?style=for-the-badge&labelColor=0A0A0A&logo=github-sponsors)](https://github.com/sponsors/AgentMindCloud)
+
+<br><br>
+
+<!-- ═══ BIG CTA — Premium Hub ═══ -->
+<a href="{{REPO_HUB_URL}}" target="_blank" rel="noopener">
+  <img src="https://raw.githubusercontent.com/AgentMindCloud/grok-install-brand/main/banners/cta-open-hub.svg" alt="Open the Premium Hub →" width="380">
+</a>
+
+<br><br>
+
+### **{{REPO_TAGLINE}}**
+
+<sub>Part of the <a href="https://github.com/AgentMindCloud">GrokInstall</a> ecosystem · <a href="https://grokagents.dev">grokagents.dev</a></sub>
+
+</div>
+
+<br>
+
+---
+
+## ⚡ Quick start
+
+```bash
+{{REPO_INSTALL_CMD}}
+```
+
+That's it. For the full guided experience, [open the Premium Hub →]({{REPO_HUB_URL}}) where the **Grok-powered repo assistant** can walk you through anything.
+
+<br>
+
+---
+
+<!-- ═══ ARCHITECTURE — Mermaid renders natively on GitHub ═══ -->
+
+<details>
+<summary><b>🧬 &nbsp;Architecture</b> &nbsp;<sub>(click to expand)</sub></summary>
+
+<br>
+
+```mermaid
+{{ARCH_DIAGRAM_BODY}}
+```
+
+<sub>Edit this diagram in `README.md` — GitHub re-renders Mermaid live.</sub>
+
+</details>
+
+<br>
+
+<!-- ═══ FEATURES — 4-cell HTML table works inside markdown ═══ -->
+
+<details open>
+<summary><b>✦ &nbsp;Features</b></summary>
+
+<br>
+
+<div align="center">
+
+<table align="center" width="100%">
+<tr>
+<td align="center" width="25%" valign="top">
+  <img src="https://raw.githubusercontent.com/AgentMindCloud/grok-install-brand/main/icons/install.svg" width="44" height="44" alt="">
+  <br><br>
+  <b>{{FEATURE_1_TITLE}}</b>
+  <br>
+  <sub>{{FEATURE_1_DESC}}</sub>
+</td>
+<td align="center" width="25%" valign="top">
+  <img src="https://raw.githubusercontent.com/AgentMindCloud/grok-install-brand/main/icons/scanner.svg" width="44" height="44" alt="">
+  <br><br>
+  <b>{{FEATURE_2_TITLE}}</b>
+  <br>
+  <sub>{{FEATURE_2_DESC}}</sub>
+</td>
+<td align="center" width="25%" valign="top">
+  <img src="https://raw.githubusercontent.com/AgentMindCloud/grok-install-brand/main/icons/swarm.svg" width="44" height="44" alt="">
+  <br><br>
+  <b>{{FEATURE_3_TITLE}}</b>
+  <br>
+  <sub>{{FEATURE_3_DESC}}</sub>
+</td>
+<td align="center" width="25%" valign="top">
+  <img src="https://raw.githubusercontent.com/AgentMindCloud/grok-install-brand/main/icons/marketplace.svg" width="44" height="44" alt="">
+  <br><br>
+  <b>{{FEATURE_4_TITLE}}</b>
+  <br>
+  <sub>{{FEATURE_4_DESC}}</sub>
+</td>
+</tr>
+</table>
+
+</div>
+
+</details>
+
+<br>
+
+<!-- ═══ USE CASES — 3-card row ═══ -->
+
+<details>
+<summary><b>◆ &nbsp;Use cases</b></summary>
+
+<br>
+
+<table align="center" width="100%">
+<tr>
+<td align="center" width="33%" valign="top">
+  <kbd>&nbsp;{{USE_CASE_1_TAG}}&nbsp;</kbd>
+  <br><br>
+  <b>{{USE_CASE_1_TITLE}}</b>
+  <br><br>
+  <sub>{{USE_CASE_1_DESC}}</sub>
+</td>
+<td align="center" width="33%" valign="top">
+  <kbd>&nbsp;{{USE_CASE_2_TAG}}&nbsp;</kbd>
+  <br><br>
+  <b>{{USE_CASE_2_TITLE}}</b>
+  <br><br>
+  <sub>{{USE_CASE_2_DESC}}</sub>
+</td>
+<td align="center" width="33%" valign="top">
+  <kbd>&nbsp;{{USE_CASE_3_TAG}}&nbsp;</kbd>
+  <br><br>
+  <b>{{USE_CASE_3_TITLE}}</b>
+  <br><br>
+  <sub>{{USE_CASE_3_DESC}}</sub>
+</td>
+</tr>
+</table>
+
+</details>
+
+<br>
+
+<!-- ═══ HOW IT WORKS — keep this section short, lean on the Hub ═══ -->
+
+<details>
+<summary><b>⟶ &nbsp;How it works</b></summary>
+
+<br>
+
+{{REPO_DESCRIPTION}}
+
+For the full walkthrough with live demos, **open the [Premium Hub]({{REPO_HUB_URL}})** where the Grok-powered assistant can answer anything you ask in real time.
+
+</details>
+
+<br>
+
+<!-- ═══ INSTALL OPTIONS — tabbed via details ═══ -->
+
+<details>
+<summary><b>↓ &nbsp;Install</b></summary>
+
+<br>
+
+**npm**
+
+```bash
+npm install -g {{NPM_PACKAGE_NAME}}
+```
+
+**pnpm**
+
+```bash
+pnpm add -g {{NPM_PACKAGE_NAME}}
+```
+
+**npx (no install)**
+
+```bash
+npx {{NPM_PACKAGE_NAME}} --help
+```
+
+**VS Code**
+
+```
+ext install {{VSCODE_EXT_ID}}
+```
+
+**GitHub Action**
+
+```yaml
+- uses: AgentMindCloud/grok-install-action@v1
+  with:
+    working-directory: .
+    mode: strict
+```
+
+</details>
+
+<br>
+
+---
+
+<!-- ═══ THE WHOLE ECOSYSTEM — repo cross-link table ═══ -->
+
+<div align="center">
+
+### The GrokInstall ecosystem
+
+<table align="center" width="100%">
+<tr>
+<td align="left" width="25%"><b><a href="https://github.com/AgentMindCloud/grok-install">grok-install</a></b><br><sub>Core spec</sub></td>
+<td align="left" width="25%"><b><a href="https://github.com/AgentMindCloud/grok-yaml-standards">grok-yaml-standards</a></b><br><sub>14 YAML specs</sub></td>
+<td align="left" width="25%"><b><a href="https://github.com/AgentMindCloud/grok-install-cli">grok-install-cli</a></b><br><sub>Runtime + scanner</sub></td>
+<td align="left" width="25%"><b><a href="https://github.com/AgentMindCloud/awesome-grok-agents">awesome-grok-agents</a></b><br><sub>Templates</sub></td>
+</tr>
+<tr>
+<td align="left"><b><a href="https://github.com/AgentMindCloud/vscode-grok-yaml">vscode-grok-yaml</a></b><br><sub>VS Code extension</sub></td>
+<td align="left"><b><a href="https://github.com/AgentMindCloud/grok-install-action">grok-install-action</a></b><br><sub>GitHub Action</sub></td>
+<td align="left"><b><a href="https://github.com/AgentMindCloud/grok-agents-marketplace">grok-agents-marketplace</a></b><br><sub>Marketplace + dashboard</sub></td>
+<td align="left"><b><a href="https://grokagents.dev">grokagents.dev</a></b><br><sub>Live</sub></td>
+</tr>
+</table>
+
+<br>
+
+<!-- ═══ FINAL HUB CTA — second push to the live experience ═══ -->
+
+[**→ Try the Grok-powered assistant on the Premium Hub**]({{REPO_HUB_URL}})
+
+</div>
+
+<br>
+
+---
+
+<!-- ═══ FOOTER — disclaimer is mandatory and verbatim ═══ -->
+
+<div align="center">
+
+<sub>
+
+**GrokInstall is an independent community project.**
+**Not affiliated with xAI, Grok, or X.**
+
+Built with ♢ by [@JanSol0s](https://x.com/JanSol0s) and the open-source community.
+
+</sub>
+
+<br>
+
+<sub>
+
+[Marketplace](https://grokagents.dev) ·
+[Documentation](https://github.com/AgentMindCloud/grok-docs) ·
+[Sponsor](https://github.com/sponsors/AgentMindCloud) ·
+[X / @JanSol0s](https://x.com/JanSol0s) ·
+[Suggest a feature](https://github.com/{{REPO_FULL_PATH}}/issues/new)
+
+</sub>
+
+<br>
+
+<sub>★ Star this repo if you build Grok agents — every star helps the ecosystem grow.</sub>
+
+</div>
+
+GrokInstall — VS Code Extension Media Assets (v1)
+===================================================
+
+Target paths in the extension repo
+----------------------------------
+Place each file at the following path inside `vscode-grok-yaml/`:
+
+  vscode-grok-yaml/media/icon.png        (128x128, transparent background)
+  vscode-grok-yaml/media/icon-dark.png   (128x128, #0A0A0A background fallback)
+  vscode-grok-yaml/media/banner.png      (1376x400, Marketplace gallery banner)
+
+Wire-up in package.json (reference, for Claude Code or manual edit):
+
+  "icon": "media/icon.png",
+  "galleryBanner": {
+    "color": "#0A0A0A",
+    "theme": "dark"
+  }
+
+And in the Marketplace-facing README.md, directly under the title:
+
+  ![GrokInstall extension banner](media/banner.png)
+
+
+Locked brand hex values used in these assets
+--------------------------------------------
+  Background (deep space black)     #0A0A0A
+  Primary neon (cyan)               #00F0FF
+  Success neon (green)              #00FF9D
+  Primary text                      #FFFFFF
+  Secondary text                    #E5E5E5
+  Tertiary text                     rgba(255, 255, 255, 0.5)
+  Surface (glass fills)             rgba(255, 255, 255, 0.04)
+  Border subtle                     rgba(0, 240, 255, 0.15)
+  Border focused                    rgba(0, 240, 255, 0.40)
+
+No other colors appear in these assets. No drop shadows. Neon glow only.
+
+
+Version
+-------
+These are version 1 of the icon + banner pair.
+
+If you want to iterate — tighter crop, different headline, a seasonal
+variant, a larger or smaller mark, a lighter-weight editor mockup, etc. —
+just ask in the same Claude Design project ("Grok Install Eco System")
+so the saved GrokInstall design system stays calibrated. Starting a new
+project would re-bootstrap the tokens and risk drift.
+
+Legal
+-----
+GrokInstall is an independent community project. Not affiliated with
+xAI, Grok, or X.
+
+// Shared GrokInstall SVG + helper primitives for grokagents.dev mockups.
+// Load with <script src="../grokagents-shared/primitives.js"></script>
+
+// Animated circuit trace background layer.
+window.GI_traces = function(viewBox = '0 0 1440 900', density = 'medium') {
+  const paths = {
+    restrained: [
+      'M -10 120 L 220 120 L 260 160 L 520 160 L 560 200 L 1450 200',
+      'M -10 720 L 320 720 L 360 680 L 720 680 L 760 720 L 1450 720',
+    ],
+    medium: [
+      'M -10 120 L 220 120 L 260 160 L 520 160 L 560 200 L 1450 200',
+      'M -10 720 L 320 720 L 360 680 L 720 680 L 760 720 L 1450 720',
+      'M -10 440 L 140 440 L 180 480 L 480 480 L 520 440 L 920 440 L 960 410 L 1450 410',
+      'M -10 580 L 220 580 L 260 610 L 560 610 L 600 580 L 1180 580 L 1220 550 L 1450 550',
+    ],
+    dense: [
+      'M -10 120 L 220 120 L 260 160 L 520 160 L 560 200 L 1450 200',
+      'M -10 720 L 320 720 L 360 680 L 720 680 L 760 720 L 1450 720',
+      'M -10 440 L 140 440 L 180 480 L 480 480 L 520 440 L 920 440 L 960 410 L 1450 410',
+      'M -10 580 L 220 580 L 260 610 L 560 610 L 600 580 L 1180 580 L 1220 550 L 1450 550',
+      'M -10 300 L 80 300 L 120 260 L 260 260 L 300 300 L 1450 300',
+      'M -10 820 L 180 820 L 220 860 L 1450 860',
+    ],
+  };
+  const list = paths[density] || paths.medium;
+  const pathEls = list.map((d, i) =>
+    `<path class="gi-trace" d="${d}" style="animation:gi-pulse-trace 5s ease-in-out infinite ${(i*0.9).toFixed(1)}s"/>`
+  ).join('');
+  return `<div class="gi-traces" aria-hidden="true">
+    <svg viewBox="${viewBox}" preserveAspectRatio="none">
+      <g stroke="#00F0FF" stroke-width="1" fill="none" stroke-linecap="round" stroke-linejoin="round">
+        ${pathEls}
+      </g>
+    </svg>
+  </div>`;
+};
+
+// Node cluster (central pulsing node, orbiting ring, connection lines)
+window.GI_nodeCluster = function(size = 360){
+  const s = size;
+  const c = s / 2;
+  return `<svg viewBox="0 0 ${s} ${s}" width="${s}" height="${s}" aria-hidden="true">
+    <defs>
+      <filter id="gi-nc-glow" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="3" result="b"/>
+        <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+    </defs>
+    <circle cx="${c}" cy="${c}" r="${c*0.58}" fill="none" stroke="#00F0FF" stroke-width="0.6" stroke-dasharray="2 6" opacity="0.4"/>
+    <circle cx="${c}" cy="${c}" r="${c*0.82}" fill="none" stroke="#00F0FF" stroke-width="0.6" stroke-dasharray="2 8" opacity="0.22"/>
+    <g stroke="#00F0FF" stroke-width="0.7" stroke-opacity="0.4">
+      <line x1="${c}" y1="${c}" x2="${c*0.45}" y2="${c*0.45}"/>
+      <line x1="${c}" y1="${c}" x2="${c*1.55}" y2="${c*0.45}"/>
+      <line x1="${c}" y1="${c}" x2="${c*0.45}" y2="${c*1.55}"/>
+      <line x1="${c}" y1="${c}" x2="${c*1.55}" y2="${c*1.55}"/>
+    </g>
+    <circle cx="${c*0.45}" cy="${c*0.45}" r="5" fill="#00FF9D" filter="url(#gi-nc-glow)"/>
+    <circle cx="${c*1.55}" cy="${c*0.45}" r="5" fill="#00FF9D" filter="url(#gi-nc-glow)"/>
+    <circle cx="${c*0.45}" cy="${c*1.55}" r="5" fill="#00FF9D" filter="url(#gi-nc-glow)"/>
+    <circle cx="${c*1.55}" cy="${c*1.55}" r="5" fill="#00FF9D" filter="url(#gi-nc-glow)"/>
+    <circle cx="${c}" cy="${c}" r="${c*0.32}" fill="none" stroke="#00F0FF" stroke-width="1" style="animation:gi-pulse-ring 3.5s ease-out infinite;transform-origin:center"/>
+    <circle cx="${c}" cy="${c}" r="${c*0.32}" fill="none" stroke="#00F0FF" stroke-width="1" style="animation:gi-pulse-ring 3.5s ease-out infinite 1.2s;transform-origin:center"/>
+    <g style="animation:gi-pulse-node 3.2s ease-in-out infinite">
+      <circle cx="${c}" cy="${c}" r="16" fill="#00F0FF" filter="url(#gi-nc-glow)"/>
+      <circle cx="${c}" cy="${c}" r="7" fill="#FFFFFF"/>
+    </g>
+  </svg>`;
+};
+
+// Ticker — counts up to `target` over `ms` after a short delay.
+window.GI_ticker = function(el, target, ms = 1400){
+  const start = performance.now();
+  const delay = 200;
+  function tick(now){
+    const t = Math.max(0, now - start - delay);
+    const k = Math.min(1, t/ms);
+    // ease-out cubic
+    const v = Math.round(target * (1 - Math.pow(1-k, 3)));
+    el.textContent = String(v);
+    if (k < 1) requestAnimationFrame(tick);
+  }
+  requestAnimationFrame(tick);
+};
+
+// Data agents (shared list)
+window.GI_agents = [
+  {
+    id:'viral-thread-architect', name:'Viral Thread Architect',
+    creator:'AgentMindCloud', handle:'@JanSol0s',
+    tagline:'Turn any idea into a fire X thread in seconds — with images, voice, and perfect formatting.',
+    certs:['grok-native','safety-max','swarm-ready','voice-ready'],
+    category:'thread-generation', safety:100,
+    installs:428, delta:'+128',
+    featured:true,
+  },
+  {
+    id:'voice-companion', name:'Voice Companion',
+    creator:'AgentMindCloud', handle:'@JanSol0s',
+    tagline:'Your personal Grok voice agent — always on, context-aware, ready for voice conversations on X.',
+    certs:['grok-native','safety-max','voice-ready'],
+    category:'voice', safety:100,
+    installs:312, delta:'+94',
+    featured:true,
+  },
+  {
+    id:'fact-check-swarm', name:'Fact Check Swarm',
+    creator:'community', handle:'@fictional',
+    tagline:'Multi-agent fact-checker that verifies claims with live X + web search.',
+    certs:['grok-native','swarm-ready','safety-max'],
+    category:'research', safety:98,
+    installs:256, delta:'+71',
+    featured:true,
+  },
+  {
+    id:'spaces-moderator', name:'Spaces Moderator',
+    creator:'community', handle:'@fictional',
+    tagline:'Voice-first moderator for X Spaces — sentiment detection, speaker diarization, gentle interventions.',
+    certs:['grok-native','voice-ready'],
+    category:'moderation', safety:95,
+    installs:184, delta:'+52',
+    featured:false,
+  },
+  {
+    id:'meme-composer', name:'Meme Composer',
+    creator:'community', handle:'@fictional',
+    tagline:'Context-aware meme generator that understands your timeline\u2019s humor.',
+    certs:['grok-native'],
+    category:'creative', safety:92,
+    installs:164, delta:'+44',
+  },
+  {
+    id:'trend-summary-bot', name:'Trend Summary Bot',
+    creator:'community', handle:'@fictional',
+    tagline:'60-second daily briefings of what\u2019s trending on X, in your niche.',
+    certs:['grok-native','beginner-friendly'],
+    category:'summarization', safety:100,
+    installs:148, delta:'+39',
+  },
+  {
+    id:'reply-optimizer', name:'Reply Optimizer',
+    creator:'community', handle:'@fictional',
+    tagline:'Suggest better replies to any tweet — tone-aware, context-aware.',
+    certs:['grok-native','beginner-friendly'],
+    category:'reply-assistant', safety:100,
+    installs:132, delta:'+28',
+  },
+  {
+    id:'dm-concierge', name:'DM Concierge',
+    creator:'community', handle:'@fictional',
+    tagline:'Auto-sorts, drafts, and flags your X DMs with opt-in privacy.',
+    certs:['grok-native','voice-ready'],
+    category:'inbox', safety:94,
+    installs:118, delta:'+22',
+  },
+  {
+    id:'citation-hunter', name:'Citation Hunter',
+    creator:'community', handle:'@fictional',
+    tagline:'Find and format sources for any claim — academic-grade references in your replies.',
+    certs:['grok-native','swarm-ready'],
+    category:'research', safety:97,
+    installs:96, delta:'+18',
+  },
+  {
+    id:'welcome-wagon', name:'Welcome Wagon',
+    creator:'community', handle:'@fictional',
+    tagline:'Personalized welcome DMs for new followers, never spammy.',
+    certs:['grok-native','beginner-friendly'],
+    category:'community', safety:100,
+    installs:84, delta:'+14',
+  },
+];
+
+// Cert label formatting for grok-native / safety-max / swarm-ready / voice-ready / beginner-friendly
+window.GI_certMap = {
+  'grok-native':     {k:'grok', v:'native',     tone:'cyan'},
+  'safety-max':      {k:'safety', v:'100/100',  tone:'green'},
+  'swarm-ready':     {k:'swarm', v:'ready',     tone:'cyan'},
+  'voice-ready':     {k:'voice', v:'ready',     tone:'cyan'},
+  'beginner-friendly':{k:'level', v:'beginner', tone:'cyan'},
+};
+window.GI_certHTML = function(key){
+  const c = GI_certMap[key];
+  if (!c) return '';
+  return `<span class="gi-cert ${c.tone}"><span class="k">${c.k}</span><span class="v">${c.v}</span></span>`;
+};
+
+/* GrokInstall locked design tokens — shared across grokagents.dev mockups */
+:root{
+  /* Color */
+  --gi-bg:#0A0A0A;
+  --gi-bg-elev:#0D0D0D;
+  --gi-surface:rgba(255,255,255,0.04);
+  --gi-surface-2:rgba(255,255,255,0.06);
+  --gi-border:rgba(0,240,255,0.15);
+  --gi-border-strong:rgba(0,240,255,0.40);
+  --gi-border-green:rgba(0,255,157,0.40);
+  --gi-border-red:rgba(255,45,85,0.40);
+  --gi-text:#FFFFFF;
+  --gi-text-muted:#E5E5E5;
+  --gi-text-dim:rgba(255,255,255,0.5);
+  --gi-text-whisper:rgba(255,255,255,0.32);
+  --gi-cyan:#00F0FF;
+  --gi-green:#00FF9D;
+  --gi-red:#FF2D55;
+
+  /* Type */
+  --gi-font-display:'Space Grotesk',Inter,sans-serif;
+  --gi-font-body:'Inter',sans-serif;
+  --gi-font-mono:'JetBrains Mono','SF Mono',Consolas,monospace;
+
+  /* Spacing scale — 4px base */
+  --s-1:4px; --s-2:8px; --s-3:12px; --s-4:16px;
+  --s-5:20px; --s-6:24px; --s-8:32px; --s-10:40px;
+  --s-12:48px; --s-16:64px; --s-20:80px; --s-24:96px;
+
+  /* Radius */
+  --r-sm:6px; --r-md:8px; --r-lg:12px; --r-xl:16px; --r-2xl:24px; --r-full:999px;
+
+  /* Elevation — neon glow, no drop shadows */
+  --glow-cyan-sm:0 0 14px rgba(0,240,255,0.25);
+  --glow-cyan-md:0 0 28px rgba(0,240,255,0.35);
+  --glow-cyan-lg:0 0 60px rgba(0,240,255,0.55);
+  --glow-green-md:0 0 28px rgba(0,255,157,0.35);
+}
+
+/* Reset */
+*,*::before,*::after{box-sizing:border-box}
+html,body{margin:0;padding:0;}
+body{
+  background:var(--gi-bg);color:var(--gi-text);
+  font-family:var(--gi-font-body);
+  -webkit-font-smoothing:antialiased;
+  min-height:100vh;
+}
+
+/* Motion primitives */
+@keyframes gi-pulse-trace{0%,100%{opacity:.12}50%{opacity:.42}}
+@keyframes gi-pulse-node{0%,100%{opacity:.55}50%{opacity:1}}
+@keyframes gi-pulse-ring{0%{opacity:.30;transform:scale(1)}70%{opacity:0;transform:scale(1.8)}100%{opacity:0;transform:scale(1.8)}}
+@keyframes gi-pulse-dot{0%,100%{box-shadow:0 0 12px rgba(0,240,255,0.55)}50%{box-shadow:0 0 20px rgba(0,240,255,0.9)}}
+@keyframes gi-halo{0%{opacity:.5;transform:scale(.8)}80%{opacity:0;transform:scale(1.8)}100%{opacity:0;transform:scale(1.8)}}
+@keyframes gi-breathe{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.06);opacity:.92}}
+
+/* a11y — reduce motion flattens all animations, keeps static end-state at 0.2 opacity traces */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .gi-trace{opacity:.2!important}
+}
+
+/* Shared primitives */
+.gi-bg-glow{
+  position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(ellipse 55% 65% at 22% 45%, rgba(0,240,255,0.12) 0%, rgba(0,240,255,0.03) 45%, transparent 80%);
+}
+.gi-bg-grid{
+  position:absolute;inset:0;pointer-events:none;
+  background-image:
+    linear-gradient(to right, rgba(0,240,255,0.045) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0,240,255,0.045) 1px, transparent 1px);
+  background-size:48px 48px;
+  mask-image:radial-gradient(ellipse at 50% 50%, #000 35%, transparent 92%);
+  -webkit-mask-image:radial-gradient(ellipse at 50% 50%, #000 35%, transparent 92%);
+}
+.gi-traces{position:absolute;inset:0;pointer-events:none}
+.gi-traces svg{width:100%;height:100%;display:block}
+
+.gi-pill{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:6px 12px;border-radius:var(--r-full);
+  background:var(--gi-surface);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  border:1px solid var(--gi-border);
+  font-family:var(--gi-font-body);
+  font-size:11px;font-weight:500;letter-spacing:2px;
+  text-transform:uppercase;color:var(--gi-text-muted);
+  white-space:nowrap;
+}
+.gi-pill.cyan{border-color:var(--gi-border-strong);color:var(--gi-cyan)}
+.gi-pill.green{border-color:var(--gi-border-green);color:var(--gi-green)}
+.gi-pill.red{border-color:var(--gi-border-red);color:var(--gi-red)}
+.gi-pill .gi-dot{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor;opacity:.9}
+
+.gi-btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:var(--s-2);
+  padding:14px 22px;border-radius:var(--r-lg);
+  font-family:var(--gi-font-display);
+  font-size:14px;font-weight:600;letter-spacing:.3px;
+  border:1px solid transparent;cursor:pointer;
+  transition:all .18s ease;text-decoration:none;
+  background:var(--gi-surface);color:var(--gi-text);
+  border-color:var(--gi-border);
+  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+}
+.gi-btn:hover{border-color:var(--gi-border-strong);color:var(--gi-cyan)}
+.gi-btn.primary{background:var(--gi-cyan);color:var(--gi-bg);border-color:transparent;box-shadow:var(--glow-cyan-sm)}
+.gi-btn.primary:hover{box-shadow:var(--glow-cyan-md);transform:translateY(-1px)}
+.gi-btn.success{background:var(--gi-green);color:var(--gi-bg);box-shadow:var(--glow-green-md)}
+.gi-btn svg{width:16px;height:16px}
+
+.gi-disclaimer{
+  font-family:var(--gi-font-body);
+  font-size:10px;letter-spacing:.3px;
+  color:rgba(255,255,255,0.32);
+}
+
+/* Cert badge mini — shields.io-like */
+.gi-cert{
+  display:inline-flex;align-items:stretch;
+  font-family:var(--gi-font-mono);
+  font-size:10px;font-weight:600;letter-spacing:.2px;
+  border-radius:4px;overflow:hidden;
+  line-height:1;
+  height:20px;
+}
+.gi-cert > span{display:inline-flex;align-items:center;padding:0 7px}
+.gi-cert .k{background:#1a1a1a;color:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.1);border-right:none;border-radius:4px 0 0 4px}
+.gi-cert .v{border:1px solid;border-radius:0 4px 4px 0}
+.gi-cert.cyan  .v{background:rgba(0,240,255,0.12);color:var(--gi-cyan);border-color:var(--gi-border-strong)}
+.gi-cert.green .v{background:rgba(0,255,157,0.12);color:var(--gi-green);border-color:var(--gi-border-green)}
+
+/* Safety score pill */
+.gi-score{
+  display:inline-flex;align-items:center;gap:6px;
+  padding:4px 10px;border-radius:var(--r-full);
+  font-family:var(--gi-font-mono);font-size:11px;font-weight:600;
+  border:1px solid;
+}
+.gi-score.hi{color:var(--gi-green);border-color:var(--gi-border-green);background:rgba(0,255,157,0.06)}
+.gi-score.mid{color:var(--gi-text-muted);border-color:rgba(229,229,229,0.25);background:rgba(229,229,229,0.04)}
+.gi-score.lo{color:var(--gi-red);border-color:var(--gi-border-red);background:rgba(255,45,85,0.06)}
+.gi-score .gi-dot{width:6px;height:6px;border-radius:50%;background:currentColor;box-shadow:0 0 8px currentColor}

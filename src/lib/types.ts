@@ -1,0 +1,68 @@
+export type Certification =
+  | 'grok-native'
+  | 'safety-max'
+  | 'voice-ready'
+  | 'swarm-ready'
+  | 'action-certified'
+  | 'vscode-verified';
+
+export type Category =
+  | 'productivity'
+  | 'research'
+  | 'content'
+  | 'developer'
+  | 'voice'
+  | 'swarm'
+  | 'analytics'
+  | 'marketing'
+  | 'education';
+
+export interface AgentCreator {
+  handle: string;
+  github?: string;
+  x?: string;
+  avatar?: string;
+  agentCount?: number;
+}
+
+export interface AgentYamlSample {
+  filename: string;
+  lang: 'yaml';
+  content: string;
+}
+
+export interface Agent {
+  id: string;
+  name: string;
+  tagline: string;
+  description: string;
+  category: Category;
+  tags: string[];
+  certifications: Certification[];
+  creator: AgentCreator;
+  repo: string;
+  homepage?: string;
+  demo_url?: string;
+  x_install_url?: string;
+  created_at: string;
+  updated_at: string;
+  installs: number;
+  safetyScore?: number;
+  yaml?: AgentYamlSample;
+  featured?: boolean;
+}
+
+export interface AgentWithStats extends Agent {
+  stars: number;
+  starsFetchedAt: number;
+  starsStale?: boolean;
+}
+
+export type SortKey = 'trending' | 'newest' | 'most-installed';
+
+export interface MarketplaceFilters {
+  q: string;
+  categories: Category[];
+  certifications: Certification[];
+  sort: SortKey;
+}

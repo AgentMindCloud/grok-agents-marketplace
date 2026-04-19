@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="GrokInstall — The community marketplace for Grok-native agents on X">
+  <defs>
+    <radialGradient id="og-glow" cx="22%" cy="55%" r="60%">
+      <stop offset="0%" stop-color="#00F0FF" stop-opacity="0.14"/>
+      <stop offset="100%" stop-color="#00F0FF" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="og-wordmark" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FFFFFF"/>
+      <stop offset="100%" stop-color="#00F0FF"/>
+    </linearGradient>
+    <filter id="og-neon" x="-10%" y="-30%" width="120%" height="160%">
+      <feGaussianBlur stdDeviation="2" result="b"/>
+      <feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge>
+    </filter>
+  </defs>
+  <rect width="1200" height="630" fill="#0A0A0A"/>
+  <rect width="1200" height="630" fill="url(#og-glow)"/>
+  <g stroke="#00F0FF" stroke-width="0.3" stroke-opacity="0.08">
+    <path d="M0 120 H1200 M0 240 H1200 M0 360 H1200 M0 480 H1200"/>
+    <path d="M120 0 V630 M240 0 V630 M360 0 V630 M480 0 V630 M600 0 V630 M720 0 V630 M840 0 V630 M960 0 V630 M1080 0 V630"/>
+  </g>
+  <g stroke="#00F0FF" stroke-width="1.2" stroke-opacity="0.5" fill="none">
+    <path d="M60 520 L260 520 L300 480 L520 480"/>
+    <path d="M900 120 L1100 120 L1140 160 L1140 260"/>
+  </g>
+  <g fill="#00F0FF">
+    <circle cx="60" cy="520" r="3.5"/>
+    <circle cx="520" cy="480" r="3.5"/>
+    <circle cx="1100" cy="120" r="3.5"/>
+  </g>
+  <text x="80" y="260" font-family="Space Grotesk, Inter, sans-serif" font-weight="700" font-size="96" letter-spacing="-4" fill="url(#og-wordmark)" filter="url(#og-neon)">GROKINSTALL</text>
+  <text x="80" y="340" font-family="Inter, sans-serif" font-weight="600" font-size="40" fill="#FFFFFF">The community marketplace</text>
+  <text x="80" y="390" font-family="Inter, sans-serif" font-weight="600" font-size="40" fill="#FFFFFF">for Grok-native agents on X</text>
+  <g transform="translate(80, 500)">
+    <rect width="220" height="44" rx="22" fill="rgba(0,240,255,0.12)" stroke="#00F0FF" stroke-width="1"/>
+    <text x="110" y="29" text-anchor="middle" font-family="Inter, sans-serif" font-weight="600" font-size="16" fill="#00F0FF">BUILT FOR GROK ON X</text>
+  </g>
+  <text x="80" y="590" font-family="Inter, sans-serif" font-size="18" fill="rgba(255,255,255,0.5)">grokagents.dev · Independent community project · Not affiliated with xAI</text>
+</svg>

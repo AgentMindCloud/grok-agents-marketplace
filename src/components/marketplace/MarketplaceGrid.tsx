@@ -1,0 +1,175 @@
+'use client';
+
+import { GlassCard } from '@/components/ui/GlassCard';
+import { NeonButton } from '@/components/ui/NeonButton';
+import { PR_TEMPLATE_URL } from '@/lib/constants';
+import type { AgentWithStats, Category, Certification, SortKey } from '@/lib/types';
+import { fuzzyMatch } from '@/lib/utils';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { useEffect, useMemo, useState, useTransition } from 'react';
+import { AgentCard } from './AgentCard';
+import { FilterPills } from './FilterPills';
+import { SearchBar } from './SearchBar';
+
+const VALID_SORT: SortKey[] = ['trending', 'newest', 'most-installed'];
+
+function parseList<T extends string>(raw: string | null, all: readonly T[]): T[] {
+  if (!raw) return [];
+  return raw
+    .split(',')
+    .map((s) => s.trim())
+    .filter((s): s is T => (all as readonly string[]).includes(s));
+}
+
+const ALL_CATEGORIES: Category[] = [
+  'productivity',
+  'research',
+  'content',
+  'developer',
+  'voice',
+  'swarm',
+  'analytics',
+  'marketing',
+  'education',
+];
+
+const ALL_CERTS: Certification[] = [
+  'grok-native',
+  'safety-max',
+  'voice-ready',
+  'swarm-ready',
+  'action-certified',
+  'vscode-verified',
+];
+
+export function MarketplaceGrid({ agents }: { agents: AgentWithStats[] }) {
+  const router = useRouter();
+  const params = useSearchParams();
+  const [, startTransition] = useTransition();
+
+  const [q, setQ] = useState(params.get('q') ?? '');
+  const [categories, setCategories] = useState<Category[]>(
+    parseList<Category>(params.get('cat'), ALL_CATEGORIES)
+  );
+  const [certifications, setCertifications] = useState<Certification[]>(
+    parseList<Certification>(params.get('cert'), ALL_CERTS)
+  );
+  const [sort, setSort] = useState<SortKey>(() => {
+    const s = params.get('sort');
+    return VALID_SORT.includes(s as SortKey) ? (s as SortKey) : 'trending';
+  });
+
+  // Sync state to URL (debounced-ish via transition)
+  useEffect(() => {
+    const sp = new URLSearchParams();
+    if (q) sp.set('q', q);
+    if (categories.length) sp.set('cat', categories.join(','));
+    if (certifications.length) sp.set('cert', certifications.join(','));
+    if (sort !== 'trending') sp.set('sort', sort);
+    const qs = sp.toString();
+    startTransition(() => {
+      router.replace(`/marketplace${qs ? `?${qs}` : ''}` as never, { scroll: false });
+    });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [q, categories, certifications, sort]);
+
+  const visible = useMemo(() => {
+    let list = agents;
+    if (q.trim()) {
+      list = list.filter((a) =>
+        fuzzyMatch([a.name, a.tagline, a.creator.handle, ...a.tags].join(' '), q)
+      );
+    }
+    if (categories.length) list = list.filter((a) => categories.includes(a.category));
+    if (certifications.length) {
+      list = list.filter((a) => certifications.every((c) => a.certifications.includes(c)));
+    }
+    const sorted = [...list];
+    if (sort === 'newest') {
+      sorted.sort((a, b) => new Date(b.created_at).getTime() - new Date(a.created_at).getTime());
+    } else if (sort === 'most-installed') {
+      sorted.sort((a, b) => b.installs - a.installs);
+    } else {
+      // trending = weighted installs + stars recency
+      sorted.sort((a, b) => b.installs + b.stars * 2 - (a.installs + a.stars * 2));
+    }
+    return sorted;
+  }, [agents, q, categories, certifications, sort]);
+
+  const toggleCategory = (c: Category) =>
+    setCategories((xs) => (xs.includes(c) ? xs.filter((x) => x !== c) : [...xs, c]));
+  const toggleCert = (c: Certification) =>
+    setCertifications((xs) => (xs.includes(c) ? xs.filter((x) => x !== c) : [...xs, c]));
+  const clearAll = () => {
+    setQ('');
+    setCategories([]);
+    setCertifications([]);
+    setSort('trending');
+  };
+
+  return (
+    <div className="grid grid-cols-1 gap-8 lg:grid-cols-[260px_1fr] lg:gap-10">
+      <aside className="space-y-6 lg:sticky lg:top-24 lg:self-start">
+        <SearchBar value={q} onChange={setQ} />
+        <FilterPills
+          categories={categories}
+          certifications={certifications}
+          sort={sort}
+          onToggleCategory={toggleCategory}
+          onToggleCertification={toggleCert}
+          onSort={setSort}
+          onClear={clearAll}
+        />
+      </aside>
+
+      <div className="flex flex-col gap-4">
+        <div className="flex items-center justify-between text-sm">
+          <span className="text-ink-subtle">
+            Showing <span className="text-ink tabular-nums">{visible.length}</span> of{' '}
+            <span className="text-ink tabular-nums">{agents.length}</span> agents
+          </span>
+        </div>
+
+        {visible.length === 0 ? (
+          <GlassCard padding="lg" className="flex flex-col items-center gap-3 py-16 text-center">
+            <p className="font-display text-xl text-ink">No agents match those filters.</p>
+            <p className="text-sm text-ink-muted max-w-md">
+              Try clearing a filter — or help us grow the gallery by submitting yours.
+            </p>
+            <div className="flex gap-2">
+              <NeonButton variant="secondary" size="sm" onClick={clearAll}>
+                Clear filters
+              </NeonButton>
+              <NeonButton variant="primary" size="sm" href={PR_TEMPLATE_URL} external>
+                Submit an agent
+              </NeonButton>
+            </div>
+          </GlassCard>
+        ) : (
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
+            {visible.map((agent) => (
+              <AgentCard key={agent.id} agent={agent} />
+            ))}
+          </div>
+        )}
+
+        <GlassCard
+          as="section"
+          padding="lg"
+          className="mt-6 flex flex-col items-start gap-4 md:flex-row md:items-center md:justify-between"
+        >
+          <div>
+            <h3 className="font-display text-xl text-ink">Shipping a Grok-native agent?</h3>
+            <p className="text-sm text-ink-muted mt-1 max-w-xl">
+              Open a PR against awesome-grok-agents with your YAML manifest. We review weekly and
+              boost new certs in the weekly digest.
+            </p>
+          </div>
+          <NeonButton variant="primary" size="md" href={PR_TEMPLATE_URL} external>
+            Submit your agent
+          </NeonButton>
+        </GlassCard>
+      </div>
+    </div>
+  );
+}

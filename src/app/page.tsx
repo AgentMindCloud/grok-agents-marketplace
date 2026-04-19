@@ -1,0 +1,89 @@
+import { FeaturedCarousel } from '@/components/home/FeaturedCarousel';
+import { Hero } from '@/components/home/Hero';
+import { LatestGrid } from '@/components/home/LatestGrid';
+import { StatsTeaser } from '@/components/home/StatsTeaser';
+import { NeonButton } from '@/components/ui/NeonButton';
+import { Section, SectionHeader } from '@/components/ui/Section';
+import { getAgents, getFeaturedAgents, getLatestAgents } from '@/lib/agents';
+import { getStarCounts } from '@/lib/github';
+import type { AgentWithStats } from '@/lib/types';
+import { ArrowRight } from 'lucide-react';
+
+async function hydrateStars<T extends { repo: string }>(
+  agents: T[]
+): Promise<(T & { stars: number; starsFetchedAt: number; starsStale?: boolean })[]> {
+  const stars = await getStarCounts(agents.map((a) => a.repo));
+  return agents.map((a) => {
+    const s = stars.get(a.repo);
+    return {
+      ...a,
+      stars: s?.stars ?? 0,
+      starsFetchedAt: s?.at ?? Date.now(),
+      starsStale: s?.stale,
+    };
+  });
+}
+
+export default async function Home() {
+  const [all, featured, latest] = await Promise.all([
+    getAgents(),
+    getFeaturedAgents(3),
+    getLatestAgents(6),
+  ]);
+
+  const [hydratedAll, hydratedFeatured, hydratedLatest] = await Promise.all([
+    hydrateStars(all),
+    hydrateStars(featured),
+    hydrateStars(latest),
+  ]);
+
+  const allWithStats = hydratedAll as AgentWithStats[];
+  const featuredWithStats = hydratedFeatured as AgentWithStats[];
+  const latestWithStats = hydratedLatest as AgentWithStats[];
+
+  return (
+    <div className="flex flex-col gap-20 pb-10 md:gap-28">
+      <Hero />
+
+      <StatsTeaser agents={allWithStats} />
+
+      <Section>
+        <SectionHeader
+          eyebrow="Featured"
+          title="Certified Grok-native, community-loved"
+          description="Hand-picked agents that hit our highest certification bars — Grok-Native, Safety-Max, Voice-Ready, or Swarm-Ready."
+          action={
+            <NeonButton
+              variant="secondary"
+              size="sm"
+              href="/marketplace"
+              trailingIcon={<ArrowRight className="h-4 w-4" />}
+            >
+              View all
+            </NeonButton>
+          }
+        />
+        <FeaturedCarousel agents={featuredWithStats} />
+      </Section>
+
+      <Section>
+        <SectionHeader
+          eyebrow="Latest"
+          title="Recently shipped"
+          description="The newest agents added to the marketplace. Refreshed every 10 minutes."
+          action={
+            <NeonButton
+              variant="secondary"
+              size="sm"
+              href="/marketplace?sort=newest"
+              trailingIcon={<ArrowRight className="h-4 w-4" />}
+            >
+              See all
+            </NeonButton>
+          }
+        />
+        <LatestGrid agents={latestWithStats} />
+      </Section>
+    </div>
+  );
+}

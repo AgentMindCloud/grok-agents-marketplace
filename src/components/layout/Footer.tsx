@@ -47,6 +47,7 @@ const COLS: { title: string; links: { href: string; label: string; external?: bo
       { href: 'https://docs.grokinstall.dev', label: 'Documentation', external: true },
       { href: 'https://github.com/sponsors/JanSol0s', label: 'Sponsor', external: true },
       { href: '/submit', label: 'Submit an agent' },
+      { href: '/privacy', label: 'Privacy' },
       { href: 'https://x.com/JanSol0s', label: '@JanSol0s on X', external: true },
     ],
   },

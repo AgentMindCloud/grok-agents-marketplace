@@ -1,6 +1,7 @@
 'use client';
 
 import { GlassCard } from '@/components/ui/GlassCard';
+import { BRAND } from '@/lib/brand';
 import { cn } from '@/lib/utils';
 import { useEffect, useMemo, useState } from 'react';
 import {
@@ -12,7 +13,6 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { BRAND } from '@/lib/brand';
 import { CHART, ChartAxisTick, ChartTooltipBox } from './RechartsTheme';
 
 interface AgentOption {

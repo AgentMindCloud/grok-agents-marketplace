@@ -34,6 +34,15 @@ single click-to-tweet on X. Part of the GrokInstall ecosystem alongside
 - `/hall-of-fame` — top-10 by live install count
 - `/submit` — client-side form that generates a pre-filled PR on
   `awesome-grok-agents`
+- `/stats` — **adoption dashboard**: live counters (agents installed, X posts
+  generated, API calls saved, active agents 7d), growth chart with 7d/30d/90d
+  toggle, Pro vs Standard stacked area, category breakdown, day×hour heatmap,
+  inline Hall of Fame, auto-generated Impact Stories, CSV export, and a
+  shareable snapshot OG image
+- `/stats/agents/[id]` — per-agent deep dive (install volume, referrers,
+  search queries)
+- `/privacy` — what we collect, what we don't, how to opt out, 90-day
+  retention pledge
 
 ## Architecture
 
@@ -44,9 +53,12 @@ flowchart LR
   N -->|ISR 10m| GH[raw.githubusercontent.com/awesome-grok-agents]
   N -->|Octokit 1h| API[api.github.com /repos]
   A -->|POST /api/track-install*| KV[(Vercel KV)]
-  V -->|Read install counts| KV
+  CLI[grok-install CLI v2+] -->|POST /api/telemetry| V
+  V -->|zod validate + rate limit| KV
+  V -->|Read install counts + events| KV
   A -.->|pageviews + custom events| P[Plausible]
-  N -->|/og, /twitter-image| OG[dynamic OG via @vercel/og]
+  N -->|/og, /twitter-image, /stats/snapshot/og| OG[dynamic OG via @vercel/og]
+  N -->|unstable_cache 30s| V
 ```
 
 ## Stack
@@ -125,14 +137,43 @@ Then flip to HTTPS-everywhere in the domain settings.
 
 ## API
 
-| route                        | method | purpose                                          |
-| ---------------------------- | ------ | ------------------------------------------------ |
-| `/api/agents`                | GET    | Catalog + merged install counts (60s SWR cache)  |
-| `/api/track-install`         | POST   | `{ agent_id, source }` → increments counts       |
-| `/api/track-install-intent`  | POST   | X-intent variant (post to X without redirecting) |
+| route                                 | method | purpose                                                                         |
+| ------------------------------------- | ------ | ------------------------------------------------------------------------------- |
+| `/api/agents`                         | GET    | Catalog + merged install counts (60s SWR cache)                                 |
+| `/api/track-install`                  | POST   | Marketplace button clicks: `{ agent_id, source }` → increments counts          |
+| `/api/track-install-intent`           | POST   | X-intent variant (post to X without redirecting)                                |
+| `/api/telemetry`                      | POST   | CLI telemetry — zod-validated payload, per-`anon_install_id` rate-limited, 204  |
+| `/api/stats/public`                   | GET    | Public aggregate JSON (IP rate-limited, CORS-enabled, 30s SWR)                  |
+| `/api/stats/summary`                  | GET    | Agent-level install summary, used by dashboard                                  |
+| `/api/stats/daily/[agentId]`          | GET    | 30-day per-agent daily series (zero-filled, 5-min cache)                        |
+| `/api/stats/growth?period=&metric=`   | GET    | Aggregate growth series (installs/posts/savings × 7d/30d/90d)                   |
 
-All write endpoints set a first-party `gi_anon` cookie for anonymous
-de-duplication (HttpOnly, 1-year).
+Cookie-based endpoints (`/api/track-install*`) set a first-party `gi_anon`
+HttpOnly cookie for anonymous de-duplication (1-year). The CLI telemetry path
+uses a locally-generated, rotatable `anon_install_id` instead — see `/privacy`.
+
+### CLI telemetry payload
+
+```json
+{
+  "event": "deploy",
+  "timestamp": "2026-04-19T08:15:02.341Z",
+  "cli_version": "2.0.4",
+  "agent_category": "voice",
+  "used_pro_mode": true,
+  "used_swarm": false,
+  "used_voice": true,
+  "safety_score": 97,
+  "agent_count": 1,
+  "success": true,
+  "anon_install_id": "k3r9s1-abc-0af4..."
+}
+```
+
+The receive endpoint is CORS-open and rate-limited to **30 events/minute per
+`anon_install_id`**; excess requests return `429 { error: "rate_limited" }`
+with `Retry-After`. Events persist in Vercel KV (or in-memory in dev) for
+90 days; aggregated counters on `/stats` live indefinitely.
 
 ## Submitting an agent
 

@@ -34,6 +34,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     { url: `${SITE_URL}/hall-of-fame`, lastModified: now, changeFrequency: 'daily', priority: 0.6 },
     { url: `${SITE_URL}/stats`, lastModified: now, changeFrequency: 'hourly', priority: 0.6 },
     { url: `${SITE_URL}/submit`, lastModified: now, changeFrequency: 'monthly', priority: 0.4 },
+    { url: `${SITE_URL}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
     ...sectionEntries,
     ...agentEntries,
     ...statsEntries,

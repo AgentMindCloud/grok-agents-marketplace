@@ -27,6 +27,13 @@
       "filename": "grok-agent.yaml",
       "lang": "yaml",
       "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: post-autopilot\n  name: Post Autopilot\nspec:\n  runtime: grok-4-fast\n  safety:\n    policy: safety-max\n    blockInjection: true\n  actions:\n    - id: draft-thread\n      uses: x.compose\n    - id: schedule-post\n      uses: x.schedule\n      requires: [composer.approved]\n  telemetry:\n    sink: grokinstall-events\n"
+    },
+    "visuals": {
+      "style": "futuristic",
+      "accent_color": "cyan",
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "Ship Grok-native threads at the speed of thought.",
+      "subheadline": "One YAML, one tap, scheduled across X with safety-max guardrails baked in."
     }
   },
   {
@@ -56,6 +63,16 @@
       "filename": "grok-voice.yaml",
       "lang": "yaml",
       "content": "apiVersion: grokinstall.dev/v1\nkind: VoiceAgent\nmetadata:\n  id: voice-concierge\nspec:\n  wakeWord: \"hey grok\"\n  language: en-US\n  barge-in: true\n  commands:\n    - intent: reply\n      grammar: \"reply to <handle> saying <text>\"\n    - intent: dm\n      grammar: \"dm <handle> <text>\"\n    - intent: poll\n      grammar: \"start a poll about <topic>\"\n"
+    },
+    "visuals": {
+      "style": "premium",
+      "accent_color": "green",
+      "demo_media": {
+        "kind": "image",
+        "url": "https://raw.githubusercontent.com/AgentMindCloud/grok-agents-marketplace/main/public/brand/banner-hero-grok-install.svg"
+      },
+      "headline": "Talk to X like it's 2030.",
+      "subheadline": "Wake-word, barge-in, and a structured grammar for replies, DMs, and polls — no hands, no friction."
     }
   },
   {
@@ -105,7 +122,14 @@
     "created_at": "2026-03-18T08:10:00Z",
     "updated_at": "2026-04-12T15:00:00Z",
     "installs": 2189,
-    "safetyScore": 92
+    "safetyScore": 92,
+    "visuals": {
+      "style": "minimal",
+      "accent_color": "cyan",
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "Drop a thread URL. Get a 5-bullet TL;DR.",
+      "subheadline": "Cited back to the original posts — ideal for research, community management, and newsroom triage."
+    }
   },
   {
     "id": "devrel-reply",

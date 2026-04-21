@@ -2,8 +2,24 @@ import 'server-only';
 import mockAgents from '@/data/featured-agents.mock.json';
 import { FEATURED_AGENTS_URL } from './constants';
 import type { Agent } from './types';
+import { parseVisuals } from './visuals/parse-visuals';
 
-const MOCK: Agent[] = mockAgents as Agent[];
+/**
+ * Route any incoming `visuals` field through the Zod schema so a
+ * malformed upstream manifest never crashes the detail page. Invalid
+ * blocks are silently dropped (we fall back to the classic demo iframe).
+ */
+function sanitize(agent: Agent): Agent {
+  if (agent.visuals === undefined) return agent;
+  const parsed = parseVisuals(agent.visuals);
+  if (parsed === null) {
+    const { visuals: _dropped, ...rest } = agent;
+    return rest;
+  }
+  return { ...agent, visuals: parsed };
+}
+
+const MOCK: Agent[] = (mockAgents as Agent[]).map(sanitize);
 
 /**
  * Fetch the canonical featured-agents.json from the awesome-grok-agents repo,
@@ -19,7 +35,7 @@ export async function getAgents(): Promise<Agent[]> {
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const data = (await res.json()) as unknown;
     if (!Array.isArray(data) || data.length === 0) throw new Error('Empty payload');
-    return data as Agent[];
+    return (data as Agent[]).map(sanitize);
   } catch (err) {
     if (process.env.NODE_ENV !== 'production') {
       console.warn('[agents] using mock — remote fetch failed:', (err as Error).message);

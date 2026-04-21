@@ -23,7 +23,7 @@ import {
   getHeatmapData,
   getProVsStandardSeries,
 } from '@/lib/telemetry-queries';
-import { ArrowUpRight, Shield } from 'lucide-react';
+import { ArrowUpRight, Shield, Sparkles } from 'lucide-react';
 import type { Metadata } from 'next';
 import Link from 'next/link';
 
@@ -80,6 +80,14 @@ export default async function StatsPage() {
 
   const starsTotal = Array.from(stars.values()).reduce((n, s) => n + s.stars, 0);
 
+  // v2.14 adoption: agents in the catalog that have opted into the new
+  // Visuals Renderer surface. Browser-side `visuals_block_rendered` events
+  // will be exposed once telemetry-queries.ts grows a Plausible hook — for
+  // now we report the catalog-side adoption directly.
+  const v214AgentCount = agents.filter((a) => a.visuals !== undefined).length;
+  const v214AdoptionPct =
+    agents.length > 0 ? Math.round((v214AgentCount / agents.length) * 100) : 0;
+
   return (
     <div className="flex flex-col gap-10 pb-16">
       <section className="relative overflow-hidden border-b border-border-subtle">
@@ -126,6 +134,40 @@ export default async function StatsPage() {
           <HeatmapGrid data={heatmap} />
 
           <HallOfFameInline entries={hofEntries} />
+
+          <GlassCard
+            as="section"
+            padding="lg"
+            className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between"
+          >
+            <div className="flex items-start gap-3">
+              <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-md border border-cyan/40 bg-cyan/5 text-cyan">
+                <Sparkles className="h-5 w-5" />
+              </div>
+              <div>
+                <h3 className="font-display text-lg tracking-tight text-ink">
+                  v2.14 Visuals Renderer adoption
+                </h3>
+                <p className="text-sm text-ink-muted mt-1 max-w-2xl">
+                  <span className="font-mono text-cyan">{v214AgentCount}</span> of{' '}
+                  <span className="font-mono text-cyan">{agents.length}</span> catalogued agents (
+                  {v214AdoptionPct}%) ship a <code className="font-mono text-cyan">visuals</code>{' '}
+                  block — the new Preview Card with futuristic / premium / minimal style variants.
+                  Browser-side <code className="font-mono text-cyan">visuals_block_rendered</code>{' '}
+                  events are recorded in Plausible; per-preset breakdowns roll out with the next
+                  dashboard drop.
+                </p>
+              </div>
+            </div>
+            <NeonButton
+              variant="secondary"
+              size="md"
+              href="/marketplace"
+              trailingIcon={<ArrowUpRight className="h-3.5 w-3.5" />}
+            >
+              Browse the marketplace
+            </NeonButton>
+          </GlassCard>
 
           <GlassCard
             as="section"

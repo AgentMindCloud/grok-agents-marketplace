@@ -1,8 +1,8 @@
 // src/components/AgentPreviewCard/AgentPreviewCard.tsx
 import { CircuitTrace } from '@/components/ui/CircuitTrace';
 import { GlassCard } from '@/components/ui/GlassCard';
-import { RenderDemoMedia } from '@/lib/visuals/render-demo-media';
 import type { AgentVisuals, VisualAccent } from '@/lib/visuals/parse-visuals';
+import { RenderDemoMedia } from '@/lib/visuals/render-demo-media';
 import styles from './AgentPreviewCard.module.css';
 import { TrackVisualsBlock } from './TrackVisualsBlock';
 
@@ -64,9 +64,7 @@ export function AgentPreviewCard({ agentId, agentName, visuals }: AgentPreviewCa
       data-visual-style={style}
       data-visual-accent={accent_color}
     >
-      {style === 'futuristic' ? (
-        <CircuitTrace density="sparse" className={styles.trace} />
-      ) : null}
+      {style === 'futuristic' ? <CircuitTrace density="sparse" className={styles.trace} /> : null}
       <div className="relative z-10 flex flex-col gap-5">
         <RenderDemoMedia
           media={demo_media}

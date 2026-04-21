@@ -1,0 +1,69 @@
+name: Feature request
+description: Propose a new feature or enhancement for grokagents.dev
+title: "[feat]: "
+labels: ["enhancement", "triage"]
+assignees:
+  - JanSol0s
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for proposing an improvement! The best feature requests start
+        from a concrete user problem, not a solution. Tell us the problem
+        first; we'll work out the shape together.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched [existing issues & discussions](https://github.com/AgentMindCloud/grok-agents-marketplace/issues?q=is%3Aissue) and did not find a duplicate.
+          required: true
+        - label: This is scoped to the **marketplace website** (not the CLI, not the YAML spec, not the VS Code extension).
+          required: true
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem / motivation
+      description: What are you trying to do, and why is it hard today?
+      placeholder: "When I land on /marketplace and want voice-only agents, I have to scroll the whole grid. A category filter pill would save that."
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: Concrete behaviour — UI, copy, or API surface. Sketches / screenshots welcome.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Things you thought about and rejected, and why.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: impact
+    attributes:
+      label: User impact
+      description: Check any that apply.
+      options:
+        - label: Breaking change (route / API / schema)
+        - label: Requires new telemetry event or schema field
+        - label: Touches the brand system (new colors / tokens / fonts)
+        - label: Needs documentation updates (README, /privacy, CONTRIBUTING)
+        - label: Needs a new npm dependency
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Mockups, links, prior art, issues in sibling repos.
+    validations:
+      required: false

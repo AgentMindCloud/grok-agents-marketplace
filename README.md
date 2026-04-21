@@ -4,6 +4,14 @@
 
 ### The community marketplace for Grok-native agents on X
 
+<a href="https://grokagents.dev">
+  <img
+    alt="GrokInstall marketplace — grokagents.dev hero"
+    src="./public/brand/banner-hero-grok-install.svg"
+    width="760"
+  />
+</a>
+
 <p>
   <img alt="Next.js" src="https://img.shields.io/badge/Next.js-15-00F0FF?style=flat-square&labelColor=0A0A0A" />
   <img alt="TypeScript" src="https://img.shields.io/badge/TypeScript-strict-00F0FF?style=flat-square&labelColor=0A0A0A" />
@@ -26,6 +34,11 @@ single click-to-tweet on X. Part of the GrokInstall ecosystem alongside
 
 ## What ships here
 
+**Twelve routes** make up the live surface at `grokagents.dev` — nine user-
+facing pages plus three dynamically rendered OG / Twitter images
+(`/marketplace/[id]/opengraph-image`, `/marketplace/[id]/twitter-image`,
+`/stats/snapshot/opengraph-image`).
+
 - `/` — landing with the marketplace, section teasers, and featured agents
 - `/marketplace` — searchable, filterable grid of every certified agent
 - `/marketplace/[id]` — per-agent page with YAML manifest, demo, install tabs,
@@ -43,6 +56,29 @@ single click-to-tweet on X. Part of the GrokInstall ecosystem alongside
   search queries)
 - `/privacy` — what we collect, what we don't, how to opt out, 90-day
   retention pledge
+
+## What's new in v2.14
+
+- **Visuals Renderer**: agents can now ship a `visuals` block in their
+  manifest that drives a dedicated Preview Card on `/marketplace/[id]`
+  — three style variants (`futuristic`, `premium`, `minimal`), two
+  accent tokens (`cyan`, `green`), and a media dispatcher that handles
+  `gif` / `video` / `image` or falls back to an auto-generated, accent-
+  themed inline-SVG placeholder. Source: `src/components/AgentPreviewCard/`.
+- **Zod-validated schema**: every `visuals` block is parsed through
+  `parseVisuals()` before render. Invalid or hex-coded accents are
+  silently dropped — the page falls back to the classic demo iframe, so
+  a malformed manifest never breaks a detail page. See
+  `src/lib/visuals/parse-visuals.ts` and the 15 vitest cases in
+  `src/lib/visuals/__tests__/`.
+- **`visuals_block_rendered` event**: a cookieless Plausible custom
+  event fires on each preview-card mount with `{ agent_id, accent_color,
+  style }`. Documented in full on [`/privacy`](./src/app/privacy/page.tsx).
+- **Adoption counter on `/stats`**: a new Sparkle card tracks how many
+  catalogued agents have opted into the Visuals Renderer.
+- **Brand-token discipline**: the new component surface introduces **zero**
+  hardcoded hex values — every color, glow, and border flows from the
+  existing tokens in `tailwind.config.ts`.
 
 ## Architecture
 

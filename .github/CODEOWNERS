@@ -1,0 +1,31 @@
+# .github/CODEOWNERS
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+#
+# Order matters — the LAST matching pattern takes precedence. Keep specific
+# overrides below the default.
+
+# Default owner for everything in the repo
+*                                   @JanSol0s
+
+# API surface — every telemetry + install + stats route
+/src/app/api/**                     @JanSol0s
+
+# Deployment config (headers, regions, env wiring)
+/vercel.json                        @JanSol0s
+/next.config.ts                     @JanSol0s
+
+# CI / supply chain / release plumbing
+/.github/workflows/**               @JanSol0s
+/.github/dependabot.yml             @JanSol0s
+/.github/CODEOWNERS                 @JanSol0s
+
+# Security + privacy contracts
+/SECURITY.md                        @JanSol0s
+/src/lib/telemetry-schema.ts        @JanSol0s
+/src/lib/telemetry-store.ts         @JanSol0s
+/src/lib/telemetry-queries.ts       @JanSol0s
+/src/app/privacy/**                 @JanSol0s
+
+# Brand tokens — single source of truth for colors, radii, shadows
+/tailwind.config.ts                 @JanSol0s
+/src/app/globals.css                @JanSol0s

@@ -1,0 +1,75 @@
+# .github/dependabot.yml
+# https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file
+
+version: 2
+
+updates:
+  # npm dependencies
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: "Etc/UTC"
+    open-pull-requests-limit: 8
+    versioning-strategy: increase
+    labels:
+      - dependencies
+      - npm
+    assignees:
+      - JanSol0s
+    reviewers:
+      - JanSol0s
+    commit-message:
+      prefix: "chore(deps)"
+      prefix-development: "chore(deps-dev)"
+      include: scope
+    groups:
+      production-dependencies:
+        dependency-type: production
+        update-types:
+          - minor
+          - patch
+      development-dependencies:
+        dependency-type: development
+        update-types:
+          - minor
+          - patch
+      next-stack:
+        patterns:
+          - "next"
+          - "react"
+          - "react-dom"
+          - "@types/react"
+          - "@types/react-dom"
+      tailwind-stack:
+        patterns:
+          - "tailwindcss"
+          - "postcss"
+          - "autoprefixer"
+
+  # GitHub Actions — pinned major bumps
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+      time: "06:00"
+      timezone: "Etc/UTC"
+    open-pull-requests-limit: 4
+    labels:
+      - dependencies
+      - github-actions
+    assignees:
+      - JanSol0s
+    reviewers:
+      - JanSol0s
+    commit-message:
+      prefix: "chore(ci)"
+      include: scope
+    groups:
+      actions-minor-patch:
+        update-types:
+          - minor
+          - patch

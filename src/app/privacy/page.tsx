@@ -106,6 +106,49 @@ export default function PrivacyPage() {
           </GlassCard>
 
           <GlassCard padding="lg" className="flex flex-col gap-3">
+            <p className="font-display text-lg tracking-tight text-ink">Browser analytics events</p>
+            <p className="text-sm text-ink-muted leading-relaxed">
+              Plausible records cookieless page views plus a short list of custom events so we can
+              see which surfaces people actually use. Each event name and every property value is
+              bounded — no free-text, no PII. You can block all of these with any tracking blocker;
+              the site works identically without them.
+            </p>
+            <ul className="flex flex-col gap-2 text-sm text-ink-muted leading-relaxed">
+              <li>
+                <code className="font-mono text-cyan">agent_viewed</code> — properties:{' '}
+                <code className="font-mono text-cyan">agent</code>
+              </li>
+              <li>
+                <code className="font-mono text-cyan">install_clicked</code> — properties:{' '}
+                <code className="font-mono text-cyan">agent</code>,{' '}
+                <code className="font-mono text-cyan">source</code>
+              </li>
+              <li>
+                <code className="font-mono text-cyan">search_used</code> — properties:{' '}
+                <code className="font-mono text-cyan">q</code> (lowercased, truncated to 40 chars)
+              </li>
+              <li>
+                <code className="font-mono text-cyan">filter_applied</code> — properties:{' '}
+                <code className="font-mono text-cyan">kind</code>,{' '}
+                <code className="font-mono text-cyan">value</code>
+              </li>
+              <li>
+                <code className="font-mono text-cyan">visuals_block_rendered</code>{' '}
+                <span className="text-ink-subtle">(v2.14)</span> — properties:{' '}
+                <code className="font-mono text-cyan">agent_id</code>,{' '}
+                <code className="font-mono text-cyan">accent_color</code> (one of{' '}
+                <code className="font-mono text-cyan">cyan</code> /{' '}
+                <code className="font-mono text-cyan">green</code>),{' '}
+                <code className="font-mono text-cyan">style</code> (one of{' '}
+                <code className="font-mono text-cyan">futuristic</code> /{' '}
+                <code className="font-mono text-cyan">premium</code> /{' '}
+                <code className="font-mono text-cyan">minimal</code>). Fires once per preview card
+                mount so we can see which visual presets perform best.
+              </li>
+            </ul>
+          </GlassCard>
+
+          <GlassCard padding="lg" className="flex flex-col gap-3">
             <p className="font-display text-lg tracking-tight text-ink">Retention</p>
             <ul className="flex flex-col gap-2 text-sm text-ink-muted leading-relaxed">
               <li>

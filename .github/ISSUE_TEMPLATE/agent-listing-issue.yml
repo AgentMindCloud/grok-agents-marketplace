@@ -1,0 +1,79 @@
+name: Agent listing correction
+description: Report a mistake in an agent card on grokagents.dev (typo, broken link, wrong category)
+title: "[listing]: "
+labels: ["agent-listing", "triage"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Use this form for small corrections to an agent's card on
+        `/marketplace/[id]`. For **new agent submissions**, use the
+        [/submit](https://grokagents.dev/submit) flow instead — it opens
+        a pre-filled PR on `awesome-grok-agents`.
+
+        The source of truth for agent metadata is the
+        [`awesome-grok-agents`](https://github.com/AgentMindCloud/awesome-grok-agents)
+        repository. Most corrections land as a PR there; this issue lets
+        the maintainers triage and cross-link.
+
+  - type: input
+    id: agent-id
+    attributes:
+      label: Agent id
+      description: The `id` slug from the URL (e.g. `grok-yaml-scanner` in `/marketplace/grok-yaml-scanner`).
+      placeholder: "foo-agent"
+    validations:
+      required: true
+
+  - type: input
+    id: agent-name
+    attributes:
+      label: Agent display name
+      placeholder: "Foo Agent"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: what-is-wrong
+    attributes:
+      label: What's wrong?
+      options:
+        - Typo in name, tagline, or description
+        - Broken link (repo, homepage, demo)
+        - Outdated version / install command
+        - Wrong category
+        - Wrong or missing certification badge
+        - Install count or safety score looks incorrect
+        - Creator attribution is wrong
+        - Other (explain below)
+    validations:
+      required: true
+
+  - type: textarea
+    id: details
+    attributes:
+      label: Correction details
+      description: Describe what's currently shown and what it should be.
+      placeholder: |
+        Current: "A voice-raedy agent for …" (typo on "voice-raedy")
+        Should be: "A voice-ready agent for …"
+    validations:
+      required: true
+
+  - type: input
+    id: source
+    attributes:
+      label: Source link (optional)
+      description: Official repo README, release notes, or tweet proving the correction.
+      placeholder: "https://github.com/foo/bar/releases/tag/v1.2.3"
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: Scope
+      options:
+        - label: I understand metadata lives in `awesome-grok-agents` and a PR there may be required.
+          required: true

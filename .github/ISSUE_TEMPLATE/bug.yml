@@ -1,0 +1,123 @@
+name: Bug report
+description: Something on grokagents.dev is broken or behaves incorrectly
+title: "[bug]: "
+labels: ["bug", "triage"]
+assignees:
+  - JanSol0s
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting! Please fill out the form so we can reproduce
+        the issue quickly. For **security issues**, do NOT use this form —
+        follow [SECURITY.md](../SECURITY.md) instead.
+
+  - type: checkboxes
+    id: preflight
+    attributes:
+      label: Preflight
+      options:
+        - label: I searched [existing issues](https://github.com/AgentMindCloud/grok-agents-marketplace/issues?q=is%3Aissue) and did not find a duplicate.
+          required: true
+        - label: I reproduced the issue on the latest `main` deploy at https://grokagents.dev (or I can explain why that's not possible).
+          required: true
+        - label: This is not a security issue (security goes via private disclosure).
+          required: true
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: A clear description of the bug, in plain language.
+      placeholder: "When I click 'Install on X' on the `/marketplace/foo-agent` page, nothing happens and no error appears in the console."
+    validations:
+      required: true
+
+  - type: textarea
+    id: repro
+    attributes:
+      label: Steps to reproduce
+      description: Exact clicks or commands. Assume the reader has never used the site.
+      value: |
+        1. Go to …
+        2. Click …
+        3. See …
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behaviour
+      placeholder: "Clicking the button should open a pre-filled X intent in a new tab."
+    validations:
+      required: true
+
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behaviour
+      description: Include any console / network errors, and screenshots if helpful.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: browser
+    attributes:
+      label: Browser
+      options:
+        - Chrome (stable)
+        - Firefox (stable)
+        - Safari (macOS)
+        - Safari (iOS)
+        - Edge
+        - Other (specify below)
+    validations:
+      required: true
+
+  - type: input
+    id: browser-version
+    attributes:
+      label: Browser version
+      placeholder: "e.g. 130.0.6723.117"
+    validations:
+      required: false
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating system
+      options:
+        - macOS
+        - Windows
+        - Linux
+        - iOS
+        - Android
+        - Other
+    validations:
+      required: true
+
+  - type: input
+    id: node-version
+    attributes:
+      label: Node version (if running locally)
+      placeholder: "e.g. v20.18.0 — leave blank for browser-only reports"
+    validations:
+      required: false
+
+  - type: input
+    id: url
+    attributes:
+      label: Affected URL
+      placeholder: "https://grokagents.dev/marketplace/…"
+    validations:
+      required: false
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Related tickets, hypotheses, recent changes that might matter.
+    validations:
+      required: false

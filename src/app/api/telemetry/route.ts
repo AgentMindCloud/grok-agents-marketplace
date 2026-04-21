@@ -1,6 +1,6 @@
-import { revalidateTag } from 'next/cache';
 import { telemetryPayloadSchema } from '@/lib/telemetry-schema';
 import { checkRateLimit, recordTelemetry } from '@/lib/telemetry-store';
+import { revalidateTag } from 'next/cache';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';

@@ -1,3 +1,4 @@
+import { AgentPreviewCard } from '@/components/AgentPreviewCard/AgentPreviewCard';
 import { CreatorProfile } from '@/components/marketplace/CreatorProfile';
 import { InstallOnX } from '@/components/marketplace/InstallOnX';
 import { InstallTabs } from '@/components/marketplace/InstallTabs';
@@ -131,7 +132,16 @@ export default async function AgentDetailPage({
               </div>
             ) : null}
 
-            {agent.demo_url ? (
+            {agent.visuals ? (
+              <div>
+                <h2 className="font-display text-xl text-ink mb-3">Preview</h2>
+                <AgentPreviewCard
+                  agentId={agent.id}
+                  agentName={agent.name}
+                  visuals={agent.visuals}
+                />
+              </div>
+            ) : agent.demo_url ? (
               <div>
                 <h2 className="font-display text-xl text-ink mb-3">Demo</h2>
                 <div className="aspect-video overflow-hidden rounded-md border border-border-subtle bg-surface">

@@ -31,6 +31,23 @@ export interface AgentYamlSample {
   content: string;
 }
 
+export type VisualAccent = 'cyan' | 'green';
+export type VisualStyle = 'futuristic' | 'premium' | 'minimal';
+
+export type AgentDemoMedia =
+  | { kind: 'gif'; url: string; poster?: string }
+  | { kind: 'video'; url: string; poster?: string }
+  | { kind: 'image'; url: string; poster?: string }
+  | { kind: 'auto_generate' };
+
+export interface AgentVisuals {
+  style: VisualStyle;
+  accent_color: VisualAccent;
+  demo_media: AgentDemoMedia;
+  headline?: string;
+  subheadline?: string;
+}
+
 export interface Agent {
   id: string;
   name: string;
@@ -50,6 +67,7 @@ export interface Agent {
   safetyScore?: number;
   yaml?: AgentYamlSample;
   featured?: boolean;
+  visuals?: AgentVisuals;
 }
 
 export interface AgentWithStats extends Agent {

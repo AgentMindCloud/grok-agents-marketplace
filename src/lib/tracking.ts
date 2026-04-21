@@ -1,12 +1,25 @@
 'use client';
 
 import type { InstallSource } from './installs';
+import type { VisualAccent, VisualStyle } from './visuals/parse-visuals';
 
 type PlausibleProps = Record<string, string | number | boolean>;
 
 export function plausible(event: string, props?: PlausibleProps): void {
   if (typeof window === 'undefined') return;
   window.plausible?.(event, props ? { props } : undefined);
+}
+
+export function trackVisualsBlockRendered(
+  agentId: string,
+  accentColor: VisualAccent,
+  style: VisualStyle
+): void {
+  plausible('visuals_block_rendered', {
+    agent_id: agentId,
+    accent_color: accentColor,
+    style,
+  });
 }
 
 export async function trackInstall(agentId: string, source: InstallSource): Promise<void> {

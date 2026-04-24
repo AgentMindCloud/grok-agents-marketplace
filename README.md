@@ -32,12 +32,29 @@ single click-to-tweet on X. Part of the GrokInstall ecosystem alongside
 `grok-install`, `grok-yaml-standards`, `vscode-grok-yaml`, and
 `grok-install-action`.
 
+## Contents
+
+- [What ships here](#what-ships-here)
+- [What's new in v2.14](#whats-new-in-v214)
+- [Architecture](#architecture)
+- [Stack](#stack)
+- [Local dev](#local-dev)
+- [Deploy (Vercel)](#deploy-vercel)
+- [CI](#ci)
+- [Data sources](#data-sources)
+- [API](#api)
+- [Submitting an agent](#submitting-an-agent)
+- [Brand system](#brand-system)
+- [Disclaimer](#disclaimer)
+- [License](#license)
+
 ## What ships here
 
-**Twelve routes** make up the live surface at `grokagents.dev` — nine user-
-facing pages plus three dynamically rendered OG / Twitter images
-(`/marketplace/[id]/opengraph-image`, `/marketplace/[id]/twitter-image`,
-`/stats/snapshot/opengraph-image`).
+**Thirteen routes** make up the live surface at `grokagents.dev` — nine
+user-facing page groups plus five dynamically rendered OG / Twitter images
+(root `/opengraph-image` + `/twitter-image`, `/marketplace/[id]/opengraph-
+image`, `/marketplace/[id]/twitter-image`, `/stats/snapshot/opengraph-image`),
+with `sitemap.xml` and `robots.txt` auto-generated from the catalog.
 
 - `/` — landing with the marketplace, section teasers, and featured agents
 - `/marketplace` — searchable, filterable grid of every certified agent
@@ -102,11 +119,16 @@ flowchart LR
 - **Next.js 15** App Router · React Server Components · Turbopack dev
 - **TypeScript** strict, `noUncheckedIndexedAccess` on
 - **Tailwind CSS** with locked GrokInstall brand tokens
+- **Recharts** for every chart on `/stats` and `/stats/agents/[id]`
+- **SWR** for client-side polling of live counters and growth series
+- **Zod** for telemetry payload + `visuals` block validation at boundaries
 - **Octokit** for live GitHub star counts (authenticated when `GITHUB_TOKEN` set)
 - **Shiki** for YAML syntax highlighting on agent detail pages
 - **@vercel/kv** for install-count persistence (falls back to in-memory in dev)
 - **Plausible** privacy-first analytics, opt-in via env var
+- **next-themes** for the dark/cyan theme provider
 - **Biome** for lint + format (no ESLint/Prettier)
+- **Vitest** for the Zod-parser suite (`npm run test`)
 
 ## Local dev
 
@@ -119,6 +141,7 @@ cp .env.example .env.local
 #   GITHUB_TOKEN=ghp_...          (raises rate limit; no scopes)
 #   KV_REST_API_URL=...           (leave blank for in-memory fallback)
 #   NEXT_PUBLIC_PLAUSIBLE_DOMAIN= (leave blank to disable analytics)
+#   PLAUSIBLE_API_KEY=...         (server-side Stats API; referrers + search)
 
 npm run dev
 # → http://localhost:3000
@@ -134,6 +157,8 @@ Commands:
 | `npm run typecheck` | `tsc --noEmit`                           |
 | `npm run lint`      | `biome check .`                          |
 | `npm run format`    | `biome format --write .`                 |
+| `npm run test`      | `vitest run` (Zod parser suite)          |
+| `npm run test:watch`| `vitest` in watch mode                   |
 
 ## Deploy (Vercel)
 
@@ -144,9 +169,14 @@ Commands:
    - `NEXT_PUBLIC_SITE_URL=https://grokagents.dev`
    - `NEXT_PUBLIC_PLAUSIBLE_DOMAIN=grokagents.dev`
    - `NEXT_PUBLIC_PLAUSIBLE_HOST` — optional (self-hosted Plausible)
+   - `PLAUSIBLE_API_KEY` — optional; enables the Stats API pulls on
+     `/stats/agents/[id]` (top referrers + search queries). Omit to show
+     "Plausible off" placeholders.
    - KV vars get injected by the integration in step 2
 4. **Domain** → add `grokagents.dev` and `www.grokagents.dev`, set the
    apex as the primary.
+
+Deployments run multi-region — `iad1`, `fra1`, `sin1` (see `vercel.json`).
 
 ### DNS records
 
@@ -159,6 +189,16 @@ Configure at your registrar:
 
 Then flip to HTTPS-everywhere in the domain settings.
 
+## CI
+
+Every PR into `main` runs through:
+
+| workflow                     | job                                              |
+| ---------------------------- | ------------------------------------------------ |
+| `.github/workflows/ci.yml`           | typecheck · biome check · vitest · `next build` |
+| `.github/workflows/dependency-review.yml` | fail-on-moderate, GPL/AGPL denylist        |
+| `.github/workflows/lighthouse.yml`   | Lighthouse on the Vercel preview, comment scores |
+
 ## Data sources
 
 - **Catalog**: `raw.githubusercontent.com/AgentMindCloud/awesome-grok-agents/main/featured-agents.json`,
@@ -170,13 +210,20 @@ Then flip to HTTPS-everywhere in the domain settings.
 - **Stars**: GitHub REST via Octokit, 1-hour in-memory cache, stale-on-error.
 - **Install counts**: Vercel KV (`install:total:<agentId>` + ZSET
   `install:recent:<agentId>` for 7-day windows). In-memory fallback in dev.
+- **Telemetry**: Vercel KV sorted set `telemetry:events` with a 90-day
+  retention window, backed by an in-memory fallback in dev. A Postgres
+  port is staged at [`migrations/001_telemetry.sql`](./migrations/001_telemetry.sql)
+  for when we outgrow KV. <!-- TODO: verify Postgres migration hasn't shipped yet -->
+- **Rate limiting**: the same backend powers two limiters —
+  per-`anon_install_id` on `/api/telemetry` and per-IP on
+  `/api/stats/public`, both at 30 req/min with `Retry-After` headers.
 
 ## API
 
 | route                                 | method | purpose                                                                         |
 | ------------------------------------- | ------ | ------------------------------------------------------------------------------- |
 | `/api/agents`                         | GET    | Catalog + merged install counts (60s SWR cache)                                 |
-| `/api/track-install`                  | POST   | Marketplace button clicks: `{ agent_id, source }` → increments counts          |
+| `/api/track-install`                  | POST   | Marketplace button clicks: `{ agent_id, source }` → increments counts. Accepts `source ∈ {marketplace, vscode, cli, x-intent, copy}` |
 | `/api/track-install-intent`           | POST   | X-intent variant (post to X without redirecting)                                |
 | `/api/telemetry`                      | POST   | CLI telemetry — zod-validated payload, per-`anon_install_id` rate-limited, 204  |
 | `/api/stats/public`                   | GET    | Public aggregate JSON (IP rate-limited, CORS-enabled, 30s SWR)                  |

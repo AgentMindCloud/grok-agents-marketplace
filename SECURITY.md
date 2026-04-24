@@ -187,7 +187,11 @@ The deployment enforces, via `vercel.json` + Next.js headers:
 - `Cache-Control: no-store` on every `/api/*` response
 - HTTPS-only via Vercel (HSTS preloaded on the apex domain)
 - `poweredByHeader: false` in `next.config.ts`
-- No `dangerouslySetInnerHTML` anywhere in the codebase (grep-enforced in CI)
+- `dangerouslySetInnerHTML` is used in exactly one place
+  (`src/components/marketplace/YamlSnippet.tsx`) to render trusted
+  Shiki-generated highlight HTML for server-rendered YAML snippets. The
+  input to Shiki is syntax-highlighted as code, never interpreted as markup,
+  and the component is server-only — no client-controlled string reaches it.
 
 Additional controls planned (tracked in issues):
 

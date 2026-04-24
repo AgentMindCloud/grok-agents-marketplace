@@ -32,6 +32,22 @@ single click-to-tweet on X. Part of the GrokInstall ecosystem alongside
 `grok-install`, `grok-yaml-standards`, `vscode-grok-yaml`, and
 `grok-install-action`.
 
+## Contents
+
+- [What ships here](#what-ships-here)
+- [What's new in v2.14](#whats-new-in-v214)
+- [Architecture](#architecture)
+- [Stack](#stack)
+- [Local dev](#local-dev)
+- [Deploy (Vercel)](#deploy-vercel)
+- [CI](#ci)
+- [Data sources](#data-sources)
+- [API](#api)
+- [Submitting an agent](#submitting-an-agent)
+- [Brand system](#brand-system)
+- [Disclaimer](#disclaimer)
+- [License](#license)
+
 ## What ships here
 
 **Thirteen routes** make up the live surface at `grokagents.dev` — nine

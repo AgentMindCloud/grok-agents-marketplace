@@ -139,6 +139,28 @@ describe('parseVisuals', () => {
     expect(parseVisuals(input)).toBeNull();
   });
 
+  it('accepts plasma accent (Spectral Tier 4)', () => {
+    const input = {
+      style: 'futuristic',
+      accent_color: 'plasma',
+      demo_media: { kind: 'auto_generate' },
+    };
+    const parsed = parseVisuals(input);
+    expect(parsed).not.toBeNull();
+    expect(parsed?.accent_color).toBe('plasma');
+  });
+
+  it('accepts aurora accent (Spectral Tier 4)', () => {
+    const input = {
+      style: 'premium',
+      accent_color: 'aurora',
+      demo_media: { kind: 'auto_generate' },
+    };
+    const parsed = parseVisuals(input);
+    expect(parsed).not.toBeNull();
+    expect(parsed?.accent_color).toBe('aurora');
+  });
+
   it('exports a Zod schema directly usable via safeParse', () => {
     const result = AgentVisualsSchema.safeParse({
       style: 'futuristic',

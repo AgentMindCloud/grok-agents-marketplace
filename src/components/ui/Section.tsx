@@ -38,7 +38,7 @@ export function SectionHeader({
     >
       <div className="flex flex-col gap-2 max-w-2xl">
         {eyebrow ? (
-          <p className="text-xs uppercase tracking-[0.2em] text-cyan font-mono">{eyebrow}</p>
+          <p className="text-xs uppercase tracking-[0.2em] text-aurora font-mono">{eyebrow}</p>
         ) : null}
         <h2 className="font-display text-2xl md:text-3xl lg:text-4xl tracking-tighter text-ink">
           {title}

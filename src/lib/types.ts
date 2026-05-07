@@ -31,7 +31,7 @@ export interface AgentYamlSample {
   content: string;
 }
 
-export type VisualAccent = 'cyan' | 'green';
+export type VisualAccent = 'plasma' | 'aurora' | 'cyan' | 'green';
 export type VisualStyle = 'futuristic' | 'premium' | 'minimal';
 
 export type AgentDemoMedia =

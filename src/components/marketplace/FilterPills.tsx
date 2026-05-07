@@ -76,7 +76,7 @@ export function FilterPills({
 function FilterGroup({ label, children }: { label: string; children: React.ReactNode }) {
   return (
     <div className="flex flex-col gap-2">
-      <span className="text-[10px] uppercase tracking-[0.2em] font-mono text-cyan">{label}</span>
+      <span className="text-[10px] uppercase tracking-[0.2em] font-mono text-aurora">{label}</span>
       {children}
     </div>
   );
@@ -99,8 +99,8 @@ function Pill({
       className={cn(
         'inline-flex items-center gap-1 rounded-sm border px-2.5 py-1 text-xs font-medium transition-all duration-150 ease-gi',
         active
-          ? 'border-cyan bg-cyan/10 text-cyan shadow-cyanGlowSoft'
-          : 'border-border-subtle bg-surface text-ink-muted hover:border-border-focus hover:text-ink'
+          ? 'border-plasma bg-plasma/10 text-plasma shadow-plasmaGlowSoft'
+          : 'border-border-subtle bg-surface text-ink-muted hover:border-aurora/50 hover:text-ink'
       )}
     >
       {active ? <Check className="h-3 w-3" /> : null}

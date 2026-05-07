@@ -17,8 +17,10 @@ export default function OgImage() {
         justifyContent: 'center',
         padding: '80px',
         background: BRAND.bg,
-        backgroundImage:
-          'radial-gradient(ellipse at 22% 55%, rgba(0,240,255,0.18), rgba(0,240,255,0) 65%)',
+        backgroundImage: [
+          'radial-gradient(900px circle at 18% 22%, rgba(255,30,112,0.22), rgba(255,30,112,0) 60%)',
+          'radial-gradient(700px circle at 82% 78%, rgba(0,224,213,0.18), rgba(0,224,213,0) 60%)',
+        ].join(', '),
         color: BRAND.ink,
         fontFamily: 'Inter, system-ui, sans-serif',
       }}
@@ -27,7 +29,7 @@ export default function OgImage() {
         style={{
           fontSize: 20,
           letterSpacing: '0.22em',
-          color: BRAND.cyan,
+          color: BRAND.aurora,
           textTransform: 'uppercase',
           fontWeight: 600,
           marginBottom: 40,
@@ -41,7 +43,7 @@ export default function OgImage() {
           lineHeight: 0.9,
           letterSpacing: '-0.05em',
           fontWeight: 700,
-          color: BRAND.cyan,
+          color: BRAND.plasma,
         }}
       >
         GROKINSTALL

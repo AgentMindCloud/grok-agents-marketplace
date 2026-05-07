@@ -26,8 +26,10 @@ export default async function StatsSnapshotOg() {
         flexDirection: 'column',
         padding: '56px 72px',
         background: BRAND.bg,
-        backgroundImage:
-          'radial-gradient(ellipse at 22% 55%, rgba(0,240,255,0.16), rgba(0,240,255,0) 60%)',
+        backgroundImage: [
+          'radial-gradient(900px circle at 18% 22%, rgba(255,30,112,0.20), rgba(255,30,112,0) 60%)',
+          'radial-gradient(700px circle at 82% 78%, rgba(0,224,213,0.16), rgba(0,224,213,0) 60%)',
+        ].join(', '),
         color: BRAND.ink,
         fontFamily: 'Inter, system-ui, sans-serif',
       }}
@@ -37,7 +39,7 @@ export default async function StatsSnapshotOg() {
           display: 'flex',
           fontSize: 18,
           letterSpacing: '0.22em',
-          color: BRAND.cyan,
+          color: BRAND.aurora,
           textTransform: 'uppercase',
           fontWeight: 600,
         }}
@@ -76,7 +78,7 @@ export default async function StatsSnapshotOg() {
               flexDirection: 'column',
               flex: 1,
               padding: '22px 24px',
-              border: '1px solid rgba(0,240,255,0.25)',
+              border: '1px solid rgba(255,30,112,0.25)',
               borderRadius: 16,
               background: 'rgba(255,255,255,0.04)',
             }}
@@ -87,7 +89,7 @@ export default async function StatsSnapshotOg() {
                 fontSize: 12,
                 letterSpacing: '0.18em',
                 textTransform: 'uppercase',
-                color: BRAND.cyan,
+                color: BRAND.aurora,
               }}
             >
               {c.label}

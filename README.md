@@ -1,8 +1,8 @@
-<!-- NEON / CYBERPUNK REPO TEMPLATE · GROK-AGENTS-MARKETPLACE -->
+<!-- SPECTRAL VISUAL IDENTITY · TIER 4 · GROK-AGENTS-MARKETPLACE -->
 
 <p align="center">
   <img
-    src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:00E5FF,50:7C3AED,100:FF4FD8&text=grok-agents-marketplace&fontSize=46&fontColor=EAF8FF&fontAlign=50&fontAlignY=38&desc=The%20Community%20Marketplace%20for%20Grok-Native%20Agents%20on%20X&descAlignY=62&descSize=17"
+    src="https://capsule-render.vercel.app/api?type=waving&height=230&color=0:0A0A0A,30:FF1E70,70:00E0D5,100:0A0A0A&text=grok-agents-marketplace&fontSize=46&fontColor=FFFFFF&fontAlign=50&fontAlignY=38&desc=The%20Community%20Marketplace%20for%20Grok-Native%20Agents%20on%20X&descAlignY=62&descSize=17"
     width="100%"
     alt="header"
   />
@@ -16,21 +16,21 @@
 </p>
 
 <p align="center">
-  <img src="https://readme-typing-svg.demolab.com?font=Space+Grotesk&weight=700&size=22&pause=1000&color=00E5FF&center=true&vCenter=true&width=900&lines=13+Routes+%C2%B7+5+Dynamic+OG+Images;Next.js+15+%2B+Vercel+Edge+%2B+KV;Adoption+Dashboard+%26+Live+Install+Counters;v2.14+Visuals+Renderer+Is+Live" alt="typing" />
+  <img src="https://readme-typing-svg.demolab.com?font=Inter&weight=700&size=22&pause=1000&color=FF1E70&center=true&vCenter=true&width=900&lines=13+Routes+%C2%B7+5+Dynamic+OG+Images;Next.js+15+%2B+Vercel+Edge+%2B+KV;Adoption+Dashboard+%26+Live+Install+Counters;Spectral+Visual+System+%E2%80%94+Tier+4+Polish" alt="typing" />
 </p>
 
 <p align="center">
-  <a href="https://grokagents.dev"><img src="https://img.shields.io/badge/LIVE%20%E2%86%92%20grokagents.dev-00E5FF?style=for-the-badge&logoColor=001018&labelColor=0A0D14" /></a>
-  <img src="https://img.shields.io/badge/Next.js%2015-7C3AED?style=for-the-badge&logo=nextdotjs&logoColor=FFFFFF&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/TypeScript%20Strict-FF4FD8?style=for-the-badge&logo=typescript&logoColor=FFFFFF&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Tailwind%203-00D5FF?style=for-the-badge&logo=tailwindcss&logoColor=001018&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Vercel%20KV-9D4EDD?style=for-the-badge&logo=vercel&logoColor=FFFFFF&labelColor=0A0D14" />
-  <a href="./LICENSE"><img src="https://img.shields.io/badge/Apache%202.0-5EF2FF?style=for-the-badge&logoColor=001018&labelColor=0A0D14" /></a>
+  <a href="https://grokagents.dev"><img src="https://img.shields.io/badge/LIVE%20%E2%86%92%20grokagents.dev-FF1E70?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0A0A" /></a>
+  <img src="https://img.shields.io/badge/Next.js%2015-00E0D5?style=for-the-badge&logo=nextdotjs&logoColor=0A0A0A&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/TypeScript%20Strict-FF1E70?style=for-the-badge&logo=typescript&logoColor=FFFFFF&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Tailwind%203-00E0D5?style=for-the-badge&logo=tailwindcss&logoColor=0A0A0A&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Vercel%20KV-FF1E70?style=for-the-badge&logo=vercel&logoColor=FFFFFF&labelColor=0A0A0A" />
+  <a href="./LICENSE"><img src="https://img.shields.io/badge/Apache%202.0-00E0D5?style=for-the-badge&logoColor=0A0A0A&labelColor=0A0A0A" /></a>
 </p>
 
 <p align="center">
   <a href="https://grokagents.dev">
-    <img alt="GrokInstall marketplace — grokagents.dev hero" src="./public/brand/banner-hero-grok-install.svg" width="760" />
+    <img alt="GrokInstall marketplace — grokagents.dev hero, Spectral palette" src="./public/brand/banner-hero-grok-install.svg" width="760" />
   </a>
 </p>
 
@@ -81,6 +81,31 @@
     <td>
       <h3>🔐 Privacy</h3>
       <p><code>/privacy</code> — what we collect, don't, how to opt out, 90-day retention pledge.</p>
+    </td>
+  </tr>
+</table>
+
+## ✦ What's New — Spectral (Tier 4)
+
+<table>
+  <tr>
+    <td width="50%">
+      <h3>🌌 Spectral palette</h3>
+      <p>Plasma <code>#FF1E70</code> + Aurora <code>#00E0D5</code> on <code>#0A0A0A</code>. New <code>NebulaBackdrop</code> drifts soft Plasma + Aurora circles behind every hero strip; <code>spectral-divider</code> hairlines transition between sections.</p>
+    </td>
+    <td width="50%">
+      <h3>✨ Chromatic-aberration headline</h3>
+      <p>The hero "Grok-native" word picks up a Plasma + Aurora text-shadow split, paired with a subtle halftone dot grid for that risograph print feel.</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <h3>🔤 Inter as the display face</h3>
+      <p>Inter is now both body and display; JetBrains Mono drives eyebrows and code. Space Grotesk demoted to legacy fallback only.</p>
+    </td>
+    <td>
+      <h3>🎨 Token-clean rollout</h3>
+      <p>All Spectral colors flow through <code>tailwind.config.ts</code> + <code>src/app/globals.css</code>. <b>Zero</b> hardcoded hex in components. The schema in <code>parse-visuals.ts</code> now accepts <code>plasma</code> + <code>aurora</code> alongside the legacy accents.</p>
     </td>
   </tr>
 </table>
@@ -136,21 +161,21 @@ flowchart LR
 ## ✦ Stack
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Next.js%2015-00E5FF?style=for-the-badge&logo=nextdotjs&logoColor=001018&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/React%20RSC-7C3AED?style=for-the-badge&logo=react&logoColor=FFFFFF&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/TypeScript-FF4FD8?style=for-the-badge&logo=typescript&logoColor=FFFFFF&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Tailwind-00D5FF?style=for-the-badge&logo=tailwindcss&logoColor=001018&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Recharts-9D4EDD?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/SWR-5EF2FF?style=for-the-badge&logoColor=001018&labelColor=0A0D14" />
+  <img src="https://img.shields.io/badge/Next.js%2015-FF1E70?style=for-the-badge&logo=nextdotjs&logoColor=FFFFFF&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/React%20RSC-00E0D5?style=for-the-badge&logo=react&logoColor=0A0A0A&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/TypeScript-FF1E70?style=for-the-badge&logo=typescript&logoColor=FFFFFF&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Tailwind-00E0D5?style=for-the-badge&logo=tailwindcss&logoColor=0A0A0A&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Recharts-FF1E70?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/SWR-00E0D5?style=for-the-badge&logoColor=0A0A0A&labelColor=0A0A0A" />
 </p>
 <p align="center">
-  <img src="https://img.shields.io/badge/Zod-C026D3?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Octokit-38BDF8?style=for-the-badge&logoColor=001018&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Shiki-00E5FF?style=for-the-badge&logoColor=001018&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Vercel%20KV-7C3AED?style=for-the-badge&logo=vercel&logoColor=FFFFFF&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Plausible-FF4FD8?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Biome-00D5FF?style=for-the-badge&logoColor=001018&labelColor=0A0D14" />
-  <img src="https://img.shields.io/badge/Vitest-9D4EDD?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0D14" />
+  <img src="https://img.shields.io/badge/Zod-FF1E70?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Octokit-00E0D5?style=for-the-badge&logoColor=0A0A0A&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Shiki-FF1E70?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Vercel%20KV-00E0D5?style=for-the-badge&logo=vercel&logoColor=0A0A0A&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Plausible-FF1E70?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Biome-00E0D5?style=for-the-badge&logoColor=0A0A0A&labelColor=0A0A0A" />
+  <img src="https://img.shields.io/badge/Vitest-FF1E70?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0A0A" />
 </p>
 
 <details>
@@ -329,21 +354,36 @@ The receive endpoint is CORS-open and rate-limited to **30 events/minute per `an
 
 Head to [`/submit`](https://grokagents.dev/submit), fill in the form, click **Open pre-filled PR** — you'll land on GitHub with the PR body pre-populated against `awesome-grok-agents`. Or copy the markdown body and open a PR manually.
 
-## ✦ Brand System
+## ✦ Brand System — Spectral (Tier 4)
 
 All colors, radii, shadows, blur, and fonts live in `tailwind.config.ts` and `src/app/globals.css` — nowhere else. **No hardcoded hex in components.**
 
-| Token | Value |
-|---|---|
-| `bg` | `#0A0A0A` |
-| `cyan` | `#00F0FF` |
-| `green` | `#00FF9D` |
-| `danger` | `#FF2D55` (safety only) |
-| `surface` | `rgba(255,255,255,0.04)` |
-| `border-subtle` | `rgba(0,240,255,0.15)` |
-| `border-focus` | `rgba(0,240,255,0.40)` |
-| `shadow-cyanGlow` | `0 0 24px rgba(0,240,255,0.30)` |
-| `backdrop-blur-gi` | `20px` |
+The Spectral palette layers Plasma + Aurora over a deep `#0A0A0A` field, with halftone dot patterns, drifting nebula circles, and subtle chromatic aberration on hero typography. Inter is now the display face; JetBrains Mono drives eyebrows and code.
+
+| Token | Value | Role |
+|---|---|---|
+| `bg` | `#0A0A0A` | Deep field |
+| `plasma` | `#FF1E70` | Primary brand accent · CTAs · hero |
+| `aurora` | `#00E0D5` | Secondary accent · eyebrows · nav hover |
+| `cyan` | `#00F0FF` | Legacy data accent (charts, vscode badge) |
+| `green` | `#00FF9D` | Safety / success states |
+| `danger` | `#FF2D55` | Warning only |
+| `surface` | `rgba(255,255,255,0.04)` | Glass panels |
+| `border-subtle` | `rgba(255,255,255,0.08)` | Hairlines |
+| `border-focus` | `rgba(255,30,112,0.45)` | Focus rings |
+| `shadow-plasmaGlow` | `0 0 28px rgba(255,30,112,0.35)` | Primary CTA glow |
+| `shadow-auroraGlow` | `0 0 28px rgba(0,224,213,0.35)` | Secondary CTA glow |
+| `shadow-spectral` | `0 0 36px plasma + 0 0 60px aurora` | Hero card |
+| `backdrop-blur-gi` | `20px` | Glass blur |
+
+### Spectral utilities (`src/app/globals.css`)
+
+- `.bg-nebula` — layered Plasma + Aurora radial circles for hero strips
+- `.bg-halftone`, `.bg-halftone-plasma`, `.bg-halftone-aurora` — 1px dots on a 14px grid
+- `.text-glow-plasma`, `.text-glow-aurora` — outer glow on type
+- `.chromatic-aberration` — Plasma + Aurora 1px text-shadow split for the hero word
+- `.spectral-divider` — gradient hairline Plasma → Aurora
+- `.text-spectral` — Plasma → Aurora gradient text fill
 
 ## ✦ Sibling Repos
 
@@ -370,9 +410,9 @@ All colors, radii, shadows, blur, and fonts live in `tailwind.config.ts` and `sr
 ## ✦ Connect
 
 <p align="center">
-  <a href="https://grokagents.dev"><img src="https://img.shields.io/badge/grokagents.dev-00E5FF?style=for-the-badge&logoColor=001018&labelColor=0A0D14" /></a>
-  <a href="https://github.com/agentmindcloud"><img src="https://img.shields.io/badge/GitHub-7C3AED?style=for-the-badge&logo=github&logoColor=FFFFFF&labelColor=0A0D14" /></a>
-  <a href="https://x.com/JanSol0s"><img src="https://img.shields.io/badge/X-FF4FD8?style=for-the-badge&logo=x&logoColor=FFFFFF&labelColor=0A0D14" /></a>
+  <a href="https://grokagents.dev"><img src="https://img.shields.io/badge/grokagents.dev-FF1E70?style=for-the-badge&logoColor=FFFFFF&labelColor=0A0A0A" /></a>
+  <a href="https://github.com/agentmindcloud"><img src="https://img.shields.io/badge/GitHub-00E0D5?style=for-the-badge&logo=github&logoColor=0A0A0A&labelColor=0A0A0A" /></a>
+  <a href="https://x.com/JanSol0s"><img src="https://img.shields.io/badge/X-FF1E70?style=for-the-badge&logo=x&logoColor=FFFFFF&labelColor=0A0A0A" /></a>
 </p>
 
 ## ✦ Disclaimer
@@ -384,5 +424,5 @@ GrokInstall is an independent community project. **Not affiliated with xAI, Grok
 Apache 2.0 — see [LICENSE](./LICENSE).
 
 <p align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:00E5FF,50:7C3AED,100:FF4FD8" width="100%" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&height=120&section=footer&color=0:0A0A0A,30:FF1E70,70:00E0D5,100:0A0A0A" width="100%" />
 </p>

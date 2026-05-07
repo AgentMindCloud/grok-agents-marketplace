@@ -18,7 +18,7 @@ export function SearchBar({
     <div
       className={cn(
         'glass flex items-center gap-2 rounded-md px-3 h-11 transition-colors',
-        'focus-within:border-border-focus focus-within:shadow-cyanGlowSoft',
+        'focus-within:border-plasma/50 focus-within:shadow-plasmaGlowSoft',
         className
       )}
     >

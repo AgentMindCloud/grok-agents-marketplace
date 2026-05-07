@@ -62,7 +62,7 @@ export function Footer() {
           <div className="md:col-span-1">
             <Link href="/" className="font-display text-lg tracking-[-0.06em] uppercase">
               <span className="text-ink">GROK</span>
-              <span className="text-cyan">INSTALL</span>
+              <span className="text-plasma text-glow-plasma">INSTALL</span>
             </Link>
             <p className="mt-3 text-sm text-ink-muted">{SITE_TAGLINE}</p>
             <div className="mt-4 flex gap-3">
@@ -71,7 +71,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="AgentMindCloud on GitHub"
-                className="text-ink-subtle hover:text-cyan transition-colors"
+                className="text-ink-subtle hover:text-plasma transition-colors"
               >
                 <Github className="h-5 w-5" />
               </a>
@@ -80,7 +80,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="@JanSol0s on X"
-                className="text-ink-subtle hover:text-cyan transition-colors"
+                className="text-ink-subtle hover:text-plasma transition-colors"
               >
                 <Twitter className="h-5 w-5" />
               </a>
@@ -89,7 +89,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Documentation"
-                className="text-ink-subtle hover:text-cyan transition-colors"
+                className="text-ink-subtle hover:text-plasma transition-colors"
               >
                 <BookOpen className="h-5 w-5" />
               </a>
@@ -98,7 +98,7 @@ export function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="npm package"
-                className="text-ink-subtle hover:text-cyan transition-colors"
+                className="text-ink-subtle hover:text-plasma transition-colors"
               >
                 <Package className="h-5 w-5" />
               </a>
@@ -107,7 +107,7 @@ export function Footer() {
 
           {COLS.map((col) => (
             <div key={col.title}>
-              <h3 className="font-display text-sm uppercase tracking-[0.18em] text-cyan">
+              <h3 className="font-display text-sm uppercase tracking-[0.18em] text-aurora">
                 {col.title}
               </h3>
               <ul className="mt-3 flex flex-col gap-2">
@@ -128,15 +128,16 @@ export function Footer() {
           ))}
         </div>
 
-        <div className="mt-10 flex flex-col gap-4 border-t border-border-subtle pt-6 sm:flex-row sm:items-center sm:justify-between">
+        <div className="relative mt-10 pt-6 sm:flex sm:items-center sm:justify-between sm:gap-4">
+          <div className="absolute inset-x-0 top-0 spectral-divider" aria-hidden />
           <p className="text-xs text-ink-subtle max-w-xl">{DISCLAIMER}</p>
-          <p className="text-xs text-ink-subtle">
+          <p className="text-xs text-ink-subtle mt-4 sm:mt-0">
             © {year} GrokInstall · Built by{' '}
             <a
               href="https://x.com/JanSol0s"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-cyan hover:underline"
+              className="text-plasma hover:underline"
             >
               @JanSol0s
             </a>

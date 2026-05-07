@@ -9,16 +9,22 @@ interface RenderDemoMediaProps {
 }
 
 const ACCENT_TEXT: Record<VisualAccent, string> = {
+  plasma: 'text-plasma',
+  aurora: 'text-aurora',
   cyan: 'text-cyan',
   green: 'text-green',
 };
 
 const ACCENT_STROKE: Record<VisualAccent, string> = {
+  plasma: 'stroke-plasma',
+  aurora: 'stroke-aurora',
   cyan: 'stroke-cyan',
   green: 'stroke-green',
 };
 
 const ACCENT_GLOW: Record<VisualAccent, string> = {
+  plasma: 'shadow-plasmaGlowSoft',
+  aurora: 'shadow-auroraGlowSoft',
   cyan: 'shadow-cyanGlowSoft',
   green: 'shadow-greenGlow',
 };

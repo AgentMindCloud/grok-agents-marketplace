@@ -1,175 +1,346 @@
 [
   {
-    "id": "post-autopilot",
-    "name": "Post Autopilot",
-    "tagline": "Drafts, schedules, and publishes Grok-aware threads on X.",
-    "description": "Post Autopilot writes in your voice, respects your content guardrails, and posts directly via the X developer API. Ships with a tuned safety policy that blocks 19 known prompt-injection vectors out of the box.",
-    "category": "content",
-    "tags": ["threads", "scheduler", "x-api", "grok-native", "beginner-friendly"],
-    "certifications": ["grok-native", "safety-max", "action-certified"],
+    "id": "hello-grok",
+    "name": "Hello Grok",
+    "tagline": "The simplest possible Grok agent — single agent, single tool, under 20 lines of YAML.",
+    "description": "A minimal starter template that demonstrates the canonical grok-agent.yaml shape: one runtime, one tool, one approval gate. Ideal as the first install when you're learning the platform or onboarding a teammate.",
+    "category": "developer",
+    "tags": ["beginner-friendly", "tutorial", "starter-template"],
+    "certifications": ["grok-native"],
     "creator": {
-      "handle": "@JanSol0s",
-      "github": "JanSol0s",
-      "x": "JanSol0s",
-      "avatar": "https://avatars.githubusercontent.com/JanSol0s",
-      "agentCount": 7
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
     },
-    "repo": "AgentMindCloud/post-autopilot",
-    "homepage": "https://postautopilot.grokagents.dev",
-    "demo_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "x_install_url": "https://x.com/install?agent=post-autopilot",
-    "created_at": "2026-02-11T10:00:00Z",
-    "updated_at": "2026-04-14T09:20:00Z",
-    "installs": 14820,
-    "safetyScore": 98,
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/hello-grok/",
+    "x_install_url": "https://x.com/install?agent=hello-grok",
+    "created_at": "2026-04-08T10:00:00Z",
+    "updated_at": "2026-04-26T12:00:00Z",
+    "installs": 1820,
+    "safetyScore": 96,
     "featured": true,
     "yaml": {
       "filename": "grok-agent.yaml",
       "lang": "yaml",
-      "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: post-autopilot\n  name: Post Autopilot\nspec:\n  runtime: grok-4-fast\n  safety:\n    policy: safety-max\n    blockInjection: true\n  actions:\n    - id: draft-thread\n      uses: x.compose\n    - id: schedule-post\n      uses: x.schedule\n      requires: [composer.approved]\n  telemetry:\n    sink: grokinstall-events\n"
+      "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: hello-grok\n  name: Hello Grok\nspec:\n  runtime: grok-4-fast\n  safety:\n    policy: standard\n  tools:\n    - id: echo\n      uses: core.echo\n  approval:\n    required: true\n"
+    },
+    "visuals": {
+      "style": "minimal",
+      "accent_color": "cyan",
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "Your first Grok-native agent in twenty lines.",
+      "subheadline": "Clone, customise, ship — the canonical starter template."
+    }
+  },
+  {
+    "id": "reply-engagement-bot",
+    "name": "Reply Engagement Bot",
+    "tagline": "Watches your X mentions and drafts thoughtful, on-brand replies behind an approval gate.",
+    "description": "Polls your X mentions, scores each one for relevance, then drafts a reply in your voice. Nothing posts without your tap — the approval queue lives in the CLI and the X composer. Built on the strict safety profile.",
+    "category": "marketing",
+    "tags": ["x-native", "beginner-friendly", "approval-gated", "replies"],
+    "certifications": ["grok-native", "safety-max", "action-certified"],
+    "creator": {
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
+    },
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/reply-engagement-bot/",
+    "x_install_url": "https://x.com/install?agent=reply-engagement-bot",
+    "created_at": "2026-03-22T11:00:00Z",
+    "updated_at": "2026-04-22T08:30:00Z",
+    "installs": 4210,
+    "safetyScore": 94,
+    "featured": true,
+    "yaml": {
+      "filename": "grok-agent.yaml",
+      "lang": "yaml",
+      "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: reply-engagement-bot\nspec:\n  runtime: grok-4-fast\n  safety:\n    policy: safety-max\n  tools:\n    - id: watch-mentions\n      uses: x.mentions.poll\n    - id: draft-reply\n      uses: x.compose\n  approval:\n    required: true\n"
     },
     "visuals": {
       "style": "futuristic",
       "accent_color": "cyan",
       "demo_media": { "kind": "auto_generate" },
-      "headline": "Ship Grok-native threads at the speed of thought.",
-      "subheadline": "One YAML, one tap, scheduled across X with safety-max guardrails baked in."
+      "headline": "Never miss a mention. Never auto-post a regret.",
+      "subheadline": "Approval-gated drafts in your voice, generated the moment a mention lands."
     }
   },
   {
-    "id": "voice-concierge",
-    "name": "Voice Concierge",
-    "tagline": "Hands-free Grok agent for replies, DMs, and quick polls.",
-    "description": "A voice-first concierge for X. Wake-word activation, barge-in support, and structured command grammar for replies, DMs, and rapid polls. Built on the Voice-Ready spec v1.2.",
-    "category": "voice",
-    "tags": ["voice", "hands-free", "concierge", "barge-in"],
-    "certifications": ["grok-native", "voice-ready", "safety-max"],
+    "id": "trend-to-thread",
+    "name": "Trend To Thread",
+    "tagline": "Monitors X trends and drafts a full thread on topics that match your profile.",
+    "description": "Subscribes to your topical filters, watches the trending API, and drafts a calibrated thread the moment a relevant topic crosses your threshold. Threads land in the approval queue with sources attached — never auto-posted.",
+    "category": "content",
+    "tags": ["x-native", "content-creation", "approval-gated", "threads"],
+    "certifications": ["grok-native", "safety-max", "action-certified"],
     "creator": {
-      "handle": "@echostackdev",
-      "github": "echostackdev",
-      "x": "echostackdev",
-      "avatar": "https://avatars.githubusercontent.com/echostackdev",
-      "agentCount": 3
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
     },
-    "repo": "AgentMindCloud/voice-concierge",
-    "demo_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "x_install_url": "https://x.com/install?agent=voice-concierge",
-    "created_at": "2026-03-02T14:45:00Z",
-    "updated_at": "2026-04-10T12:00:00Z",
-    "installs": 5203,
-    "safetyScore": 95,
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/trend-to-thread/",
+    "x_install_url": "https://x.com/install?agent=trend-to-thread",
+    "created_at": "2026-03-15T09:30:00Z",
+    "updated_at": "2026-04-24T15:00:00Z",
+    "installs": 6480,
+    "safetyScore": 93,
     "featured": true,
     "yaml": {
-      "filename": "grok-voice.yaml",
+      "filename": "grok-agent.yaml",
       "lang": "yaml",
-      "content": "apiVersion: grokinstall.dev/v1\nkind: VoiceAgent\nmetadata:\n  id: voice-concierge\nspec:\n  wakeWord: \"hey grok\"\n  language: en-US\n  barge-in: true\n  commands:\n    - intent: reply\n      grammar: \"reply to <handle> saying <text>\"\n    - intent: dm\n      grammar: \"dm <handle> <text>\"\n    - intent: poll\n      grammar: \"start a poll about <topic>\"\n"
+      "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: trend-to-thread\nspec:\n  runtime: grok-4\n  safety:\n    policy: safety-max\n  tools:\n    - id: watch-trends\n      uses: x.trends.subscribe\n    - id: draft-thread\n      uses: x.compose.thread\n  approval:\n    required: true\n"
+    },
+    "visuals": {
+      "style": "futuristic",
+      "accent_color": "cyan",
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "Catch the trend. Ship the thread. Approve the post.",
+      "subheadline": "Topical filters, calibrated drafts, sources attached — all behind one approval tap."
+    }
+  },
+  {
+    "id": "research-swarm",
+    "name": "Research Swarm",
+    "tagline": "A three-agent swarm: researcher gathers sources, critic challenges them, publisher writes the brief.",
+    "description": "Coordinates three specialist agents under the Swarm-Ready v1 spec. Researcher pulls citations, Critic stress-tests them, Publisher produces the final brief. Every hop is logged for audit and replay.",
+    "category": "swarm",
+    "tags": ["multi-agent", "research", "advanced", "audit-log"],
+    "certifications": ["grok-native", "swarm-ready", "safety-max"],
+    "creator": {
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
+    },
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/research-swarm/",
+    "x_install_url": "https://x.com/install?agent=research-swarm",
+    "created_at": "2026-02-18T14:00:00Z",
+    "updated_at": "2026-04-19T10:20:00Z",
+    "installs": 2980,
+    "safetyScore": 95,
+    "yaml": {
+      "filename": "grok-swarm.yaml",
+      "lang": "yaml",
+      "content": "apiVersion: grokinstall.dev/v1\nkind: Swarm\nmetadata:\n  id: research-swarm\nspec:\n  agents:\n    - id: researcher\n      role: retriever\n      runtime: grok-4\n    - id: critic\n      role: arbiter\n      runtime: grok-4\n    - id: publisher\n      role: composer\n      runtime: grok-4-fast\n  routing:\n    - from: researcher\n      to: critic\n      always: true\n    - from: critic\n      to: publisher\n      when: \"confidence >= 0.7\"\n  audit:\n    log: true\n"
     },
     "visuals": {
       "style": "premium",
       "accent_color": "green",
-      "demo_media": {
-        "kind": "image",
-        "url": "https://raw.githubusercontent.com/AgentMindCloud/grok-agents-marketplace/main/public/brand/banner-hero-grok-install.svg"
-      },
-      "headline": "Talk to X like it's 2030.",
-      "subheadline": "Wake-word, barge-in, and a structured grammar for replies, DMs, and polls — no hands, no friction."
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "Three agents, one brief. Every claim challenged.",
+      "subheadline": "Researcher → Critic → Publisher, with every hop logged for audit and replay."
     }
   },
   {
-    "id": "swarm-sentry",
-    "name": "Swarm Sentry",
-    "tagline": "A three-agent swarm that moderates replies in real time.",
-    "description": "Swarm Sentry coordinates three specialist agents — Triage, Evidence, and Judge — to moderate replies on high-volume posts. Every decision is logged with citations for appeal. Runs on the Swarm-Ready v1 spec.",
-    "category": "swarm",
-    "tags": ["swarm", "moderation", "triage", "audit-log"],
-    "certifications": ["grok-native", "swarm-ready", "safety-max"],
+    "id": "code-reviewer",
+    "name": "Code Reviewer",
+    "tagline": "Reviews GitHub PRs with Grok reasoning. Posts inline comments behind an approval gate.",
+    "description": "Subscribes to your repository's PR webhook, runs a structured review pass, and queues inline comments for your approval. Ships with a curated rule pack for security, perf, and style — every flag links to a citation.",
+    "category": "developer",
+    "tags": ["developer-tools", "github", "approval-gated", "code-review"],
+    "certifications": ["grok-native", "vscode-verified", "action-certified"],
     "creator": {
-      "handle": "@sentrylabs",
-      "github": "sentrylabs",
-      "x": "sentrylabs",
-      "avatar": "https://avatars.githubusercontent.com/sentrylabs",
-      "agentCount": 4
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
     },
-    "repo": "AgentMindCloud/swarm-sentry",
-    "demo_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "x_install_url": "https://x.com/install?agent=swarm-sentry",
-    "created_at": "2026-01-24T09:00:00Z",
-    "updated_at": "2026-04-16T22:10:00Z",
-    "installs": 3104,
-    "safetyScore": 97,
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/code-reviewer/",
+    "x_install_url": "https://x.com/install?agent=code-reviewer",
+    "created_at": "2026-03-04T16:45:00Z",
+    "updated_at": "2026-04-21T19:00:00Z",
+    "installs": 5610,
+    "safetyScore": 92,
     "featured": true,
     "yaml": {
-      "filename": "grok-swarm.yaml",
+      "filename": "grok-agent.yaml",
       "lang": "yaml",
-      "content": "apiVersion: grokinstall.dev/v1\nkind: Swarm\nmetadata:\n  id: swarm-sentry\nspec:\n  agents:\n    - id: triage\n      role: classifier\n      runtime: grok-4-fast\n    - id: evidence\n      role: retriever\n      runtime: grok-4\n    - id: judge\n      role: arbiter\n      runtime: grok-4\n  routing:\n    - from: triage\n      to: evidence\n      when: \"confidence < 0.85\"\n    - from: evidence\n      to: judge\n      always: true\n  audit:\n    log: true\n    sink: grokinstall-events\n"
+      "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: code-reviewer\nspec:\n  runtime: grok-4\n  safety:\n    policy: safety-max\n  tools:\n    - id: read-pr\n      uses: github.pulls.read\n    - id: post-review\n      uses: github.pulls.review\n  approval:\n    required: true\n"
+    },
+    "visuals": {
+      "style": "minimal",
+      "accent_color": "green",
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "PR reviews that cite their sources.",
+      "subheadline": "Inline comments, queued for your approval — security, perf, and style in one pass."
     }
   },
   {
-    "id": "thread-summarizer",
-    "name": "Thread Summarizer",
-    "tagline": "Collapses a 200-reply thread into a 5-bullet TL;DR.",
-    "description": "Feed it any X thread URL and get a calibrated TL;DR with citations back to the original posts. Ideal for research, community management, and journalism workflows.",
-    "category": "research",
-    "tags": ["tldr", "summary", "citations", "research", "beginner-friendly"],
+    "id": "thread-ghostwriter",
+    "name": "Thread Ghostwriter",
+    "tagline": "Turns a rough idea into a polished, tone-matched X thread ready for approval.",
+    "description": "Drop a paragraph, pick a tone, get a structured thread back with hook, body, and CTA. Tone-matching learns from your last 200 posts; everything lands in the approval queue with diff against your house style guide.",
+    "category": "content",
+    "tags": ["x-native", "content-creation", "approval-gated", "tone-match"],
     "certifications": ["grok-native", "safety-max"],
     "creator": {
-      "handle": "@mxr-labs",
-      "github": "mxr-labs",
-      "avatar": "https://avatars.githubusercontent.com/mxr-labs",
-      "agentCount": 2
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
     },
-    "repo": "AgentMindCloud/thread-summarizer",
-    "created_at": "2026-03-18T08:10:00Z",
-    "updated_at": "2026-04-12T15:00:00Z",
-    "installs": 2189,
-    "safetyScore": 92,
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/thread-ghostwriter/",
+    "x_install_url": "https://x.com/install?agent=thread-ghostwriter",
+    "created_at": "2026-03-26T10:15:00Z",
+    "updated_at": "2026-04-25T11:45:00Z",
+    "installs": 3340,
+    "safetyScore": 91,
+    "yaml": {
+      "filename": "grok-agent.yaml",
+      "lang": "yaml",
+      "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: thread-ghostwriter\nspec:\n  runtime: grok-4\n  safety:\n    policy: safety-max\n  tools:\n    - id: tone-match\n      uses: x.history.read\n    - id: draft-thread\n      uses: x.compose.thread\n  approval:\n    required: true\n"
+    },
+    "visuals": {
+      "style": "premium",
+      "accent_color": "cyan",
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "Idea in. Thread out. Voice intact.",
+      "subheadline": "Tone-matched against your last 200 posts, diffed against your house style guide."
+    }
+  },
+  {
+    "id": "personal-knowledge",
+    "name": "Personal Knowledge",
+    "tagline": "Builds a persistent, searchable memory of your X history. Ask what you've posted, liked, or been mentioned in.",
+    "description": "Indexes your X archive into a private vector store. Ask natural-language questions and get back exact post citations with permalinks. Encrypted at rest and never leaves your account scope.",
+    "category": "productivity",
+    "tags": ["memory", "rag", "x-native", "search"],
+    "certifications": ["grok-native", "safety-max"],
+    "creator": {
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
+    },
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/personal-knowledge/",
+    "x_install_url": "https://x.com/install?agent=personal-knowledge",
+    "created_at": "2026-02-28T08:00:00Z",
+    "updated_at": "2026-04-18T14:10:00Z",
+    "installs": 2120,
+    "safetyScore": 96,
+    "yaml": {
+      "filename": "grok-agent.yaml",
+      "lang": "yaml",
+      "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: personal-knowledge\nspec:\n  runtime: grok-4\n  safety:\n    policy: safety-max\n  tools:\n    - id: index-archive\n      uses: x.archive.read\n    - id: query-memory\n      uses: vector.query\n  approval:\n    required: false\n"
+    },
     "visuals": {
       "style": "minimal",
       "accent_color": "cyan",
       "demo_media": { "kind": "auto_generate" },
-      "headline": "Drop a thread URL. Get a 5-bullet TL;DR.",
-      "subheadline": "Cited back to the original posts — ideal for research, community management, and newsroom triage."
+      "headline": "Your X history, finally searchable.",
+      "subheadline": "Natural-language queries, exact-post citations, encrypted at rest."
     }
   },
   {
-    "id": "devrel-reply",
-    "name": "DevRel Reply",
-    "tagline": "Suggests on-brand replies for developer-community accounts.",
-    "description": "Trained on DevRel voice patterns from 42 OSS accounts. Generates replies you can approve in one tap, respects a custom style guide, and flags anything your brand team pre-listed.",
-    "category": "marketing",
-    "tags": ["devrel", "replies", "style-guide", "brand-safety", "beginner-friendly"],
-    "certifications": ["grok-native", "action-certified"],
+    "id": "scientific-discovery",
+    "name": "Scientific Discovery",
+    "tagline": "Watches arXiv plus the X discussion. Produces a daily brief of what's new and what researchers are saying.",
+    "description": "Cross-references new arXiv submissions in your tracked categories with the X conversation around them. Returns a daily digest with novelty score, sentiment, and the most-cited reply threads — so you see signal, not noise.",
+    "category": "research",
+    "tags": ["research", "x-native", "daily-digest", "arxiv"],
+    "certifications": ["grok-native", "safety-max"],
     "creator": {
-      "handle": "@relay-studio",
-      "github": "relay-studio",
-      "avatar": "https://avatars.githubusercontent.com/relay-studio",
-      "agentCount": 5
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
     },
-    "repo": "AgentMindCloud/devrel-reply",
-    "created_at": "2026-03-28T11:00:00Z",
-    "updated_at": "2026-04-17T10:45:00Z",
-    "installs": 1476,
-    "safetyScore": 88
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/scientific-discovery/",
+    "x_install_url": "https://x.com/install?agent=scientific-discovery",
+    "created_at": "2026-03-09T07:30:00Z",
+    "updated_at": "2026-04-20T07:45:00Z",
+    "installs": 1670,
+    "safetyScore": 95,
+    "yaml": {
+      "filename": "grok-agent.yaml",
+      "lang": "yaml",
+      "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: scientific-discovery\nspec:\n  runtime: grok-4\n  safety:\n    policy: safety-max\n  tools:\n    - id: pull-arxiv\n      uses: arxiv.fetch\n    - id: cross-x\n      uses: x.search\n  approval:\n    required: false\n"
+    },
+    "visuals": {
+      "style": "premium",
+      "accent_color": "green",
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "arXiv plus X — distilled into one daily brief.",
+      "subheadline": "Novelty score, sentiment, top reply threads. Signal only."
+    }
   },
   {
-    "id": "codepilot-x",
-    "name": "CodePilot X",
-    "tagline": "Turns a code snippet into a post-ready explainer thread.",
-    "description": "Paste code, pick a tone. CodePilot X writes a clear thread with inline syntax highlighting, a hook, and a CTA. Ships with VS Code sidebar integration and GitHub Action support.",
-    "category": "developer",
-    "tags": ["vscode", "code-explainer", "threads", "github-action"],
-    "certifications": ["grok-native", "vscode-verified", "action-certified"],
+    "id": "voice-agent-x",
+    "name": "Voice Agent X",
+    "tagline": "Speak a post, review the transcript, approve, publish. Voice-first X workflow with safety gates.",
+    "description": "Hands-free composition for X. Wake-word activation, barge-in, and a structured grammar for replies, DMs, and threads — every utterance lands as a transcript in the approval queue before anything ships.",
+    "category": "voice",
+    "tags": ["voice", "x-native", "approval-gated", "advanced", "hands-free"],
+    "certifications": ["grok-native", "voice-ready", "safety-max"],
     "creator": {
-      "handle": "@vybe-dev",
-      "github": "vybe-dev",
-      "avatar": "https://avatars.githubusercontent.com/vybe-dev",
-      "agentCount": 6
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
     },
-    "repo": "AgentMindCloud/codepilot-x",
-    "demo_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
-    "created_at": "2026-04-01T18:00:00Z",
-    "updated_at": "2026-04-18T09:30:00Z",
-    "installs": 987,
-    "safetyScore": 90
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/voice-agent-x/",
+    "x_install_url": "https://x.com/install?agent=voice-agent-x",
+    "created_at": "2026-03-30T13:20:00Z",
+    "updated_at": "2026-04-23T17:00:00Z",
+    "installs": 1450,
+    "safetyScore": 94,
+    "yaml": {
+      "filename": "grok-voice.yaml",
+      "lang": "yaml",
+      "content": "apiVersion: grokinstall.dev/v1\nkind: VoiceAgent\nmetadata:\n  id: voice-agent-x\nspec:\n  wakeWord: \"hey grok\"\n  language: en-US\n  barge-in: true\n  commands:\n    - intent: post\n      grammar: \"post <text>\"\n    - intent: reply\n      grammar: \"reply to <handle> saying <text>\"\n    - intent: dm\n      grammar: \"dm <handle> <text>\"\n  approval:\n    required: true\n"
+    },
+    "visuals": {
+      "style": "futuristic",
+      "accent_color": "cyan",
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "Talk to X. Approve before it ships.",
+      "subheadline": "Wake-word, barge-in, structured grammar — every post passes the transcript review."
+    }
+  },
+  {
+    "id": "live-event-commentator",
+    "name": "Live Event Commentator",
+    "tagline": "Real-time event commentary on X with strict rate limits and a kill switch.",
+    "description": "Streams an event feed (sports, conference, product launch) and drafts running commentary at the cadence you set. Hard rate limit, hard kill switch, every post gated on approval. Engineered for the strictest safety profile.",
+    "category": "content",
+    "tags": ["x-native", "real-time", "advanced", "approval-gated", "live"],
+    "certifications": ["grok-native", "safety-max", "action-certified"],
+    "creator": {
+      "handle": "@AgentMindCloud",
+      "github": "AgentMindCloud",
+      "avatar": "https://avatars.githubusercontent.com/AgentMindCloud",
+      "agentCount": 10
+    },
+    "repo": "AgentMindCloud/awesome-grok-agents",
+    "homepage": "https://agentmindcloud.github.io/awesome-grok-agents/templates/live-event-commentator/",
+    "x_install_url": "https://x.com/install?agent=live-event-commentator",
+    "created_at": "2026-04-02T18:00:00Z",
+    "updated_at": "2026-04-26T20:30:00Z",
+    "installs": 980,
+    "safetyScore": 97,
+    "yaml": {
+      "filename": "grok-agent.yaml",
+      "lang": "yaml",
+      "content": "apiVersion: grokinstall.dev/v1\nkind: Agent\nmetadata:\n  id: live-event-commentator\nspec:\n  runtime: grok-4-fast\n  safety:\n    policy: safety-max\n  tools:\n    - id: stream-feed\n      uses: events.subscribe\n    - id: draft-commentary\n      uses: x.compose\n  rateLimit:\n    perMinute: 4\n  killSwitch:\n    keyword: \"abort\"\n  approval:\n    required: true\n"
+    },
+    "visuals": {
+      "style": "futuristic",
+      "accent_color": "green",
+      "demo_media": { "kind": "auto_generate" },
+      "headline": "Live commentary. Hard limits. One kill switch.",
+      "subheadline": "Streams events into draft posts at your cadence — every line gated on approval."
+    }
   }
 ]

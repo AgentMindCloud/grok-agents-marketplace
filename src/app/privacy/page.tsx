@@ -68,7 +68,11 @@ export default function PrivacyPage() {
                 </p>
               </div>
               <ul className="flex flex-col gap-2 text-sm text-ink-muted leading-relaxed">
-                <li>IP addresses (stripped at the edge)</li>
+                <li>
+                  Raw IP addresses — the public stats endpoint hashes the caller IP into a short
+                  rate-limit token (1-minute TTL); the original IP is never stored, logged, or
+                  associated with telemetry events
+                </li>
                 <li>OS usernames, hostnames, or file paths</li>
                 <li>Agent YAML contents</li>
                 <li>Prompts, completions, or any response bodies</li>

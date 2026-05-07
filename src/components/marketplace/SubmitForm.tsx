@@ -41,7 +41,7 @@ export function SubmitForm() {
   const prBody = useMemo(() => buildPrBody(form), [form]);
   const prUrl = useMemo(
     () =>
-      `https://github.com/AgentMindCloud/awesome-grok-agents/compare/main...main?quick_pull=1&title=${encodeURIComponent(
+      `https://github.com/AgentMindCloud/awesome-grok-agents/issues/new?labels=agent-submission&title=${encodeURIComponent(
         `Add agent: ${form.name || '<agent-name>'}`
       )}&body=${encodeURIComponent(prBody)}`,
     [form.name, prBody]
@@ -165,7 +165,7 @@ export function SubmitForm() {
             className={cn(!isValid && 'opacity-50 pointer-events-none')}
             aria-disabled={!isValid}
           >
-            Open pre-filled PR
+            Open pre-filled submission
           </NeonButton>
           <NeonButton
             variant="secondary"
@@ -205,8 +205,10 @@ export function SubmitForm() {
           <p className="text-ink">How it works</p>
           <ol className="mt-2 space-y-1 text-ink-subtle list-decimal list-inside">
             <li>Fill in the fields on the left.</li>
-            <li>Click “Open pre-filled PR” — GitHub opens with the PR body ready.</li>
-            <li>Finish the PR title, hit Create, we review weekly.</li>
+            <li>
+              Click “Open pre-filled submission” — GitHub opens an issue with everything filled in.
+            </li>
+            <li>Submit the issue, we review weekly and open the merge PR for you.</li>
           </ol>
         </GlassCard>
       </aside>

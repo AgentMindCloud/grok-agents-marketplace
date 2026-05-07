@@ -8,8 +8,9 @@ export const alt = 'GrokInstall agent';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
-export default async function OgImage({ params }: { params: { id: string } }) {
-  const agent = await getAgentById(params.id);
+export default async function OgImage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+  const agent = await getAgentById(id);
   const title = agent?.name ?? 'Agent not found';
   const tagline = agent?.tagline ?? 'Explore agents at grokagents.dev';
   const category = agent ? CATEGORY_LABELS[agent.category] : SITE_NAME;

@@ -10,19 +10,19 @@ import {
 import { checkIpRateLimit } from '@/lib/telemetry-store';
 
 export const runtime = 'nodejs';
-export const dynamic = 'force-dynamic';
+export const revalidate = 30;
 
-function clientIp(req: Request): string {
+function clientIpHash(req: Request): string {
   const fwd = req.headers.get('x-forwarded-for');
-  if (fwd) return fwd.split(',')[0]!.trim();
   const real = req.headers.get('x-real-ip');
-  if (real) return real.trim();
-  return 'unknown';
+  const raw = (fwd?.split(',')[0]?.trim() ?? real?.trim() ?? 'unknown').toLowerCase();
+  let h = 0;
+  for (let i = 0; i < raw.length; i++) h = ((h << 5) - h + raw.charCodeAt(i)) | 0;
+  return `h${(h >>> 0).toString(36)}`;
 }
 
 export async function GET(req: Request) {
-  const ip = clientIp(req);
-  const limit = await checkIpRateLimit(ip);
+  const limit = await checkIpRateLimit(clientIpHash(req));
   if (!limit.ok) {
     return NextResponse.json(
       { error: 'rate_limited' },

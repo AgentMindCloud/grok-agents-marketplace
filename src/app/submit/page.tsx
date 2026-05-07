@@ -17,7 +17,7 @@ export default function SubmitPage() {
           <SectionHeader
             eyebrow="Submit"
             title="Ship your Grok-native agent."
-            description="Fill in the details below and we’ll open a pre-populated pull request on awesome-grok-agents. Review is weekly."
+            description="Fill in the details below and we’ll open a pre-filled submission issue on awesome-grok-agents. Review is weekly."
           />
         </div>
       </section>

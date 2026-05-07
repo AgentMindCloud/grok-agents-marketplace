@@ -1,0 +1,28 @@
+workflow:
+  id: pr_review
+  input_schema:
+    repo: string
+    pr_number: integer
+  steps:
+    - id: gather
+      agent: reader
+      input:
+        repo: "{{ input.repo }}"
+        pr_number: "{{ input.pr_number }}"
+      output: pr_context
+
+    - id: review
+      agent: reviewer
+      input:
+        pr: "{{ pr_context }}"
+      output: review_payload
+
+    - id: approval_gate
+      type: approval
+      target: review_payload
+
+    - id: publish
+      agent: commenter
+      when: "{{ review_payload.approved }}"
+      input:
+        review: "{{ review_payload }}"

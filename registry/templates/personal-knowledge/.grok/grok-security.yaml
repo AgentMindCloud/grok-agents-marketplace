@@ -1,0 +1,14 @@
+safety_profile: standard
+permissions:
+  - tool:sync_posts
+  - tool:sync_likes
+  - tool:sync_mentions
+  - tool:index_documents
+  - tool:semantic_search
+  - tool:answer_with_citations
+  - network:api.x.com
+  - storage:vector_index
+requires_approval: []
+rate_limits:
+  tool_calls_per_minute: 30
+  x_api_calls_per_hour: 300

@@ -1,0 +1,22 @@
+agents:
+  - id: triage
+    model: grok-4
+    prompt_ref: triage_system
+    tools:
+      - fetch_mentions
+      - classify_mention
+    max_turns: 6
+
+  - id: drafter
+    model: grok-4
+    prompt_ref: drafter_system
+    tools:
+      - draft_reply
+    max_turns: 4
+
+  - id: publisher
+    model: grok-4
+    prompt_ref: publisher_system
+    tools:
+      - post_reply
+    max_turns: 2

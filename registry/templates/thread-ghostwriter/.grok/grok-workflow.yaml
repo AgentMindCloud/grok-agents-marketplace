@@ -1,0 +1,27 @@
+workflow:
+  id: ghostwriter
+  input_schema:
+    idea: string
+    length: integer
+  steps:
+    - id: profile_voice
+      agent: voice_profiler
+      when: "{{ state.voice_profile is undefined }}"
+      output: voice_profile
+
+    - id: write
+      agent: ghostwriter
+      input:
+        idea: "{{ input.idea }}"
+        length: "{{ input.length | default(6) }}"
+      output: draft
+
+    - id: review
+      type: approval
+      target: draft
+
+    - id: publish
+      agent: poster
+      when: "{{ draft.approved }}"
+      input:
+        thread: "{{ draft }}"

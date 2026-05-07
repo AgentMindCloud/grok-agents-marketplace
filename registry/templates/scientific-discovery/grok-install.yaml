@@ -1,0 +1,12 @@
+spec: grok-install/v2.12
+name: scientific-discovery
+description: Daily brief of new arXiv papers and the X discussion around them.
+entrypoint: .grok/grok-workflow.yaml
+model: grok-4
+runtime:
+  python: ">=3.11"
+env:
+  - XAI_API_KEY
+  - X_BEARER_TOKEN
+schedule:
+  cron: "0 14 * * *"

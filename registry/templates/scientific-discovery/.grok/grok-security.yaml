@@ -1,0 +1,19 @@
+safety_profile: strict
+permissions:
+  - tool:fetch_arxiv_new
+  - tool:summarize_paper
+  - tool:search_x_for_paper
+  - tool:extract_expert_takes
+  - tool:compile_digest
+  - tool:deliver_digest
+  - network:export.arxiv.org
+  - network:arxiv.org
+  - network:api.x.com
+  - network:smtp.*
+requires_approval:
+  - tool:deliver_digest
+rate_limits:
+  tool_calls_per_minute: 30
+  digests_per_day: 1
+kill_switch:
+  env: DIGEST_DISABLED

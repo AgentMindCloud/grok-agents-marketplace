@@ -1,0 +1,26 @@
+workflow:
+  id: voice_to_x
+  input_schema:
+    audio_path: string
+  steps:
+    - id: transcribe
+      agent: transcriber
+      input:
+        path: "{{ input.audio_path }}"
+      output: transcript
+
+    - id: polish
+      agent: polisher
+      input:
+        transcript: "{{ transcript.text }}"
+      output: draft
+
+    - id: review
+      type: approval
+      target: draft
+
+    - id: publish
+      agent: poster
+      when: "{{ draft.approved }}"
+      input:
+        post: "{{ draft }}"

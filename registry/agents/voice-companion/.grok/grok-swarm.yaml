@@ -1,0 +1,39 @@
+swarm:
+  id: voice-companion-swarm
+  version: 2.0
+  agents:
+    - id: coordinator
+      role: conversationalist
+      model: grok-4.20-multi-agent
+      persona: >-
+        Calm, attentive voice companion. Responds in 1 to 2 sentences.
+        Asks the memory-keeper for prior context only when it matters.
+        Knows when to speak and when to listen.
+      tools:
+        - x_search
+        - draft_reply
+      prompt_ref: context_aware_response
+      max_turns: 6
+
+    - id: memory-keeper
+      role: archivist
+      model: grok-4.20
+      persona: >-
+        Quiet background agent. Pulls the 1 to 3 facts from the
+        encrypted session store that matter for the current turn.
+        Never surfaces noise.
+      tools:
+        - session_memory_read
+      prompt_ref: memory_recall
+      max_turns: 2
+
+  state:
+    encrypted: true
+    persistence: session-only
+
+  orchestration:
+    timeout_seconds: 8     # tight budget for voice latency
+    max_parallel_calls: 2
+    strategy: coordinator_delegates
+    on_timeout: respond_without_memory
+    on_agent_error: apologize_and_continue

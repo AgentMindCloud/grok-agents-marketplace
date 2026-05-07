@@ -1,0 +1,37 @@
+ui:
+  voice:
+    tone: warm-conversational
+    formality: casual
+    pacing_wpm: 170
+    response_length:
+      max_sentences: 2
+      max_words_per_turn: 35
+      max_seconds_per_turn: 12
+    filler_words: avoid
+    pause_before_answer_ms: 250
+    acknowledgment_tokens:
+      - "mm"
+      - "got it"
+      - "one sec"
+    never_say:
+      - "as an AI"
+      - "how may I assist you today"
+      - "certainly"
+
+  text_fallback:
+    max_chars: 280
+    emoji: none
+    numbering: none
+    link_style: bare_url
+
+  handoff_cues:
+    switch_to_text_when:
+      - user_asks_for_list
+      - user_asks_for_code_snippet
+      - answer_exceeds_35_words
+      - user_asks_to_read_a_thread
+
+  transcript_view:
+    show_timestamps: true
+    show_speaker_labels: true
+    alt_text_for_audio_attachments: true

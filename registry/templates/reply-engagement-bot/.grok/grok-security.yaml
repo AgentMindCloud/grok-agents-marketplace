@@ -1,0 +1,14 @@
+safety_profile: strict
+permissions:
+  - tool:fetch_mentions
+  - tool:classify_mention
+  - tool:draft_reply
+  - tool:post_reply
+  - network:api.x.com
+requires_approval:
+  - tool:post_reply
+rate_limits:
+  tool_calls_per_minute: 20
+  posts_per_hour: 15
+kill_switch:
+  env: REPLY_BOT_DISABLED

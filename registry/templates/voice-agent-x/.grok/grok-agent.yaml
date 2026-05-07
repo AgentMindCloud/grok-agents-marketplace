@@ -1,0 +1,21 @@
+agents:
+  - id: transcriber
+    model: grok-4
+    prompt_ref: transcriber_system
+    tools:
+      - transcribe_audio
+    max_turns: 2
+
+  - id: polisher
+    model: grok-4
+    prompt_ref: polisher_system
+    tools:
+      - polish_to_post
+    max_turns: 4
+
+  - id: poster
+    model: grok-4
+    prompt_ref: poster_system
+    tools:
+      - post_single
+    max_turns: 2

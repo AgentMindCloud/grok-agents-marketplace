@@ -1,0 +1,49 @@
+swarm:
+  id: thread-architect-swarm
+  version: 2.0
+  agents:
+    - id: coordinator
+      role: orchestrator
+      model: grok-4.20-multi-agent
+      persona: >-
+        Senior producer. Breaks the user's idea into research tasks,
+        delegates to creative and logic, assembles the final thread,
+        and runs the safety + cost checks before publish.
+      tools:
+        - x_search
+        - web_search
+      prompt_ref: coordinator
+      max_turns: 8
+
+    - id: creative
+      role: lucas
+      model: grok-4.20
+      persona: >-
+        Lucas. Hook writer. Opens every thread with a cold, precise
+        first line that rewards the scroll-stop. No cliches, no emojis,
+        no hype.
+      tools:
+        - image_generation
+      prompt_ref: hook_writer
+      max_turns: 4
+
+    - id: logic
+      role: benjamin
+      model: grok-4.20
+      persona: >-
+        Benjamin. Thread architect. Structures the body into 8 to 12
+        posts, one beat per post, image slots at first, mid, and final.
+      tools: []
+      prompt_ref: thread_structure
+      max_turns: 6
+
+  state:
+    encrypted: true
+    persistence: session-only
+
+  orchestration:
+    timeout_seconds: 60
+    max_parallel_calls: 4
+    strategy: coordinator_delegates
+    on_timeout: return_partial_with_warning
+    on_agent_error: retry_once_then_fail

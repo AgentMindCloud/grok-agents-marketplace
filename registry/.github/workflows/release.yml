@@ -1,0 +1,54 @@
+name: release
+
+on:
+  push:
+    tags:
+      - "v*"
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Extract tag
+        id: tag
+        run: echo "name=${GITHUB_REF_NAME}" >> "$GITHUB_OUTPUT"
+
+      - name: Extract release notes from CHANGELOG
+        id: notes
+        run: |
+          tag="${{ steps.tag.outputs.name }}"
+          version="${tag#v}"
+          notes_file="$(mktemp)"
+          awk -v ver="$version" '
+            BEGIN { printing = 0 }
+            /^## \[/ {
+              if (printing) { exit }
+              if (index($0, "[" ver "]") > 0) { printing = 1; next }
+            }
+            printing { print }
+          ' CHANGELOG.md > "$notes_file"
+          if [ ! -s "$notes_file" ]; then
+            echo "No CHANGELOG section found for $version; falling back to tag message." >&2
+            git tag -l --format='%(contents)' "$tag" > "$notes_file" || true
+          fi
+          if [ ! -s "$notes_file" ]; then
+            echo "Release $tag" > "$notes_file"
+          fi
+          echo "path=$notes_file" >> "$GITHUB_OUTPUT"
+
+      - name: Publish GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ steps.tag.outputs.name }}
+          name: ${{ steps.tag.outputs.name }}
+          body_path: ${{ steps.notes.outputs.path }}
+          draft: false
+          prerelease: false
+          generate_release_notes: false

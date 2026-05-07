@@ -1,0 +1,26 @@
+analytics:
+  enabled: true
+  retention_days: 30
+  anonymize_user_ids: true
+  events:
+    - session_started
+    - session_ended
+    - turn_taken
+    - interruption_handled
+    - memory_recall_hit
+    - memory_recall_miss
+    - handoff_to_text
+    - reply_posted
+    - reply_blocked_by_safety
+    - kill_switch_triggered
+  metrics:
+    - median_latency_ms_first_audio
+    - median_latency_ms_stt
+    - median_latency_ms_reasoning
+    - average_session_duration_seconds
+    - average_turns_per_session
+    - handoff_rate
+    - safety_block_rate
+  exports:
+    format: ndjson
+    destination: grok-analytics://voice-companion

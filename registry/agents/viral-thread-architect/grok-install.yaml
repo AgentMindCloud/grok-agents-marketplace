@@ -1,0 +1,20 @@
+spec: grok-install/v2.0
+name: viral-thread-architect
+version: 1.0.0
+description: >-
+  Multi-agent swarm that turns any idea into a polished X thread
+  with images, voice narration, and perfect formatting.
+category: thread-generation
+certification_target: grok-native-certified
+tagline: Turn any idea into a fire X thread in seconds.
+entrypoint: .grok/grok-swarm.yaml
+runtime:
+  python: ">=3.11"
+  grok: "4.20-multi-agent"
+env:
+  - XAI_API_KEY
+  - X_BEARER_TOKEN
+  - X_OAUTH_TOKEN
+safety_profile: strict
+author: agentmindcloud
+license: Apache-2.0

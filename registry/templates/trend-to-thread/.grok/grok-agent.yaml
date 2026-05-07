@@ -1,0 +1,23 @@
+agents:
+  - id: scout
+    model: grok-4
+    prompt_ref: scout_system
+    tools:
+      - fetch_trends
+      - score_trend
+    max_turns: 6
+
+  - id: author
+    model: grok-4
+    prompt_ref: author_system
+    tools:
+      - search_x_for_trend
+      - draft_thread
+    max_turns: 8
+
+  - id: poster
+    model: grok-4
+    prompt_ref: poster_system
+    tools:
+      - post_thread
+    max_turns: 2

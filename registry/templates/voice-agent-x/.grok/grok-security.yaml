@@ -1,0 +1,14 @@
+safety_profile: strict
+permissions:
+  - tool:transcribe_audio
+  - tool:polish_to_post
+  - tool:post_single
+  - network:api.x.com
+  - filesystem:read:audio_in/
+requires_approval:
+  - tool:post_single
+rate_limits:
+  tool_calls_per_minute: 10
+  posts_per_hour: 10
+kill_switch:
+  env: VOICE_X_DISABLED

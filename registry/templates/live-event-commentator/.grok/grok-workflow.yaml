@@ -1,0 +1,35 @@
+workflow:
+  id: live_commentary
+  input_schema:
+    event_query: string
+    duration_minutes: integer
+  config:
+    min_seconds_between_posts: 120
+    max_posts: 20
+  steps:
+    - id: watch
+      agent: listener
+      type: loop
+      until: "{{ elapsed_minutes >= input.duration_minutes }}"
+      input:
+        query: "{{ input.event_query }}"
+      output: moments
+
+    - id: react
+      agent: commentator
+      for_each: "{{ moments }}"
+      input:
+        moment: "{{ item }}"
+      output: drafts
+
+    - id: fast_approval
+      type: approval
+      mode: batched
+      window_seconds: 30
+      target: drafts
+
+    - id: publish
+      agent: poster
+      for_each: "{{ drafts | selectattr('approved') }}"
+      input:
+        post: "{{ item }}"

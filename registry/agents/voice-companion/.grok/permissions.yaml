@@ -1,0 +1,28 @@
+permissions:
+  scopes:
+    - voice:stt
+    - voice:tts
+    - read:dms
+    - post:reply
+  network:
+    allow:
+      - api.x.com
+      - api.xai.com
+      - voice.xai.com
+    deny:
+      - "*"
+  storage:
+    allow:
+      - session-cache-encrypted
+    deny:
+      - persistent-disk
+  # Real-time voice cannot gate every reply behind human approval
+  # without killing the UX. Safety is enforced via profanity filter,
+  # banned_categories, rate limits, and the kill switch.
+  requires_approval: []
+  non_approval_safety_controls:
+    - profanity_filter
+    - banned_categories
+    - per_session_duration_cap
+    - kill_switch
+    - audit_log

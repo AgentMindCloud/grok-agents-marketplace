@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-label="trend-to-thread poster"><defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0f17"/><stop offset="1" stop-color="#1a1030"/></linearGradient></defs><rect width="1280" height="360" fill="url(#grad)"/><rect x="0" y="0" width="6" height="360" fill="#7c5cff"/>
+<text x="48" y="74" font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, sans-serif" font-size="42" font-weight="800" fill="#e6e8ef">trend-to-thread</text>
+<text x="48" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#7c5cff">grok-native certified</text>
+<text x="48" y="144" font-family="ui-sans-serif, -apple-system, Segoe UI, sans-serif" font-size="18" fill="#8b93a7">Monitors X trends and drafts a full thread on topics that match your profile.</text>
+<g><rect x="48" y="210" width="162" height="26" rx="13" fill="#ef4444"/><text x="129.0" y="228" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" fill="#0b0f17">safety: strict</text></g>
+<g><rect x="220" y="210" width="162" height="26" rx="13" fill="#7c5cff"/><text x="301.0" y="228" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" fill="#0b0f17">pattern: swarm</text></g>
+<g><rect x="392" y="210" width="112" height="26" rx="13" fill="#121826"/><text x="448.0" y="228" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" fill="#e6e8ef">agents: 3</text></g>
+<rect x="704" y="40" width="528" height="230" rx="14" fill="#121826" opacity="0.85"/>
+<text x="720" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#8b93a7">AGENTS &amp; TOOLS</text>
+<text x="720" y="94" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" fill="#e6e8ef">scout</text>
+<text x="720" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8b93a7">fetch_trends, score_trend</text>
+<text x="720" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" fill="#e6e8ef">author</text>
+<text x="720" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8b93a7">search_x_for_trend, draft_thread</text>
+<text x="720" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" fill="#e6e8ef">poster</text>
+<text x="720" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8b93a7">post_thread</text>
+<rect x="48" y="286" width="1184" height="40" rx="8" fill="#2a1f55" opacity="0.6"/>
+<text x="64" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#e6e8ef">$ grok-install install github.com/agentmindcloud/awesome-grok-agents/templates/trend-to-thread</text>
+</svg>

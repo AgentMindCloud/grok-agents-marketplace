@@ -1,0 +1,7 @@
+agents:
+  - id: greeter
+    model: grok-4
+    prompt_ref: greeter_system
+    tools:
+      - now
+    max_turns: 4

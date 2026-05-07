@@ -1,0 +1,38 @@
+workflow:
+  id: daily_science_digest
+  config:
+    arxiv_categories:
+      - cs.AI
+      - cs.LG
+      - cs.CL
+    max_papers: 6
+    delivery:
+      channel: email
+      to: "{{ env.DIGEST_TO }}"
+  steps:
+    - id: pull_papers
+      agent: paper_scout
+      input:
+        categories: "{{ config.arxiv_categories }}"
+        limit: "{{ config.max_papers }}"
+      output: papers
+
+    - id: track_buzz
+      agent: buzz_tracker
+      for_each: "{{ papers }}"
+      input:
+        paper: "{{ item }}"
+      output: paper_takes
+
+    - id: compose
+      agent: editor
+      input:
+        papers: "{{ papers }}"
+        takes: "{{ paper_takes }}"
+        delivery: "{{ config.delivery }}"
+      output: digest
+
+    - id: approve_delivery
+      type: approval
+      target: digest
+      mode: remember_destination

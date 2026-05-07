@@ -1,0 +1,22 @@
+agents:
+  - id: listener
+    model: grok-4
+    prompt_ref: listener_system
+    tools:
+      - sample_event_stream
+      - detect_moment
+    max_turns: 40
+
+  - id: commentator
+    model: grok-4
+    prompt_ref: commentator_system
+    tools:
+      - draft_reaction
+    max_turns: 20
+
+  - id: poster
+    model: grok-4
+    prompt_ref: poster_system
+    tools:
+      - post_single
+    max_turns: 10

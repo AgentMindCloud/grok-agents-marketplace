@@ -1,0 +1,15 @@
+safety_profile: strict
+permissions:
+  - tool:sample_event_stream
+  - tool:detect_moment
+  - tool:draft_reaction
+  - tool:post_single
+  - network:api.x.com
+requires_approval:
+  - tool:post_single
+rate_limits:
+  tool_calls_per_minute: 60
+  posts_per_hour: 20
+  min_seconds_between_posts: 120
+kill_switch:
+  env: COMMENTATOR_DISABLED

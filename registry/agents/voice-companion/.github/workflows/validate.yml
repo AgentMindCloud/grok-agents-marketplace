@@ -1,0 +1,28 @@
+# Per-agent validation workflow.
+# Triggered on any change under agents/voice-companion/**.
+# Runs grok-install-action v1 in validate-and-scan mode and fails
+# on any warning or a safety_score below 100.
+name: validate voice-companion
+
+on:
+  pull_request:
+    paths:
+      - "agents/voice-companion/**"
+  push:
+    branches: [main]
+    paths:
+      - "agents/voice-companion/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate and scan
+        uses: agentmindcloud/grok-install-action@v1
+        with:
+          path: agents/voice-companion
+          mode: validate-and-scan
+          fail-on: warning
+          required-safety-score: 100

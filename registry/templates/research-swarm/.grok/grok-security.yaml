@@ -1,0 +1,15 @@
+safety_profile: standard
+permissions:
+  - tool:web_search
+  - tool:fetch_page
+  - tool:add_source
+  - tool:challenge_claim
+  - tool:score_evidence
+  - tool:compile_brief
+  - network:api.tavily.com
+  - network:*.arxiv.org
+  - network:*  # research must browse the open web
+requires_approval: []
+rate_limits:
+  tool_calls_per_minute: 40
+  web_fetches_per_run: 60

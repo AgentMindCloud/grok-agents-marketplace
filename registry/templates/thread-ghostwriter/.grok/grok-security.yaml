@@ -1,0 +1,16 @@
+safety_profile: strict
+permissions:
+  - tool:load_recent_posts
+  - tool:store_voice_profile
+  - tool:load_voice_profile
+  - tool:draft_thread
+  - tool:post_thread
+  - network:api.x.com
+  - storage:voice_profile
+requires_approval:
+  - tool:post_thread
+rate_limits:
+  tool_calls_per_minute: 20
+  threads_per_day: 3
+kill_switch:
+  env: GHOSTWRITER_DISABLED

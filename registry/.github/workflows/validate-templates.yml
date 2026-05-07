@@ -1,0 +1,116 @@
+name: validate-templates
+
+on:
+  pull_request:
+    branches: [main]
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    outputs:
+      templates: ${{ steps.list.outputs.templates }}
+    steps:
+      - uses: actions/checkout@v6
+      - id: list
+        run: |
+          templates=$(ls -d templates/*/ | sed 's|/$||' | jq -R -s -c 'split("\n") | map(select(length>0))')
+          echo "templates=$templates" >> "$GITHUB_OUTPUT"
+
+  yamllint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - run: pipx install yamllint
+      - run: yamllint -c .yamllint.yml templates/ featured-agents.json .github/
+
+  registry:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - run: pip install pyyaml
+      - name: Validate featured-agents.json
+        run: python scripts/validate_registry.py
+
+  schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install ajv-cli
+        run: npm install -g ajv-cli@5 ajv-formats@3
+      - name: Validate featured-agents.json against schema
+        run: |
+          ajv validate \
+            -s schemas/featured-agents.schema.json \
+            -d featured-agents.json \
+            --spec=draft2020 \
+            -c ajv-formats \
+            --strict=false
+
+  spec-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Enforce grok-install spec version (v2.12 / v2.13 / v2.14)
+        run: |
+          fail=0
+          for f in templates/*/grok-install.yaml; do
+            spec=$(grep -E '^spec:' "$f" | head -n1 | sed -E 's/^spec:[[:space:]]*//' | tr -d '"'"'")
+            case "$spec" in
+              grok-install/v2.12|grok-install/v2.13|grok-install/v2.14)
+                echo "OK   $f -> $spec"
+                ;;
+              *)
+                echo "FAIL $f has unsupported spec: $spec" >&2
+                fail=1
+                ;;
+            esac
+          done
+          exit "$fail"
+
+  links:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+      - name: Lychee link check on template READMEs
+        uses: lycheeverse/lychee-action@v1
+        with:
+          args: >-
+            --no-progress
+            --max-concurrency 4
+            --accept 200,204,206,403,429
+            'templates/**/README.md'
+          fail: true
+
+  validate:
+    needs: [discover, yamllint, registry, schema, spec-version]
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        template: ${{ fromJson(needs.discover.outputs.templates) }}
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install stub runtime + deps
+        run: |
+          pip install pyyaml
+          pip install ./scripts/grok_install_stub
+      - name: Validate template
+        run: python scripts/validate_template.py ${{ matrix.template }}
+      - name: Security scan
+        run: python scripts/scan_template.py ${{ matrix.template }} --fail-on warning
+      - name: Mock run
+        run: python scripts/mock_run_template.py ${{ matrix.template }}

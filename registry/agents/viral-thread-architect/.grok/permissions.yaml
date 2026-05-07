@@ -1,0 +1,19 @@
+permissions:
+  scopes:
+    - post:thread
+    - read:trends
+    - generate:images
+    - voice:tts
+  network:
+    allow:
+      - api.x.com
+      - api.xai.com
+    deny:
+      - "*"
+  storage:
+    allow:
+      - session-cache
+    deny:
+      - persistent-disk
+  requires_approval:
+    - post:thread

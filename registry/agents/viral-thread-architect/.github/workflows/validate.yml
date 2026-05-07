@@ -1,0 +1,28 @@
+# Per-agent validation workflow.
+# Triggered on any change under agents/viral-thread-architect/**.
+# Runs grok-install-action v1 in validate-and-scan mode and fails
+# on any warning or a safety_score below 100.
+name: validate viral-thread-architect
+
+on:
+  pull_request:
+    paths:
+      - "agents/viral-thread-architect/**"
+  push:
+    branches: [main]
+    paths:
+      - "agents/viral-thread-architect/**"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Validate and scan
+        uses: agentmindcloud/grok-install-action@v1
+        with:
+          path: agents/viral-thread-architect
+          mode: validate-and-scan
+          fail-on: warning
+          required-safety-score: 100

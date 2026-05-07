@@ -1,0 +1,28 @@
+safety:
+  profile: strict
+  human_review_required:
+    - condition: topic_mentions_real_named_individuals
+    - condition: topic_mentions_brand_or_trademark
+    - condition: post_contains_prediction_about_markets_or_elections
+  banned_categories:
+    - election_misinformation
+    - medical_advice
+    - financial_advice
+    - explicit_content
+    - minors
+    - harassment
+    - self_harm
+  rate_limits:
+    max_threads_per_day: 10
+    max_posts_per_thread: 12
+    min_seconds_between_threads: 300
+  kill_switch:
+    env: VIRAL_THREAD_DISABLED
+    on_true: halt_all_posting
+  content_filters:
+    block_profanity: false
+    block_personal_data: true
+    block_unverified_claims: true
+  audit:
+    log_every_post: true
+    retention_days: 30

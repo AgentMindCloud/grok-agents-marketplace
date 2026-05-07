@@ -1,0 +1,6 @@
+safety_profile: standard
+permissions:
+  - tool:now
+requires_approval: []
+rate_limits:
+  tool_calls_per_minute: 30

@@ -1,0 +1,17 @@
+voice:
+  enabled: true
+  fallback: text-only
+  engine: grok-voice-1
+  voice_id: ember
+  pacing:
+    words_per_minute: 165
+    pause_between_posts_ms: 420
+  output:
+    format: mp3
+    bitrate_kbps: 128
+    attach_to_thread: true
+    alt_text: Voice-narrated version of this thread.
+  controls:
+    allow_user_opt_out: true
+    max_duration_seconds: 180
+    cost_ceiling_usd_per_thread: 0.15

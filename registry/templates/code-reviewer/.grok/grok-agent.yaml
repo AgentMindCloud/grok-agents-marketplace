@@ -1,0 +1,24 @@
+agents:
+  - id: reader
+    model: grok-4
+    prompt_ref: reader_system
+    tools:
+      - fetch_pr
+      - fetch_diff
+      - fetch_file
+    max_turns: 10
+
+  - id: reviewer
+    model: grok-4
+    prompt_ref: reviewer_system
+    tools:
+      - draft_inline_comment
+      - draft_summary
+    max_turns: 12
+
+  - id: commenter
+    model: grok-4
+    prompt_ref: commenter_system
+    tools:
+      - post_review
+    max_turns: 2

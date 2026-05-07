@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 360" role="img" aria-label="research-swarm poster"><defs><linearGradient id="grad" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b0f17"/><stop offset="1" stop-color="#1a1030"/></linearGradient></defs><rect width="1280" height="360" fill="url(#grad)"/><rect x="0" y="0" width="6" height="360" fill="#7c5cff"/>
+<text x="48" y="74" font-family="ui-sans-serif, -apple-system, Segoe UI, Roboto, sans-serif" font-size="42" font-weight="800" fill="#e6e8ef">research-swarm</text>
+<text x="48" y="104" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#7c5cff">grok-native certified</text>
+<text x="48" y="144" font-family="ui-sans-serif, -apple-system, Segoe UI, sans-serif" font-size="18" fill="#8b93a7">Three-agent swarm: researcher gathers sources, critic challenges them,</text>
+<text x="48" y="170" font-family="ui-sans-serif, -apple-system, Segoe UI, sans-serif" font-size="18" fill="#8b93a7">publisher produces the final brief.</text>
+<g><rect x="48" y="210" width="182" height="26" rx="13" fill="#f59e0b"/><text x="139.0" y="228" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" fill="#0b0f17">safety: standard</text></g>
+<g><rect x="240" y="210" width="162" height="26" rx="13" fill="#7c5cff"/><text x="321.0" y="228" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" fill="#0b0f17">pattern: swarm</text></g>
+<g><rect x="412" y="210" width="112" height="26" rx="13" fill="#121826"/><text x="468.0" y="228" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" font-weight="700" fill="#e6e8ef">agents: 3</text></g>
+<rect x="704" y="40" width="528" height="230" rx="14" fill="#121826" opacity="0.85"/>
+<text x="720" y="64" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="13" fill="#8b93a7">AGENTS &amp; TOOLS</text>
+<text x="720" y="94" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" fill="#e6e8ef">researcher</text>
+<text x="720" y="114" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8b93a7">web_search, fetch_page, add_source</text>
+<text x="720" y="138" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" fill="#e6e8ef">critic</text>
+<text x="720" y="158" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8b93a7">challenge_claim, score_evidence</text>
+<text x="720" y="182" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="16" font-weight="700" fill="#e6e8ef">publisher</text>
+<text x="720" y="202" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="12" fill="#8b93a7">compile_brief</text>
+<rect x="48" y="286" width="1184" height="40" rx="8" fill="#2a1f55" opacity="0.6"/>
+<text x="64" y="312" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="14" fill="#e6e8ef">$ grok-install install github.com/agentmindcloud/awesome-grok-agents/templates/research-swarm</text>
+</svg>

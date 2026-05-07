@@ -1,0 +1,24 @@
+agents:
+  - id: researcher
+    model: grok-4
+    prompt_ref: researcher_system
+    tools:
+      - web_search
+      - fetch_page
+      - add_source
+    max_turns: 12
+
+  - id: critic
+    model: grok-4
+    prompt_ref: critic_system
+    tools:
+      - challenge_claim
+      - score_evidence
+    max_turns: 10
+
+  - id: publisher
+    model: grok-4
+    prompt_ref: publisher_system
+    tools:
+      - compile_brief
+    max_turns: 4

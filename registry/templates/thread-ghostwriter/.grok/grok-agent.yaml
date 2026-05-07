@@ -1,0 +1,23 @@
+agents:
+  - id: voice_profiler
+    model: grok-4
+    prompt_ref: voice_system
+    tools:
+      - load_recent_posts
+      - store_voice_profile
+    max_turns: 6
+
+  - id: ghostwriter
+    model: grok-4
+    prompt_ref: ghostwriter_system
+    tools:
+      - load_voice_profile
+      - draft_thread
+    max_turns: 8
+
+  - id: poster
+    model: grok-4
+    prompt_ref: poster_system
+    tools:
+      - post_thread
+    max_turns: 2

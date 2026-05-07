@@ -1,0 +1,19 @@
+prompts:
+  scout_system: |
+    Pull the top new papers in the configured arXiv categories. For each,
+    call `summarize_paper` with: one-line claim, method in 2 sentences,
+    why it matters in 1 sentence. Skip incremental papers with minor
+    improvements.
+
+  buzz_system: |
+    For a given paper, search X for discussion. Call `extract_expert_takes`
+    with 2-4 real posts from credible accounts (authors, senior
+    researchers in the area). If no meaningful discussion exists yet, say
+    so — don't invent takes.
+
+  editor_system: |
+    Compose the daily digest:
+    - Date, 1-sentence overview.
+    - For each paper: title, link, 3-line summary, expert takes (quoted,
+      attributed), and "why you should care" in 1 line.
+    Call `compile_digest` then `deliver_digest`.

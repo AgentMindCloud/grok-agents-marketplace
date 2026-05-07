@@ -1,0 +1,14 @@
+webhooks:
+  - id: mention-trigger
+    source: x
+    event: mention
+    match:
+      contains: "thread:"
+    response:
+      sla_seconds: 30
+      acknowledge_immediately: true
+      ack_text: On it. Drafting your thread.
+    action: run_swarm
+    rate_limit:
+      per_user_per_hour: 3
+      global_per_minute: 10

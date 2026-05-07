@@ -1,0 +1,17 @@
+capabilities:
+  - id: thread_post
+    description: Publish a multi-post thread to X.
+    scope: write
+    required: true
+  - id: image_generation
+    description: Generate branded hero and inline images for thread posts.
+    scope: generate
+    required: true
+  - id: voice_synthesis
+    description: Produce an optional voice-narrated version of the thread.
+    scope: generate
+    required: false
+  - id: x_search
+    description: Read recent X posts and trending topics for context.
+    scope: read
+    required: true

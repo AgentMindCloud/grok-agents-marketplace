@@ -1,0 +1,36 @@
+tools:
+  x_search:
+    default_recency_hours: 24
+    default_lang: en
+    exclude:
+      - replies
+      - retweets
+    max_results: 50
+
+  web_search:
+    provider: grok-native
+    max_results: 20
+    allow_domains: []
+    deny_domains: []
+
+  image_generation:
+    model: grok-image-2
+    aspect_ratio: "16:9"
+    style_hints:
+      - neon-cyber-premium
+      - glassmorphic-dark
+      - background-hex-0A0A0A-only
+      - accent-hex-00F0FF-only
+      - no-people
+      - no-emojis
+      - no-stock-photography
+      - apple-polish-meets-blade-runner
+    safety:
+      reject_faces_of_real_people: true
+      reject_logos: true
+      reject_minors: true
+
+  voice_synthesis:
+    engine: grok-voice-1
+    voice_id: ember
+    format: mp3

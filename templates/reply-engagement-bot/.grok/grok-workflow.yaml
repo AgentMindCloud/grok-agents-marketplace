@@ -1,0 +1,26 @@
+workflow:
+  id: reply_engagement
+  steps:
+    - id: triage_mentions
+      agent: triage
+      input:
+        since: "{{ state.last_checked | default('1h') }}"
+      output: mentions
+
+    - id: draft_replies
+      agent: drafter
+      for_each: "{{ mentions | selectattr('worth_replying') }}"
+      input:
+        mention: "{{ item }}"
+      output: drafts
+
+    - id: human_review
+      type: approval
+      target: drafts
+      reviewer: "{{ env.APPROVER | default('owner') }}"
+
+    - id: publish_approved
+      agent: publisher
+      for_each: "{{ drafts | selectattr('approved') }}"
+      input:
+        reply: "{{ item }}"

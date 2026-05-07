@@ -1,0 +1,15 @@
+safety_profile: strict
+permissions:
+  - tool:fetch_trends
+  - tool:score_trend
+  - tool:search_x_for_trend
+  - tool:draft_thread
+  - tool:post_thread
+  - network:api.x.com
+requires_approval:
+  - tool:post_thread
+rate_limits:
+  tool_calls_per_minute: 20
+  threads_per_day: 4
+kill_switch:
+  env: TREND_BOT_DISABLED

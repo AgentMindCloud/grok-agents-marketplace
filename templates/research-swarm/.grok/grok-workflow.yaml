@@ -1,0 +1,32 @@
+workflow:
+  id: research_swarm
+  input_schema:
+    question: string
+  steps:
+    - id: research_round_one
+      agent: researcher
+      input:
+        question: "{{ input.question }}"
+      output: initial_findings
+
+    - id: critique
+      agent: critic
+      input:
+        findings: "{{ initial_findings }}"
+      output: critiques
+
+    - id: research_round_two
+      agent: researcher
+      when: "{{ critiques.weak_claims | length > 0 }}"
+      input:
+        question: "{{ input.question }}"
+        gaps: "{{ critiques.weak_claims }}"
+      output: refined_findings
+
+    - id: final_brief
+      agent: publisher
+      input:
+        question: "{{ input.question }}"
+        findings: "{{ refined_findings | default(initial_findings) }}"
+        critiques: "{{ critiques }}"
+      output: brief

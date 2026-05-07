@@ -1,0 +1,21 @@
+capabilities:
+  - id: voice_stt
+    description: Real-time speech to text with VAD and language auto-detect.
+    scope: generate
+    required: true
+  - id: voice_tts
+    description: Emotion-aware text to speech with dynamic pacing.
+    scope: generate
+    required: true
+  - id: session_memory
+    description: Encrypted session-only memory for in-conversation recall.
+    scope: read
+    required: true
+  - id: reply_post
+    description: Draft and send a short reply on X.
+    scope: write
+    required: true
+  - id: x_search
+    description: Read recent X posts for freshness and context.
+    scope: read
+    required: false

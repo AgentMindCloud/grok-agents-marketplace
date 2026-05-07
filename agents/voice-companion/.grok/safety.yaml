@@ -1,0 +1,34 @@
+safety:
+  profile: standard
+  # Real-time voice means human approval on every reply would kill
+  # the experience. Safety is enforced through the controls below.
+  human_review_required: []
+  profanity_filter: true
+  banned_categories:
+    - medical_advice
+    - financial_advice
+    - explicit_content
+    - minors
+    - harassment
+    - self_harm
+    - election_misinformation
+  rate_limits:
+    max_replies_per_hour: 30
+    max_session_duration_seconds: 180
+    max_sessions_per_day: 50
+    max_sessions_per_user_per_day: 8
+  kill_switch:
+    env: VOICE_COMPANION_DISABLED
+    on_true: halt_all_voice_and_text
+  content_filters:
+    block_personal_data: true
+    block_unverified_claims: true
+    refuse_impersonation: true
+  audit:
+    log_every_turn: true
+    log_stt_confidence: true
+    retention_days: 30
+  voice_specific:
+    refuse_to_mimic_real_voices: true
+    announce_ai_on_request: true
+    record_with_consent_only: true

@@ -1,0 +1,18 @@
+agents:
+  - id: indexer
+    model: grok-4
+    prompt_ref: indexer_system
+    tools:
+      - sync_posts
+      - sync_likes
+      - sync_mentions
+      - index_documents
+    max_turns: 6
+
+  - id: librarian
+    model: grok-4
+    prompt_ref: librarian_system
+    tools:
+      - semantic_search
+      - answer_with_citations
+    max_turns: 8

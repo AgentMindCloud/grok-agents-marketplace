@@ -1,0 +1,108 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/agentmindcloud/awesome-grok-agents/main/schemas/featured-agents.schema.json",
+  "title": "Awesome Grok Agents — Featured Agents Registry",
+  "description": "Schema for featured-agents.json. Every entry under `agents[]` must pass this schema. Backward compatible with v0.1.0 registry entries; has_visuals and accent_color are optional.",
+  "type": "object",
+  "required": ["version", "agents"],
+  "additionalProperties": true,
+  "properties": {
+    "version": {
+      "type": "string",
+      "const": "1.0"
+    },
+    "updated": {
+      "type": "string",
+      "format": "date"
+    },
+    "agents": {
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/agent" }
+    }
+  },
+  "$defs": {
+    "agent": {
+      "type": "object",
+      "additionalProperties": true,
+      "required": [
+        "name",
+        "description",
+        "path",
+        "tags",
+        "install_command",
+        "safety_profile",
+        "certified",
+        "poster"
+      ],
+      "properties": {
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{1,63}$"
+        },
+        "name": {
+          "type": "string",
+          "pattern": "^[a-z][a-z0-9-]{1,63}$"
+        },
+        "description": {
+          "type": "string",
+          "minLength": 10,
+          "maxLength": 240
+        },
+        "category": {
+          "type": "string",
+          "enum": [
+            "x-native",
+            "developer-tools",
+            "research",
+            "content-creation",
+            "voice",
+            "memory",
+            "real-time",
+            "tutorial"
+          ]
+        },
+        "pattern": {
+          "type": "string",
+          "enum": ["single-agent", "multi-step", "swarm"]
+        },
+        "safety": {
+          "type": "string",
+          "enum": ["strict", "standard", "permissive"]
+        },
+        "safety_profile": {
+          "type": "string",
+          "enum": ["strict", "standard", "permissive"]
+        },
+        "template_path": {
+          "type": "string",
+          "pattern": "^templates/[a-z0-9-]+$"
+        },
+        "path": {
+          "type": "string",
+          "pattern": "^templates/[a-z0-9-]+$"
+        },
+        "tags": {
+          "type": "array",
+          "items": { "type": "string", "minLength": 2 },
+          "minItems": 1,
+          "uniqueItems": true
+        },
+        "install_command": {
+          "type": "string",
+          "pattern": "^grok-install install "
+        },
+        "certified": { "type": "boolean" },
+        "has_visuals": { "type": "boolean" },
+        "accent_color": {
+          "type": "string",
+          "pattern": "^#[0-9a-fA-F]{6}$"
+        },
+        "poster": {
+          "type": "string",
+          "pattern": "^docs/posters/[a-z0-9-]+\\.svg$"
+        }
+      }
+    }
+  }
+}

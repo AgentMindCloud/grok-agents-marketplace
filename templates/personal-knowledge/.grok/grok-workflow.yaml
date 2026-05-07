@@ -1,0 +1,18 @@
+workflow:
+  id: personal_knowledge
+  modes:
+    refresh:
+      steps:
+        - id: pull_posts
+          agent: indexer
+          output: counts
+    ask:
+      input_schema:
+        question: string
+      steps:
+        - id: answer
+          agent: librarian
+          input:
+            question: "{{ input.question }}"
+          output: answer
+  default_mode: "{{ 'refresh' if schedule.triggered else 'ask' }}"

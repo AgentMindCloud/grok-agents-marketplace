@@ -1,0 +1,10 @@
+spec: grok-install/v2.12
+name: research-swarm
+description: Researcher + critic + publisher multi-agent swarm.
+entrypoint: .grok/grok-workflow.yaml
+model: grok-4
+runtime:
+  python: ">=3.11"
+env:
+  - XAI_API_KEY
+  - TAVILY_API_KEY

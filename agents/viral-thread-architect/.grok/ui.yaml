@@ -1,0 +1,23 @@
+ui:
+  thread_formatting:
+    emoji: none
+    hashtags: max_one_per_thread
+    numbering:
+      style: n_of_total     # renders as "1/10", "2/10", etc.
+      separator: "/"
+      placement: post_prefix
+    line_breaks:
+      between_sentences: optional
+      between_ideas: required
+    image_alt_text:
+      required: true
+      min_length_chars: 20
+      max_length_chars: 300
+    hero_image:
+      required_on_first_post: true
+    divider_between_posts: none
+    call_to_action:
+      required_on_final_post: true
+  voice_version_badge:
+    text: Voice version attached.
+    placement: final_post

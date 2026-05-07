@@ -1,0 +1,20 @@
+analytics:
+  enabled: true
+  retention_days: 30
+  anonymize_user_ids: true
+  events:
+    - thread_requested
+    - thread_drafted
+    - thread_approved
+    - thread_posted
+    - thread_blocked_by_safety
+    - voice_synthesized
+    - image_generated
+  metrics:
+    - engagement_rate
+    - reply_rate
+    - reach_per_post
+    - bounce_before_post_3
+  exports:
+    format: ndjson
+    destination: grok-analytics://viral-thread-architect

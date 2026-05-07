@@ -1,0 +1,25 @@
+title: Awesome Grok Agents
+description: Production-ready Grok agent templates for X — copy, install, ship.
+url: https://agentmindcloud.github.io
+baseurl: /awesome-grok-agents
+twitter:
+  username: agentmindcloud
+  card: summary_large_image
+social:
+  name: AgentMindCloud
+  links:
+    - https://github.com/AgentMindCloud
+plugins:
+  - jekyll-seo-tag
+defaults:
+  - scope:
+      path: ""
+    values:
+      layout: default
+      image: /docs/posters/hello-grok.png
+exclude:
+  - scripts/
+  - schemas/
+  - tests/
+  - "*.lock"
+  - .github/

@@ -1,0 +1,18 @@
+prompts:
+  listener_system: |
+    Sample the X stream for the event query every 20 seconds. Call
+    `detect_moment` ONLY when the volume or sentiment shifts meaningfully
+    — do not post on every sample. Be picky. Five moments over an hour
+    is better than twenty forgettable ones.
+
+  commentator_system: |
+    Given a detected moment, draft one post:
+    - Name the moment concretely.
+    - Add one non-obvious observation.
+    - Under 275 chars.
+    - No hype, no "wow", no "incredible".
+
+  poster_system: |
+    Enforce the cooldown. If less than the configured number of seconds
+    have passed since the last post, skip this one. Otherwise call
+    `post_single` with the approved text.

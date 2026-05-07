@@ -1,0 +1,50 @@
+name: Propose a new template
+description: Suggest a new Grok agent template for the gallery.
+title: "[template] "
+labels: ["new-template"]
+body:
+  - type: input
+    id: name
+    attributes:
+      label: Proposed template name
+      placeholder: kebab-case, e.g. daily-digest-bot
+    validations:
+      required: true
+  - type: textarea
+    id: what
+    attributes:
+      label: What does it do?
+      description: One paragraph. What's the user's problem and how does the agent solve it?
+    validations:
+      required: true
+  - type: dropdown
+    id: agents
+    attributes:
+      label: Single or multi-agent?
+      options:
+        - single
+        - multi
+    validations:
+      required: true
+  - type: textarea
+    id: tools
+    attributes:
+      label: Tools it would need
+      description: List the tools + which ones write to the outside world.
+    validations:
+      required: true
+  - type: dropdown
+    id: safety
+    attributes:
+      label: Expected safety profile
+      options:
+        - strict
+        - standard
+        - permissive
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Anything else?
+      description: Prior art, demos, tricky parts.

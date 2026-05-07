@@ -1,0 +1,23 @@
+spec: grok-install/v2.0
+name: voice-companion
+version: 1.0.0
+description: >-
+  Voice-first Grok agent with session memory and a 2-agent swarm.
+  Real-time conversation over X voice DMs, voice mentions, and Spaces.
+category: voice-agent
+certification_target: grok-native-certified
+tagline: >-
+  Your personal Grok voice agent — always on, context-aware,
+  ready for voice conversations on X.
+entrypoint: .grok/grok-swarm.yaml
+runtime:
+  python: ">=3.11"
+  grok: "4.20-multi-agent"
+env:
+  - XAI_API_KEY
+  - X_BEARER_TOKEN
+  - X_OAUTH_TOKEN
+  - GROK_VOICE_API_KEY
+safety_profile: standard
+author: agentmindcloud
+license: Apache-2.0

@@ -1,0 +1,11 @@
+# Default owner for everything not matched by a more specific rule.
+*   @agentmindcloud
+
+# Per-template ownership — add the template author's handle here when
+# a community contributor takes on maintenance of their submission.
+# /templates/hello-grok/           @example-author
+# /templates/reply-engagement-bot/ @example-author
+
+# CI and validation scripts — kept tight.
+/.github/                          @agentmindcloud
+/scripts/                          @agentmindcloud

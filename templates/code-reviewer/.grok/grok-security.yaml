@@ -1,0 +1,16 @@
+safety_profile: strict
+permissions:
+  - tool:fetch_pr
+  - tool:fetch_diff
+  - tool:fetch_file
+  - tool:draft_inline_comment
+  - tool:draft_summary
+  - tool:post_review
+  - network:api.github.com
+requires_approval:
+  - tool:post_review
+rate_limits:
+  tool_calls_per_minute: 30
+  reviews_per_pr: 1
+kill_switch:
+  env: CODE_REVIEWER_DISABLED

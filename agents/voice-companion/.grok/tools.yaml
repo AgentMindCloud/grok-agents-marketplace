@@ -1,0 +1,28 @@
+tools:
+  x_search:
+    default_recency_hours: 6
+    default_lang: auto
+    exclude:
+      - replies
+      - retweets
+    max_results: 10
+
+  draft_reply:
+    max_chars: 280
+    tone: warm-conversational
+    emoji: none
+    quote_if_source_exists: false
+
+  session_memory_read:
+    max_records_returned: 3
+    scope: current_session_only
+    require_encryption: true
+
+  voice_stt:
+    engine: grok-stt-2
+    language_detect: auto
+
+  voice_tts:
+    engine: grok-voice-2
+    voice_id: ember
+    style: warm-conversational

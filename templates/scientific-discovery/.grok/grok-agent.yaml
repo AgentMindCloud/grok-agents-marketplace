@@ -1,0 +1,24 @@
+agents:
+  - id: paper_scout
+    model: grok-4
+    prompt_ref: scout_system
+    tools:
+      - fetch_arxiv_new
+      - summarize_paper
+    max_turns: 10
+
+  - id: buzz_tracker
+    model: grok-4
+    prompt_ref: buzz_system
+    tools:
+      - search_x_for_paper
+      - extract_expert_takes
+    max_turns: 8
+
+  - id: editor
+    model: grok-4
+    prompt_ref: editor_system
+    tools:
+      - compile_digest
+      - deliver_digest
+    max_turns: 4

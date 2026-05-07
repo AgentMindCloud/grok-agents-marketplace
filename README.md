@@ -290,6 +290,16 @@ Then flip to HTTPS-everywhere in the domain settings.
   </tr>
 </table>
 
+## ✦ Registry
+
+`/registry/` is the in-repo mirror of [`awesome-grok-agents`](https://github.com/agentmindcloud/awesome-grok-agents) — the canonical catalog of certified agents.
+
+It was merged in via `git subtree --squash`, so the upstream commit SHA is preserved in this repo's history without bloating the working tree. Treat `/registry/` as the **source of truth for agent data** going forward (manifests, schemas, featured-agents.json, and templates).
+
+> Note: the live site still fetches the catalog over HTTPS from `raw.githubusercontent.com/.../awesome-grok-agents/...` — see the architecture diagram above. Repointing the build to read directly from `./registry/` is staged for **Tier 4 polish**.
+
+See [`MERGE_PLAN.md`](./MERGE_PLAN.md) for the full merge ledger.
+
 ## ✦ API
 
 | Route | Method | Purpose |
@@ -356,7 +366,7 @@ All colors, radii, shadows, blur, and fonts live in `tailwind.config.ts` and `sr
     </td>
     <td width="33%">
       <h3>🌟 awesome-grok-agents</h3>
-      <p>The catalog this site reads from on every deploy.</p>
+      <p>The catalog this site reads from on every deploy. Now also mirrored in this repo at <a href="./registry"><code>/registry/</code></a> — see <a href="./MERGE_PLAN.md"><code>MERGE_PLAN.md</code></a>.</p>
       <a href="https://github.com/agentmindcloud/awesome-grok-agents">Repository →</a>
     </td>
     <td width="33%">

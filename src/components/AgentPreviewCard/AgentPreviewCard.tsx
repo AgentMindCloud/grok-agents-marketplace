@@ -13,11 +13,15 @@ interface AgentPreviewCardProps {
 }
 
 const ACCENT_HEADLINE: Record<VisualAccent, string> = {
+  plasma: 'text-plasma',
+  aurora: 'text-aurora',
   cyan: 'text-cyan',
   green: 'text-green',
 };
 
 const ACCENT_SHADOW: Record<VisualAccent, string> = {
+  plasma: 'shadow-plasmaGlow',
+  aurora: 'shadow-auroraGlow',
   cyan: 'shadow-cyanGlow',
   green: 'shadow-greenGlow',
 };

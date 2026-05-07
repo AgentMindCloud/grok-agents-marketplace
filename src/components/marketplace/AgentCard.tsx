@@ -27,16 +27,21 @@ export function AgentCard({ agent }: { agent: AgentWithStats }) {
               className="h-7 w-7 rounded-sm border border-border-subtle"
               unoptimized
             />
-          ) : null}
+          ) : (
+            <div
+              aria-hidden
+              className="h-7 w-7 rounded-sm border border-plasma/30 bg-halftone-plasma"
+            />
+          )}
           <span className="text-xs text-ink-subtle truncate">{agent.creator.handle}</span>
         </div>
-        <span className="text-[10px] uppercase tracking-[0.18em] text-cyan font-mono">
+        <span className="text-[10px] uppercase tracking-[0.18em] text-aurora font-mono">
           {CATEGORY_LABELS[agent.category]}
         </span>
       </div>
 
       <Link href={`/marketplace/${agent.id}` as never} className="flex flex-col gap-2">
-        <h3 className="font-display text-xl tracking-tight text-ink group-hover:text-cyan transition-colors">
+        <h3 className="font-display text-xl tracking-tight text-ink group-hover:text-plasma transition-colors">
           {agent.name}
         </h3>
         <p className="text-sm text-ink-muted line-clamp-2">{agent.tagline}</p>
@@ -47,15 +52,15 @@ export function AgentCard({ agent }: { agent: AgentWithStats }) {
       <div className="mt-auto flex items-center justify-between gap-2 pt-2">
         <div className="flex items-center gap-1.5">
           <StatPill
-            icon={<Star className="fill-cyan/30" />}
+            icon={<Star className="fill-aurora/30" />}
             value={formatCount(agent.stars)}
-            tone="cyan"
+            tone="aurora"
           />
-          <StatPill icon={<Download />} value={formatCount(agent.installs)} tone="green" />
+          <StatPill icon={<Download />} value={formatCount(agent.installs)} tone="plasma" />
         </div>
         <Link
           href={`/marketplace/${agent.id}` as never}
-          className="inline-flex items-center gap-1 text-sm text-cyan hover:underline font-medium"
+          className="inline-flex items-center gap-1 text-sm text-plasma hover:underline font-medium"
         >
           Details <ArrowUpRight className="h-3.5 w-3.5" />
         </Link>

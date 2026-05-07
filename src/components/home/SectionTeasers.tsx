@@ -9,28 +9,28 @@ const TEASERS = [
     title: 'Trending',
     blurb: 'Most install-intents in the last 7 days.',
     icon: Flame,
-    tone: 'cyan',
+    tone: 'plasma',
   },
   {
     href: '/marketplace/sections/voice',
     title: 'Voice-ready',
     blurb: 'Hands-free, wake-word, barge-in.',
     icon: Mic,
-    tone: 'cyan',
+    tone: 'aurora',
   },
   {
     href: '/marketplace/sections/swarm',
     title: 'Swarm-ready',
     blurb: 'Multi-agent deployments on rails.',
     icon: Network,
-    tone: 'cyan',
+    tone: 'plasma',
   },
   {
     href: '/marketplace/sections/new',
     title: 'New',
     blurb: 'Freshly shipped in the last 30 days.',
     icon: Sparkles,
-    tone: 'cyan',
+    tone: 'aurora',
   },
   {
     href: '/marketplace/sections/beginner',
@@ -53,16 +53,17 @@ export function SectionTeasers() {
                 <div
                   className={cn(
                     'flex h-8 w-8 items-center justify-center rounded-sm border',
-                    t.tone === 'cyan' && 'border-cyan/40 text-cyan bg-cyan/5',
+                    t.tone === 'plasma' && 'border-plasma/40 text-plasma bg-plasma/5',
+                    t.tone === 'aurora' && 'border-aurora/40 text-aurora bg-aurora/5',
                     t.tone === 'green' && 'border-green/40 text-green bg-green/5'
                   )}
                 >
                   <Icon className="h-4 w-4" />
                 </div>
-                <ArrowUpRight className="h-4 w-4 text-ink-subtle group-hover:text-cyan transition-colors" />
+                <ArrowUpRight className="h-4 w-4 text-ink-subtle group-hover:text-plasma transition-colors" />
               </div>
               <div className="flex flex-col gap-1">
-                <h3 className="font-display text-lg tracking-tight text-ink group-hover:text-cyan transition-colors">
+                <h3 className="font-display text-lg tracking-tight text-ink group-hover:text-plasma transition-colors">
                   {t.title}
                 </h3>
                 <p className="text-xs text-ink-muted">{t.blurb}</p>

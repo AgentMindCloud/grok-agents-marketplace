@@ -30,17 +30,17 @@ export function Header() {
     <header
       className={cn(
         'fixed inset-x-0 top-0 z-40 transition-all duration-200 ease-gi',
-        scrolled ? 'backdrop-blur-gi bg-bg/70 border-b border-border-subtle' : 'bg-transparent'
+        scrolled ? 'backdrop-blur-gi bg-bg/75 border-b border-plasma/15' : 'bg-transparent'
       )}
     >
       <div className="mx-auto flex h-16 w-full max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <Link
           href="/"
-          className="font-display text-lg tracking-[-0.06em] uppercase text-ink hover:text-cyan transition-colors"
+          className="font-display text-lg tracking-[-0.06em] uppercase text-ink hover:text-aurora transition-colors"
           aria-label="GrokInstall home"
         >
-          <span className="text-glow-cyan">GROK</span>
-          <span className="text-cyan">INSTALL</span>
+          <span className="text-ink">GROK</span>
+          <span className="text-plasma text-glow-plasma">INSTALL</span>
         </Link>
 
         <nav className="hidden md:flex items-center gap-1" aria-label="Primary">

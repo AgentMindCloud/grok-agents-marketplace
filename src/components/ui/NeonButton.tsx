@@ -2,14 +2,16 @@ import { cn } from '@/lib/utils';
 import Link from 'next/link';
 import { type ButtonHTMLAttributes, type ReactNode, forwardRef } from 'react';
 
-type Variant = 'primary' | 'secondary' | 'success' | 'danger' | 'ghost';
+type Variant = 'primary' | 'secondary' | 'aurora' | 'success' | 'danger' | 'ghost';
 type Size = 'sm' | 'md' | 'lg';
 
 const variants: Record<Variant, string> = {
   primary:
-    'bg-cyan text-bg font-semibold hover:shadow-cyanGlow hover:brightness-110 active:brightness-95 border border-cyan',
+    'bg-plasma text-ink font-semibold hover:shadow-plasmaGlow hover:brightness-110 active:brightness-95 border border-plasma',
   secondary:
-    'bg-transparent text-cyan border border-cyan/60 hover:bg-cyan/10 hover:border-cyan hover:shadow-cyanGlowSoft',
+    'bg-transparent text-aurora border border-aurora/60 hover:bg-aurora/10 hover:border-aurora hover:shadow-auroraGlowSoft',
+  aurora:
+    'bg-aurora text-bg font-semibold hover:shadow-auroraGlow hover:brightness-110 active:brightness-95 border border-aurora',
   success:
     'bg-green text-bg font-semibold hover:shadow-greenGlow hover:brightness-110 active:brightness-95 border border-green',
   danger:
@@ -48,7 +50,7 @@ function baseClasses(variant: Variant, size: Size, fullWidth: boolean | undefine
   return cn(
     'inline-flex items-center justify-center gap-2 font-body font-medium tracking-tight',
     'transition-all duration-200 ease-gi',
-    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-cyan/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg',
+    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-plasma/60 focus-visible:ring-offset-2 focus-visible:ring-offset-bg',
     'disabled:opacity-40 disabled:cursor-not-allowed disabled:shadow-none',
     variants[variant],
     sizes[size],

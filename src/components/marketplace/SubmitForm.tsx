@@ -179,8 +179,9 @@ export function SubmitForm() {
       </form>
 
       <aside className="flex flex-col gap-4 lg:sticky lg:top-24 lg:self-start">
-        <GlassCard padding="lg" className="flex flex-col gap-3">
-          <p className="text-[10px] uppercase tracking-[0.2em] font-mono text-cyan">Preview</p>
+        <GlassCard padding="lg" className="relative overflow-hidden flex flex-col gap-3">
+          <div className="absolute inset-x-0 top-0 spectral-divider" aria-hidden />
+          <p className="text-[10px] uppercase tracking-[0.2em] font-mono text-aurora">Preview</p>
           <h3 className="font-display text-xl tracking-tight text-ink">
             {form.name || 'Your agent name'}
           </h3>
@@ -192,7 +193,7 @@ export function SubmitForm() {
               {form.certifications.map((c) => (
                 <span
                   key={c}
-                  className="inline-flex rounded-sm border border-cyan/40 bg-cyan/5 text-cyan px-2 py-0.5 text-[11px]"
+                  className="inline-flex rounded-sm border border-plasma/40 bg-plasma/5 text-plasma px-2 py-0.5 text-[11px]"
                 >
                   {CERTIFICATION_LABELS[c]}
                 </span>
@@ -229,9 +230,9 @@ function Field({
 }) {
   return (
     <fieldset className="flex flex-col gap-1.5 border-0 p-0">
-      <legend className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.18em] text-cyan mb-1">
+      <legend className="flex items-center gap-1.5 text-xs font-mono uppercase tracking-[0.18em] text-aurora mb-1">
         {label}
-        {required ? <span className="text-danger">*</span> : null}
+        {required ? <span className="text-plasma">*</span> : null}
       </legend>
       {children}
       {help ? <span className="text-[11px] text-ink-subtle">{help}</span> : null}
@@ -257,8 +258,8 @@ function Pill({
       className={cn(
         'inline-flex rounded-sm border px-2.5 py-1 text-xs font-medium transition-all duration-150 ease-gi',
         active
-          ? 'border-cyan bg-cyan/10 text-cyan shadow-cyanGlowSoft'
-          : 'border-border-subtle bg-surface text-ink-muted hover:border-border-focus hover:text-ink'
+          ? 'border-plasma bg-plasma/10 text-plasma shadow-plasmaGlowSoft'
+          : 'border-border-subtle bg-surface text-ink-muted hover:border-aurora/50 hover:text-ink'
       )}
     >
       {children}
@@ -269,7 +270,7 @@ function Pill({
 const inputClass = cn(
   'w-full rounded-md border border-border-subtle bg-surface px-3 py-2.5',
   'text-sm text-ink placeholder:text-ink-subtle',
-  'focus:outline-none focus:border-border-focus focus:shadow-cyanGlowSoft transition-all'
+  'focus:outline-none focus:border-plasma/50 focus:shadow-plasmaGlowSoft transition-all'
 );
 
 function validate(f: Form): Partial<Record<keyof Form, string>> {

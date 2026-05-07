@@ -1,6 +1,7 @@
 import { AgentCard } from '@/components/marketplace/AgentCard';
 import { CircuitTrace } from '@/components/ui/CircuitTrace';
 import { GlassCard } from '@/components/ui/GlassCard';
+import { NebulaBackdrop } from '@/components/ui/NebulaBackdrop';
 import { NeonButton } from '@/components/ui/NeonButton';
 import { Section, SectionHeader } from '@/components/ui/Section';
 import { getStarCounts } from '@/lib/github';
@@ -30,11 +31,12 @@ export async function SectionPage({
   return (
     <div className="flex flex-col gap-10 pb-16">
       <section className="relative overflow-hidden border-b border-border-subtle">
-        <CircuitTrace density="sparse" />
+        <NebulaBackdrop intensity="normal" />
+        <CircuitTrace className="opacity-25 mix-blend-screen" density="sparse" />
         <div className="relative mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 pt-10 pb-10">
           <Link
             href="/marketplace"
-            className="inline-flex items-center gap-1.5 text-xs text-ink-subtle hover:text-cyan transition-colors"
+            className="inline-flex items-center gap-1.5 text-xs text-ink-subtle hover:text-plasma transition-colors"
           >
             <ArrowLeft className="h-3.5 w-3.5" /> Marketplace
           </Link>
@@ -46,6 +48,7 @@ export async function SectionPage({
             />
           </div>
         </div>
+        <div className="spectral-divider" aria-hidden />
       </section>
 
       <Section>

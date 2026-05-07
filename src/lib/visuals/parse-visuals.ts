@@ -1,7 +1,7 @@
 // src/lib/visuals/parse-visuals.ts
 import { z } from 'zod';
 
-export const VisualAccentSchema = z.enum(['cyan', 'green']);
+export const VisualAccentSchema = z.enum(['plasma', 'aurora', 'cyan', 'green']);
 export const VisualStyleSchema = z.enum(['futuristic', 'premium', 'minimal']);
 
 const urlField = z.string().url().max(2048);
